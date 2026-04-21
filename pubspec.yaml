@@ -1,0 +1,83 @@
+name: amazon_track_data
+description: "Amazon Track Data - App Flutter completo para rastreamento de embarcações e mototáxis."
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.1.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  
+  # Gerenciamento de estado
+  flutter_riverpod: ">=2.6.0 <3.0.0"
+  riverpod_annotation: ">=2.3.0 <3.0.0"
+  
+  # Navegação
+  go_router: ">=14.0.0 <15.0.0"
+  
+  # Firebase
+  firebase_core: ">=3.1.0 <4.0.0"
+  firebase_auth: ">=5.1.0 <6.0.0"
+  cloud_firestore: ">=5.1.0 <6.0.0"
+  firebase_storage: ">=12.0.0 <13.0.0"
+  
+  # Localização GPS
+  geolocator: ">=11.0.0 <12.0.0"
+  permission_handler: ">=11.4.0 <12.0.0"
+  
+  # Rastreamento em background
+  flutter_background_service: ">=5.1.0 <6.0.0"
+  flutter_background_service_android: ">=6.3.1 <7.0.0"
+  
+  # Notificações
+  flutter_local_notifications: ">=17.0.0 <18.0.0"
+  
+  # Banco de dados offline
+  drift: ">=2.15.0 <3.0.0"
+  sqlite3_flutter_libs: ">=0.5.0 <1.0.0"
+  
+  # Mapa
+  flutter_map: ">=7.0.0 <8.0.0"
+  latlong2: ">=0.9.1 <1.0.0"
+  
+  # Cache de imagens
+  cached_network_image: ">=3.3.0 <4.0.0"
+  
+  # Seleção de imagens
+  image_picker: ">=1.0.0 <2.0.0"
+  
+  # Login com Google
+  google_sign_in: ">=6.0.0 <7.0.0"
+  
+  # Internacionalização
+  intl: ">=0.19.0 <1.0.0"
+  
+  # IDs únicos
+  uuid: ">=4.0.0 <5.0.0"
+  
+  # Utilitários
+  shared_preferences: ">=2.2.0 <3.0.0"
+  connectivity_plus: ">=5.0.0 <6.0.0"
+  dio: ">=5.3.0 <6.0.0"
+  equatable: ">=2.0.0 <3.0.0"
+  get_it: ">=7.6.0 <8.0.0"
+  cupertino_icons: ">=1.0.8 <2.0.0"
+  
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  
+  flutter_lints: ">=2.0.0 <3.0.0"
+  build_runner: ">=2.4.0 <3.0.0"
+  drift_dev: ">=2.15.0 <3.0.0"
+  riverpod_generator: ">=2.3.0 <3.0.0"
+
+flutter:
+  uses-material-design: true
+  
+  assets:
+    - assets/images/
+    - assets/icons/

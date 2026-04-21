@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "414477644661",
+    "project_id": "fir-capdex",
+    "storage_bucket": "fir-capdex.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414477644661:android:c646aefc777f384268593c",
+        "android_client_info": {
+          "package_name": "com.example.amazontrackdata"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYw8XnJCbYUXwdt7sZRcppVxELOvKROhQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:414477644661:android:636af92d0518a88b68593c",
+        "android_client_info": {
+          "package_name": "com.example.capdex"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBYw8XnJCbYUXwdt7sZRcppVxELOvKROhQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

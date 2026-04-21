@@ -1,0 +1,12 @@
+// Firebase Storage Security Rules para Amazon Track Data
+// Regras permissivas para desenvolvimento e testes
+
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Permitir ler e escrever em todas as imagens de embarcações para usuários autenticados
+    match /imagens_embarcacoes/{allPaths=**} {
+      allow read, write: if request.auth != null;
+    }
+  }
+}
