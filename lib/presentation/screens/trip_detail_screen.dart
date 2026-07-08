@@ -15,7 +15,40 @@ class TripDetailScreen extends ConsumerStatefulWidget {
   ConsumerState<TripDetailScreen> createState() => _TripDetailScreenState();
 }
 
-class _TripDetailScreenState extends ConsumerState<TripDetailScreen> {
+class _TripDetailScreenState extends ConsumerState<TripDetailScreen>
+    with SingleTickerProviderStateMixin {
+  late AnimationController _animController;
+  List<LatLng> _allPoints = [];
+  // Índice do ponto "atual" do marcador animado (embarcação percorrendo a rota)
+  int _travelerIndex = 0;
+  bool _animationStarted = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _animController = AnimationController(vsync: this);
+    _animController.addListener(() {
+      final n = (_animController.value * (_allPoints.length - 1))
+          .round()
+          .clamp(0, _allPoints.isEmpty ? 0 : _allPoints.length - 1);
+      if (mounted) setState(() => _travelerIndex = n);
+    });
+  }
+
+  @override
+  void dispose() {
+    _animController.dispose();
+    super.dispose();
+  }
+
+  void _startAnimation(List<LatLng> points) {
+    _allPoints = points;
+    _travelerIndex = 0;
+    final durationMs = (points.length * 30).clamp(2000, 12000);
+    _animController.duration = Duration(milliseconds: durationMs);
+    _animController.forward(from: 0.0);
+  }
+
   @override
   Widget build(BuildContext context) {
     final s = widget.summary;
@@ -64,7 +97,24 @@ class _TripDetailScreenState extends ConsumerState<TripDetailScreen> {
 
               final latlngs =
                   points.map((p) => LatLng(p.latitude, p.longitude)).toList();
+
+              // Dispara animação do marcador percorrendo a rota na primeira carga
+              if (!_animationStarted) {
+                WidgetsBinding.instance.addPostFrameCallback((_) {
+                  if (mounted && !_animationStarted) {
+                    setState(() => _animationStarted = true);
+                    _startAnimation(latlngs);
+                  }
+                });
+              }
+
               final bounds = LatLngBounds.fromPoints(latlngs);
+              // Ponto atual do marcador animado (embarcação percorrendo a rota)
+              final travelerPoint = _allPoints.isNotEmpty
+                  ? _allPoints[_travelerIndex]
+                  : latlngs.first;
+              final animComplete = _allPoints.isNotEmpty &&
+                  _travelerIndex >= _allPoints.length - 1;
 
               return FlutterMap(
                 options: MapOptions(
@@ -81,35 +131,80 @@ class _TripDetailScreenState extends ConsumerState<TripDetailScreen> {
                         'https://tile.openstreetmap.org/{z}/{x}/{y}.png',
                     userAgentPackageName: 'com.amazon_track_data.app',
                   ),
-                  // Linha da rota
-                  PolylineLayer(
-                    polylines: [
-                      Polyline(
-                        points: latlngs,
-                        strokeWidth: 4,
-                        color: Colors.blue,
-                      ),
-                    ],
-                  ),
-                  // Marcador de início (verde) e fim (vermelho)
+                  // ── Rota completa: do ponto de partida por cada ponto
+                  //    capturado até o ponto de chegada ──────────────────
+                  if (latlngs.length >= 2)
+                    PolylineLayer(
+                      polylines: [
+                        // Trecho já percorrido (azul sólido)
+                        if (_animationStarted && _travelerIndex >= 1)
+                          Polyline(
+                            points: _allPoints.sublist(0, _travelerIndex + 1),
+                            strokeWidth: 4,
+                            color: Colors.blue,
+                          ),
+                        // Trecho restante (azul claro / tracejado)
+                        if (_animationStarted &&
+                            _travelerIndex < latlngs.length - 1)
+                          Polyline(
+                            points: _allPoints.sublist(_travelerIndex),
+                            strokeWidth: 3,
+                            color: Colors.blue.withOpacity(0.3),
+                          ),
+                        // Antes da animação iniciar: exibe rota completa
+                        if (!_animationStarted)
+                          Polyline(
+                            points: latlngs,
+                            strokeWidth: 4,
+                            color: Colors.blue,
+                          ),
+                      ],
+                    ),
+                  // Marcadores: início (verde), fim (vermelho) e embarcação animada
                   MarkerLayer(
                     markers: [
+                      // Ponto de partida
                       Marker(
                         point: latlngs.first,
                         child: const _RouteMarker(
                           color: Colors.green,
                           icon: Icons.play_arrow,
-                          label: 'Início',
+                          label: 'Partida',
                         ),
                       ),
+                      // Ponto de chegada (sempre visível)
                       Marker(
                         point: latlngs.last,
                         child: const _RouteMarker(
                           color: Colors.red,
                           icon: Icons.flag,
-                          label: 'Fim',
+                          label: 'Chegada',
                         ),
                       ),
+                      // Marcador animado da embarcação percorrendo a rota
+                      if (_animationStarted && !animComplete)
+                        Marker(
+                          point: travelerPoint,
+                          child: Container(
+                            decoration: const BoxDecoration(
+                              color: Colors.white,
+                              shape: BoxShape.circle,
+                              boxShadow: [
+                                BoxShadow(
+                                  color: Colors.black26,
+                                  blurRadius: 4,
+                                  offset: Offset(0, 2),
+                                ),
+                              ],
+                            ),
+                            padding: const EdgeInsets.all(4),
+                            child: const Icon(
+                              Icons.directions_boat,
+                              size: 16,
+                              color: Colors.blue,
+                            ),
+                          ),
+                        ),
                     ],
                   ),
                 ],

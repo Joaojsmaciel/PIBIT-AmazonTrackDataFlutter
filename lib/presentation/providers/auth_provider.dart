@@ -60,3 +60,9 @@ final signInWithGoogleProvider = FutureProvider<UserModel?>((ref) async {
   final authRepo = ref.watch(authRepositoryProvider);
   return await authRepo.signInWithGoogle();
 });
+
+final signInWithGoogleWithTypeProvider =
+    FutureProvider.family<UserModel?, UserType>((ref, userType) async {
+  final authRepo = ref.watch(authRepositoryProvider);
+  return await authRepo.signInWithGoogle(userType: userType);
+});

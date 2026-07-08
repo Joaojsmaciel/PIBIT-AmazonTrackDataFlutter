@@ -1,0 +1,72 @@
+@startuml caso_uso_passageiro
+skinparam actorStyle awesome
+skinparam usecaseBackgroundColor #E8F5E9
+skinparam usecaseBorderColor #2E7D32
+skinparam arrowColor #2E7D32
+skinparam packageBackgroundColor #F9FBE7
+skinparam packageBorderColor #A5D6A7
+skinparam actorBackgroundColor #FFF8DC
+skinparam actorBorderColor #B8860B
+left to right direction
+
+actor "Passageiro" as P
+
+rectangle "Sistema AmazonTrack" {
+
+  package "Autenticação" {
+    usecase "Criar conta" as UC1
+    usecase "Fazer login" as UC2
+    usecase "Fazer logout" as UC3
+    usecase "Visualizar perfil" as UC4
+  }
+
+  package "Acompanhamento de Embarcação" {
+    usecase "Visualizar lista de\nembarcações ativas" as UC5
+    usecase "Selecionar embarcação\npara acompanhar" as UC6
+    usecase "Visualizar posição\nda embarcação no mapa" as UC7
+    usecase "Visualizar ETA\n(tempo de chegada)" as UC8
+    usecase "Visualizar progresso\nda rota (%)" as UC9
+    usecase "Visualizar velocidade\nmédia" as UC10
+    usecase "Visualizar distância\nrestante" as UC11
+    usecase "Visualizar rota\nno mapa" as UC12
+  }
+
+  package "Notificações" {
+    usecase "Ativar acompanhamento\ncom alertas" as UC13
+    usecase "Receber notificação\nde aproximação ao porto" as UC14
+    usecase "Receber notificação\nde atracação" as UC15
+  }
+
+  package "Comunicação" {
+    usecase "Enviar mensagem\npara barqueiro" as UC16
+    usecase "Visualizar histórico\nde mensagens" as UC17
+  }
+
+}
+
+' ── Relacionamentos principais ──────────
+P --> UC1
+P --> UC2
+P --> UC3
+P --> UC4
+P --> UC5
+P --> UC6
+P --> UC13
+P --> UC16
+P --> UC17
+
+' ── Includes / Extends ──────────────────
+UC6  ..> UC7  : <<include>>
+UC6  ..> UC8  : <<include>>
+UC6  ..> UC9  : <<include>>
+UC6  ..> UC10 : <<include>>
+UC6  ..> UC11 : <<include>>
+UC6  ..> UC12 : <<include>>
+
+UC13 ..> UC14 : <<include>>
+UC13 ..> UC15 : <<include>>
+
+UC2  ..> UC1  : <<extend>>\n[novo usuário]
+UC16 ..> UC17 : <<extend>>
+
+@enduml

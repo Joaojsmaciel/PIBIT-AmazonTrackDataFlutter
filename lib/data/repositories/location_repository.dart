@@ -20,13 +20,37 @@ class LocationRepository {
         _localDatabaseService = localDatabaseService;
 
   Future<void> saveLocation(LocationModel location) async {
+    // Sempre persiste localmente (DTN Store)
+    try {
+      await _localDatabaseService.insertLocation(location);
+    } catch (_) {}
+
+    // Tenta enviar ao Firestore (DTN Forward) e atualizar posição ao vivo
     try {
       await _firestoreDatasource.saveLocation(location);
-      await _localDatabaseService.insertLocation(location);
-    } catch (e) {
-      // Se falhar online, salva offline para sincronização posterior
-      await _localDatabaseService.insertLocation(location);
+      await _firestoreDatasource.updateLivePosition(location);
+    } catch (_) {
+      // Sem internet: ponto fica na fila SQLite; sync ocorre ao reconectar
     }
+  }
+
+  /// Atualiza (ou cria) o documento de posição ao vivo do barqueiro.
+  Future<void> updateLivePosition(LocationModel location) async {
+    try {
+      await _firestoreDatasource.updateLivePosition(location);
+    } catch (_) {}
+  }
+
+  /// Marca a posição ao vivo como inativa (barqueiro encerrou a viagem).
+  Future<void> setLivePositionInactive(String userId) async {
+    try {
+      await _firestoreDatasource.setLivePositionInactive(userId);
+    } catch (_) {}
+  }
+
+  /// Stream de posições ao vivo de todos os barqueiros ativos.
+  Stream<List<TrackedUserModel>> getLivePositionsStream() {
+    return _firestoreDatasource.getLivePositionsStream();
   }
 
   Stream<List<TrackedUserModel>> getRecentTrackedUsers({
@@ -63,13 +87,16 @@ class LocationRepository {
   Future<void> syncOfflineLocations() async {
     try {
       final unsynced = await _localDatabaseService.getAllUnsynced();
-      for (int i = 0; i < unsynced.length; i++) {
+      for (final row in unsynced) {
         try {
-          final location = LocationModel.fromMap(unsynced[i]);
+          final location = LocationModel.fromMap(row);
           await _firestoreDatasource.saveLocation(location);
-          await _localDatabaseService.markAsSynced(i);
-        } catch (e) {
-          // Continua com próximas localizações
+          // ID composto = userId_timestamp (corresponde ao formato do SQLite)
+          final id = row['id'] as String? ??
+              '${location.userId}_${location.timestamp}';
+          await _localDatabaseService.markAsSyncedById(id);
+        } catch (_) {
+          // Ponto permanece na fila para próxima tentativa
         }
       }
     } catch (e) {
@@ -212,6 +239,11 @@ class LocationRepository {
   /// Retorna os pontos GPS de uma trip específica, ordenados por timestamp.
   Future<List<LocationModel>> getTripPoints(String userId, String tripId) async {
     return await _firestoreDatasource.getUserTripPoints(userId, tripId);
+  }
+
+  /// Stream de pontos GPS de uma trip em tempo real (para trilha ao vivo do passageiro).
+  Stream<List<LocationModel>> getTripPointsStream(String userId, String tripId) {
+    return _firestoreDatasource.getUserTripPointsStream(userId, tripId);
   }
 
   /// Retorna todos os metadados de viagens de um usuário, indexados por tripId.

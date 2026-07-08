@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter/foundation.dart';
 import 'package:amazon_track_data/core/constants/firestore_paths.dart';
 import 'package:amazon_track_data/core/errors/failures.dart';
 import 'package:amazon_track_data/data/models/user_model.dart';
@@ -6,6 +7,9 @@ import 'package:amazon_track_data/data/models/boat_model.dart';
 import 'package:amazon_track_data/data/models/route_model.dart';
 import 'package:amazon_track_data/data/models/stop_model.dart';
 import 'package:amazon_track_data/data/models/location_model.dart';
+import 'package:amazon_track_data/data/models/tracked_user_model.dart';
+import 'package:amazon_track_data/data/models/chat_message.dart';
+import 'package:amazon_track_data/data/models/chat_conversation.dart';
 
 class FirestoreDatasource {
   final FirebaseFirestore _firestore = FirebaseFirestore.instance;
@@ -117,13 +121,21 @@ class FirestoreDatasource {
 
   Future<List<BoatModel>> getUserBoats(String userId) async {
     try {
+      debugPrint('[getUserBoats] Buscando barcos do userId: $userId');
       final query = await _firestore
           .collection(FirestorePaths.boatsCollection)
           .where('ownerId', isEqualTo: userId)
-          .where('isActive', isEqualTo: true)
           .get();
 
-      return query.docs.map((doc) => BoatModel.fromMap(doc.data())).toList();
+      debugPrint('[getUserBoats] Documentos encontrados: ${query.docs.length}');
+      for (final doc in query.docs) {
+        debugPrint('[getUserBoats] Doc ${doc.id}: ownerId=${doc.data()['ownerId']}, isActive=${doc.data()['isActive']}');
+      }
+
+      return query.docs
+          .map((doc) => BoatModel.fromMap(doc.data()))
+          .where((b) => b.isActive)
+          .toList();
     } on FirebaseException catch (e) {
       throw FirestoreFailure(
         message: e.message ?? 'Erro ao buscar barcos',
@@ -176,10 +188,12 @@ class FirestoreDatasource {
     try {
       final query = await _firestore
           .collection(FirestorePaths.boatsCollection)
-          .where('isActive', isEqualTo: true)
           .get();
 
-      return query.docs.map((doc) => BoatModel.fromMap(doc.data())).toList();
+      return query.docs
+          .map((doc) => BoatModel.fromMap(doc.data()))
+          .where((b) => b.isActive)
+          .toList();
     } on FirebaseException catch (e) {
       throw FirestoreFailure(
         message: e.message ?? 'Erro ao buscar embarcações',
@@ -271,6 +285,56 @@ class FirestoreDatasource {
     }
   }
 
+  // ---------------------------------------------------------------------------
+  // Live Positions — coleção plana sem índice composto
+  // ---------------------------------------------------------------------------
+
+  /// Grava/atualiza a posição ao vivo do barqueiro em rastreamento ativo.
+  /// Chamado a cada ponto GPS coletado (foreground e background service).
+  Future<void> updateLivePosition(LocationModel location) async {
+    try {
+      await _firestore
+          .collection(FirestorePaths.livePositionsCollection)
+          .doc(location.userId)
+          .set({
+        ...location.toMap(),
+        'active': true,
+      }, SetOptions(merge: true));
+    } on FirebaseException catch (e) {
+      throw FirestoreFailure(
+        message: e.message ?? 'Erro ao atualizar posição ao vivo',
+        code: e.code,
+      );
+    }
+  }
+
+  /// Marca a posição ao vivo do barqueiro como inativa (viagem encerrada).
+  Future<void> setLivePositionInactive(String userId) async {
+    try {
+      await _firestore
+          .collection(FirestorePaths.livePositionsCollection)
+          .doc(userId)
+          .set({'active': false}, SetOptions(merge: true));
+    } on FirebaseException catch (e) {
+      throw FirestoreFailure(
+        message: e.message ?? 'Erro ao desativar posição ao vivo',
+        code: e.code,
+      );
+    }
+  }
+
+  /// Stream de todas as posições ao vivo ativas.
+  /// Sem collectionGroup, sem índice composto — coleção plana.
+  Stream<List<TrackedUserModel>> getLivePositionsStream() {
+    return _firestore
+        .collection(FirestorePaths.livePositionsCollection)
+        .where('active', isEqualTo: true)
+        .snapshots()
+        .map((snap) => snap.docs
+            .map((doc) => TrackedUserModel.fromMap(doc.data()))
+            .toList());
+  }
+
   Stream<List<LocationModel>> getRecentTrackedUsers(Duration windowDuration) {
     try {
       final cutoffTime = DateTime.now().millisecondsSinceEpoch - windowDuration.inMilliseconds;
@@ -317,6 +381,21 @@ class FirestoreDatasource {
     } catch (e) {
       throw FirestoreFailure(message: 'Erro desconhecido ao buscar pontos da viagem');
     }
+  }
+
+  /// Stream de pontos GPS de uma trip em tempo real (usado para trilha ao vivo).
+  Stream<List<LocationModel>> getUserTripPointsStream(String userId, String tripId) {
+    return _firestore
+        .collection(FirestorePaths.locationTracksPath(userId))
+        .where('tripId', isEqualTo: tripId)
+        .snapshots()
+        .map((snap) {
+          final pts = snap.docs
+              .map((doc) => LocationModel.fromMap(doc.data()))
+              .toList()
+            ..sort((a, b) => a.timestamp.compareTo(b.timestamp));
+          return pts;
+        });
   }
 
   /// Retorna todos os pontos de localização de um usuário,
@@ -386,5 +465,74 @@ class FirestoreDatasource {
     } catch (e) {
       throw FirestoreFailure(message: 'Erro ao buscar metadados de viagens');
     }
+  }
+
+  // ── Chat ──────────────────────────────────────────────────────────────────
+
+  /// Stream de mensagens de um chat em tempo real, ordenadas por timestamp.
+  Stream<List<ChatMessage>> watchChatMessages(String chatId) {
+    return _firestore
+        .collection(FirestorePaths.chatsCollection)
+        .doc(chatId)
+        .collection('messages')
+        .orderBy('timestamp', descending: false)
+        .snapshots()
+        .map((snap) =>
+            snap.docs.map((d) => ChatMessage.fromMap(d.data())).toList());
+  }
+
+  /// Envia uma mensagem para o chat e atualiza o metadata da conversa.
+  Future<void> sendChatMessage(ChatMessage message) async {
+    try {
+      final batch = _firestore.batch();
+
+      // Mensagem
+      final msgRef = _firestore
+          .collection(FirestorePaths.chatsCollection)
+          .doc(message.chatId)
+          .collection('messages')
+          .doc(message.id);
+      batch.set(msgRef, message.toMap());
+
+      // Metadata da conversa (document pai) — permite inbox do barqueiro
+      final parts = message.chatId.split('_');
+      final chatRef = _firestore
+          .collection(FirestorePaths.chatsCollection)
+          .doc(message.chatId);
+      batch.set(
+        chatRef,
+        {
+          'participants': parts.length == 2 ? parts : [message.senderId],
+          'participantNames': {message.senderId: message.senderName},
+          'lastMessage': message.text,
+          'lastSenderId': message.senderId,
+          'lastSenderName': message.senderName,
+          'lastTimestamp': message.timestamp,
+        },
+        SetOptions(merge: true),
+      );
+
+      await batch.commit();
+    } on FirebaseException catch (e) {
+      throw FirestoreFailure(
+        message: e.message ?? 'Erro ao enviar mensagem',
+        code: e.code,
+      );
+    } catch (e) {
+      throw FirestoreFailure(message: 'Erro ao enviar mensagem');
+    }
+  }
+
+  /// Stream de todas as conversas em que [uid] é participante.
+  /// Ordenadas pela última mensagem (mais recente primeiro).
+  Stream<List<ChatConversation>> watchBarqueiroChatInbox(String uid) {
+    return _firestore
+        .collection(FirestorePaths.chatsCollection)
+        .where('participants', arrayContains: uid)
+        .orderBy('lastTimestamp', descending: true)
+        .snapshots()
+        .map((snap) => snap.docs
+            .map((d) => ChatConversation.fromMap(d.id, d.data()))
+            .toList());
   }
 }

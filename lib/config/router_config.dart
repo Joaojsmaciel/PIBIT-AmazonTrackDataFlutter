@@ -10,6 +10,8 @@ import 'package:amazon_track_data/presentation/screens/route_selection_screen.da
 import 'package:amazon_track_data/presentation/screens/trip_detail_screen.dart';
 import 'package:amazon_track_data/presentation/screens/profile_screen.dart';
 import 'package:amazon_track_data/presentation/screens/passenger_home_screen.dart';
+import 'package:amazon_track_data/presentation/screens/onboarding_screen.dart';
+import 'package:amazon_track_data/presentation/screens/trip_calendar_screen.dart';
 import 'package:amazon_track_data/data/models/trip_summary.dart';
 
 class AppRouter {
@@ -62,6 +64,17 @@ class AppRouter {
       GoRoute(
         path: '/passenger-home',
         builder: (context, state) => const PassengerHomeScreen(),
+      ),
+      GoRoute(
+        path: '/onboarding',
+        builder: (context, state) => const OnboardingScreen(),
+      ),
+      GoRoute(
+        path: '/trip-calendar',
+        builder: (context, state) {
+          final isBarqueiro = state.uri.queryParameters['role'] == 'barqueiro';
+          return TripCalendarScreen(isBarqueiro: isBarqueiro);
+        },
       ),
     ],
     errorBuilder: (context, state) => Scaffold(

@@ -5,6 +5,7 @@ import 'package:go_router/go_router.dart';
 import 'package:amazon_track_data/core/validators/validators.dart';
 import 'package:amazon_track_data/core/extensions/context_extensions.dart';
 import 'package:amazon_track_data/data/models/user_model.dart';
+import 'package:amazon_track_data/presentation/providers/auth_provider.dart';
 import 'package:amazon_track_data/presentation/providers/service_provider.dart';
 
 final _obscurePasswordProvider = StateProvider<bool>((ref) => true);
@@ -80,12 +81,86 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
     }
   }
 
+  Future<void> _signUpWithGoogle() async {
+    // Primeiro pede o tipo de usuário via bottom sheet
+    final selectedType = await showModalBottomSheet<UserType>(
+      context: context,
+      shape: const RoundedRectangleBorder(
+        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
+      ),
+      builder: (_) => Padding(
+        padding: const EdgeInsets.fromLTRB(24, 20, 24, 32),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            const Text(
+              'Você é...',
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+            ),
+            const SizedBox(height: 8),
+            const Text(
+              'Selecione seu perfil para continuar com o Google.',
+              style: TextStyle(color: Colors.grey),
+            ),
+            const SizedBox(height: 20),
+            ListTile(
+              leading: const CircleAvatar(
+                child: Icon(Icons.person),
+              ),
+              title: const Text('Passageiro'),
+              subtitle: const Text('Acompanha embarcações em tempo real'),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12)),
+              onTap: () => Navigator.pop(context, UserType.passageiro),
+            ),
+            const SizedBox(height: 8),
+            ListTile(
+              leading: const CircleAvatar(
+                child: Icon(Icons.directions_boat),
+              ),
+              title: const Text('Barqueiro'),
+              subtitle: const Text('Opera e rastreia embarcações'),
+              shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(12)),
+              onTap: () => Navigator.pop(context, UserType.barqueiro),
+            ),
+          ],
+        ),
+      ),
+    );
+
+    if (selectedType == null || !mounted) return;
+
+    setState(() => _isLoading = true);
+    try {
+      final user = await ref
+          .read(signInWithGoogleWithTypeProvider(selectedType).future);
+      if (user != null) ref.read(userSessionProvider.notifier).state = user;
+      if (mounted) {
+        if (user?.userType == UserType.passageiro) {
+          context.go('/passenger-home');
+        } else {
+          context.go('/map');
+        }
+      }
+    } catch (e) {
+      if (mounted) context.showErrorSnackBar(e.toString());
+    } finally {
+      if (mounted) setState(() => _isLoading = false);
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Cadastro'),
         elevation: 0,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () => context.go('/login'),
+        ),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(24),
@@ -182,9 +257,6 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                     case UserType.passageiro:
                       label = 'Passageiro';
                       break;
-                    case UserType.mototaxi:
-                      label = 'Mototáxi';
-                      break;
                     case UserType.barqueiro:
                       label = 'Barqueiro';
                       break;
@@ -216,6 +288,36 @@ class _SignupScreenState extends ConsumerState<SignupScreen> {
                           child: CircularProgressIndicator(strokeWidth: 2),
                         )
                       : const Text('Cadastrar'),
+                ),
+              ),
+              const SizedBox(height: 12),
+              Row(
+                children: [
+                  const Expanded(child: Divider()),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 12),
+                    child: Text('ou',
+                        style: TextStyle(color: Colors.grey[600])),
+                  ),
+                  const Expanded(child: Divider()),
+                ],
+              ),
+              const SizedBox(height: 12),
+              SizedBox(
+                width: double.infinity,
+                child: OutlinedButton.icon(
+                  onPressed: _isLoading ? null : _signUpWithGoogle,
+                  icon: Image.asset(
+                    'assets/icons/google_logo.png',
+                    height: 20,
+                    width: 20,
+                    errorBuilder: (_, __, ___) =>
+                        const Icon(Icons.g_mobiledata, size: 22),
+                  ),
+                  label: const Text('Cadastrar com Google'),
+                  style: OutlinedButton.styleFrom(
+                    padding: const EdgeInsets.symmetric(vertical: 12),
+                  ),
                 ),
               ),
               const SizedBox(height: 16),

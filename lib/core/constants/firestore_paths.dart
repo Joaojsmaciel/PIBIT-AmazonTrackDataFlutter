@@ -10,6 +10,12 @@ class FirestorePaths {
   static const String stopsCollection = '$rootDocument/$amazontrackdataDoc/stops';
   static const String locationsCollection = '$rootDocument/$amazontrackdataDoc/locations';
   static const String tripMetaCollection = '$rootDocument/$amazontrackdataDoc/tripMeta';
+  static const String chatsCollection = '$rootDocument/$amazontrackdataDoc/chats';
+  /// Posições ao vivo de barqueiros em rastreamento ativo.
+  /// Um documento por userId — sem subcoleções, sem índice composto necessário.
+  static const String livePositionsCollection = '$rootDocument/$amazontrackdataDoc/livePositions';
+  static const String scheduledTripsCollection = '$rootDocument/$amazontrackdataDoc/scheduledTrips';
+  static const String tripSummariesCollection = '$rootDocument/$amazontrackdataDoc/tripSummaries';
 
   // Subcoleções
   static const String tracksSubcollection = 'tracks';

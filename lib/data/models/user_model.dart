@@ -1,6 +1,6 @@
 import 'package:equatable/equatable.dart';
 
-enum UserType { passageiro, mototaxi, barqueiro }
+enum UserType { passageiro, barqueiro }
 
 class UserModel extends Equatable {
   final String uid;

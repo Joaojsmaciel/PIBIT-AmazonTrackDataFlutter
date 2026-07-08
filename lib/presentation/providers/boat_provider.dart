@@ -6,10 +6,11 @@ import 'auth_provider.dart';
 import 'location_provider.dart';
 
 final userBoatsProvider = FutureProvider<List<BoatModel>>((ref) async {
-  final boatRepo = ref.watch(boatRepositoryProvider);
+  // currentUserIdProvider lê FirebaseAuth.currentUser?.uid de forma síncrona.
+  // Quando o usuário chega nesta tela já está autenticado (splash garante isso).
   final userId = ref.watch(currentUserIdProvider);
-  
   if (userId == null) return [];
+  final boatRepo = ref.watch(boatRepositoryProvider);
   return await boatRepo.getUserBoats(userId);
 });
 

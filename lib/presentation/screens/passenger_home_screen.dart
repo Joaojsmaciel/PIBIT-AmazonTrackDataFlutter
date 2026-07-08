@@ -10,7 +10,12 @@ import 'package:amazon_track_data/presentation/providers/auth_provider.dart';
 import 'package:amazon_track_data/presentation/providers/boat_provider.dart';
 import 'package:amazon_track_data/presentation/providers/location_provider.dart';
 import 'package:amazon_track_data/presentation/providers/map_provider.dart';
+import 'package:amazon_track_data/presentation/providers/geofence_provider.dart';
 import 'package:amazon_track_data/presentation/widgets/map_widget.dart';
+import 'package:amazon_track_data/presentation/screens/boat_chat_screen.dart';
+import 'package:amazon_track_data/presentation/screens/boat_detail_screen.dart';
+import 'package:amazon_track_data/presentation/screens/passenger_trip_history_screen.dart';
+import 'package:amazon_track_data/presentation/screens/trip_calendar_screen.dart';
 
 class PassengerHomeScreen extends ConsumerStatefulWidget {
   const PassengerHomeScreen({Key? key}) : super(key: key);
@@ -24,7 +29,7 @@ class _PassengerHomeScreenState extends ConsumerState<PassengerHomeScreen> {
   int _currentIndex = 0;
   late MapController _mapController;
 
-  static const _titles = ['Mapa', 'Embarcações', 'Perfil'];
+  static const _titles = ['Mapa', 'Embarcações', 'Calendário', 'Histórico', 'Perfil'];
 
   @override
   void initState() {
@@ -66,6 +71,24 @@ class _PassengerHomeScreenState extends ConsumerState<PassengerHomeScreen> {
       });
     });
 
+    // Alimenta o GeofenceService com a posição do barco seguido.
+    // Notificações só disparam enquanto watchedBoatId != null.
+    final watchedBoatId = ref.watch(watchedBoatIdProvider);
+    ref.listen(trackedUsersProvider, (_, next) {
+      if (watchedBoatId == null) return;
+      next.whenData((users) {
+        final candidates = users
+            .where((u) => u.boatId == watchedBoatId)
+            .toList();
+        if (candidates.isEmpty) return;
+        candidates.sort((a, b) => b.timestamp.compareTo(a.timestamp));
+        final u = candidates.first;
+        ref
+            .read(geofenceServiceProvider)
+            .updatePosition(u.latitude, u.longitude, u.speed);
+      });
+    });
+
     return Scaffold(
       appBar: AppBar(
         title: Text(_titles[_currentIndex]),
@@ -88,6 +111,12 @@ class _PassengerHomeScreenState extends ConsumerState<PassengerHomeScreen> {
                 ref.invalidate(activeBoatTripsProvider);
               },
             ),
+          if (_currentIndex == 3)
+            IconButton(
+              icon: const Icon(Icons.refresh),
+              tooltip: 'Atualizar',
+              onPressed: () => ref.invalidate(allBoatsProvider),
+            ),
         ],
       ),
       body: IndexedStack(
@@ -95,6 +124,8 @@ class _PassengerHomeScreenState extends ConsumerState<PassengerHomeScreen> {
         children: [
           _MapTab(mapController: _mapController),
           const _BoatsTab(),
+          const TripCalendarScreen(isBarqueiro: false),
+          const PassengerTripHistoryScreen(),
           const _ProfileTab(),
         ],
       ),
@@ -123,6 +154,14 @@ class _PassengerHomeScreenState extends ConsumerState<PassengerHomeScreen> {
             label: 'Embarcações',
           ),
           BottomNavigationBarItem(
+            icon: Icon(Icons.calendar_month),
+            label: 'Calendário',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(Icons.history),
+            label: 'Histórico',
+          ),
+          BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Perfil',
           ),
@@ -144,6 +183,7 @@ class _MapTab extends ConsumerWidget {
     final userLocationAsync = ref.watch(userLocationProvider);
     final mapCenter = ref.watch(mapCenterProvider);
     final currentUserAsync = ref.watch(currentUserProvider);
+    final boatTrail = ref.watch(watchedBoatTrailProvider);
 
     return userLocationAsync.when(
       data: (userLocation) => MapWidget(
@@ -152,6 +192,7 @@ class _MapTab extends ConsumerWidget {
         trackedUsers: trackedUsers,
         userLocation: userLocation,
         currentUserType: currentUserAsync.valueOrNull?.userType,
+        boatTrail: boatTrail.valueOrNull ?? const [],
       ),
       loading: () => const Center(child: CircularProgressIndicator()),
       error: (error, _) => Center(
@@ -231,15 +272,17 @@ class _BoatsTab extends ConsumerWidget {
   }
 }
 
-class _BoatCard extends StatelessWidget {
+class _BoatCard extends ConsumerWidget {
   final BoatModel boat;
   final ActiveTripInfo? activeTripInfo;
 
   const _BoatCard({required this.boat, required this.activeTripInfo});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final isActive = activeTripInfo != null;
+    final watchedBoatId = ref.watch(watchedBoatIdProvider);
+    final isWatching = watchedBoatId == boat.id;
 
     return Card(
       margin: const EdgeInsets.only(bottom: 12),
@@ -311,6 +354,85 @@ class _BoatCard extends StatelessWidget {
               const SizedBox(height: 10),
               _ActiveTripDetails(info: activeTripInfo!),
             ],
+            // ── Botões de ação ─────────────────────────────────────
+            const SizedBox(height: 12),
+            const Divider(height: 1),
+            const SizedBox(height: 8),
+            Row(
+              children: [
+                OutlinedButton.icon(
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => BoatChatScreen(
+                        boatName: boat.name,
+                        ownerName: boat.ownerName,
+                        ownerId: boat.ownerId,
+                      ),
+                    ),
+                  ),
+                  icon: const Icon(Icons.chat_bubble_outline, size: 16),
+                  label: const Text('Mensagem'),
+                  style: OutlinedButton.styleFrom(
+                    visualDensity: VisualDensity.compact,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 4),
+                  ),
+                ),
+                const SizedBox(width: 6),
+                OutlinedButton.icon(
+                  onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (_) => BoatDetailScreen(
+                        boat: boat,
+                        activeTripInfo: activeTripInfo,
+                      ),
+                    ),
+                  ),
+                  icon: const Icon(Icons.info_outline, size: 16),
+                  label: const Text('Detalhes'),
+                  style: OutlinedButton.styleFrom(
+                    visualDensity: VisualDensity.compact,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 4),
+                  ),
+                ),
+                const Spacer(),
+                ElevatedButton.icon(
+                  onPressed: () {
+                    final geofence = ref.read(geofenceServiceProvider);
+                    if (isWatching) {
+                      ref.read(watchedBoatIdProvider.notifier).state = null;
+                      geofence.disableNotifications();
+                      context.showSuccessSnackBar(
+                          'Deixou de acompanhar ${boat.name}');
+                    } else {
+                      ref.read(watchedBoatIdProvider.notifier).state = boat.id;
+                      geofence.enableNotifications();
+                      context.showSuccessSnackBar(
+                          'Acompanhando ${boat.name}');
+                    }
+                  },
+                  icon: Icon(
+                    isWatching
+                        ? Icons.notifications_off_outlined
+                        : Icons.notifications_active_outlined,
+                    size: 16,
+                  ),
+                  label: Text(isWatching ? 'Parar' : 'Acompanhar'),
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: isWatching
+                        ? Colors.red.shade600
+                        : Colors.blue.shade700,
+                    foregroundColor: Colors.white,
+                    visualDensity: VisualDensity.compact,
+                    padding: const EdgeInsets.symmetric(
+                        horizontal: 10, vertical: 4),
+                  ),
+                ),
+              ],
+            ),
           ],
         ),
       ),

@@ -2,12 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:go_router/go_router.dart';
+import 'package:latlong2/latlong.dart';
 
+import 'package:amazon_track_data/presentation/providers/geofence_provider.dart';
 import 'package:amazon_track_data/presentation/providers/location_provider.dart';
 import 'package:amazon_track_data/presentation/providers/map_provider.dart';
 import 'package:amazon_track_data/presentation/providers/auth_provider.dart';
+import 'package:amazon_track_data/presentation/providers/chat_provider.dart';
 import 'package:amazon_track_data/presentation/widgets/map_widget.dart';
 import 'package:amazon_track_data/presentation/dialogs/boat_selection_dialog.dart';
+import 'package:amazon_track_data/presentation/screens/barqueiro_inbox_screen.dart';
+import 'package:amazon_track_data/presentation/screens/trip_calendar_screen.dart';
 import 'package:amazon_track_data/core/extensions/context_extensions.dart';
 
 class MapScreen extends ConsumerStatefulWidget {
@@ -60,6 +65,9 @@ class _MapScreenState extends ConsumerState<MapScreen> {
     final mapCenter = ref.watch(mapCenterProvider);
     final currentUserAsync = ref.watch(currentUserProvider);
     final isTracking = ref.watch(isTrackingProvider);
+    final ports = ref.watch(portosProvider);
+    final latestGeofenceEvent = ref.watch(latestGeofenceEventProvider);
+    final offlinePending = ref.watch(offlinePendingCountProvider);
 
     // Popula o cache apenas quando o currentUserProvider terminar de carregar
     // e o cache ainda estiver vazio (evita sobrescrever com dados antigos).
@@ -68,6 +76,13 @@ class _MapScreenState extends ConsumerState<MapScreen> {
         if (user != null && ref.read(userSessionProvider) == null) {
           ref.read(userSessionProvider.notifier).state = user;
         }
+      });
+    });
+
+    // Atualiza o evento de geofence mais recente
+    ref.listen(geofenceEventsProvider, (_, next) {
+      next.whenData((event) {
+        ref.read(latestGeofenceEventProvider.notifier).state = event;
       });
     });
 
@@ -89,25 +104,70 @@ class _MapScreenState extends ConsumerState<MapScreen> {
         title: const Text('Mapa em Tempo Real'),
         actions: [
           IconButton(
+            icon: const Icon(Icons.calendar_month),
+            tooltip: 'Calendário de Viagens',
+            onPressed: () => Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (_) => const TripCalendarScreen(isBarqueiro: true),
+              ),
+            ),
+          ),
+          // Indicador de pontos offline pendentes
+          offlinePending.when(
+            data: (count) => count > 0
+                ? Padding(
+                    padding: const EdgeInsets.only(right: 4),
+                    child: Tooltip(
+                      message: '$count ponto(s) pendentes de sync',
+                      child: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          const Icon(Icons.cloud_off, size: 22),
+                          Positioned(
+                            top: 6,
+                            right: 0,
+                            child: Container(
+                              padding: const EdgeInsets.all(2),
+                              decoration: const BoxDecoration(
+                                color: Colors.orange,
+                                shape: BoxShape.circle,
+                              ),
+                              constraints: const BoxConstraints(
+                                  minWidth: 14, minHeight: 14),
+                              child: Text(
+                                '$count',
+                                style: const TextStyle(
+                                    color: Colors.white, fontSize: 9),
+                                textAlign: TextAlign.center,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  )
+                : const SizedBox.shrink(),
+            loading: () => const SizedBox.shrink(),
+            error: (_, __) => const SizedBox.shrink(),
+          ),
+          IconButton(
             icon: const Icon(Icons.exit_to_app),
             onPressed: () => _handleLogout(context, ref),
           ),
         ],
       ),
-      body: userLocationAsync.when(
-        data: (userLocation) => MapWidget(
-          mapController: mapController,
-          center: mapCenter,
-          trackedUsers: trackedUsers,
-          userLocation: userLocation,
-          currentUserType: currentUserAsync.valueOrNull?.userType,
-        ),
-        loading: () => const Center(
-          child: CircularProgressIndicator(),
-        ),
-        error: (error, stack) => Center(
-          child: Text('Erro ao carregar localização: $error'),
-        ),
+      // O mapa é exibido imediatamente; o marcador do usuário aparece
+      // assim que o GPS retornar posição (sem bloquear a tela).
+      body: MapWidget(
+        mapController: mapController,
+        center: mapCenter,
+        trackedUsers: trackedUsers,
+        userLocation: userLocationAsync.valueOrNull,
+        currentUserType: currentUserAsync.valueOrNull?.userType,
+        ports: ports,
+        nearestPortEvent: latestGeofenceEvent,
+        liveTrail: ref.watch(liveTrailProvider),
       ),
       floatingActionButton: Padding(
         padding: const EdgeInsets.only(bottom: 15, right: 16),
@@ -115,8 +175,21 @@ class _MapScreenState extends ConsumerState<MapScreen> {
           mainAxisAlignment: MainAxisAlignment.end,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
+            // Botão: ver todos os portos (zoom sobre o Amazonas)
+            FloatingActionButton(
+              heroTag: 'view_ports',
+              mini: true,
+              tooltip: 'Ver portos',
+              onPressed: () => mapController.move(
+                const LatLng(-3.5, -62.0),
+                6.0, // zoom suficiente para ver toda a calha do rio
+              ),
+              child: const Icon(Icons.anchor),
+            ),
+            const SizedBox(height: 8),
             FloatingActionButton(
               heroTag: 'center_location',
+              tooltip: 'Minha localização',
               onPressed: () {
                 userLocationAsync.whenData((location) {
                   if (location != null) {
@@ -149,20 +222,24 @@ class _MapScreenState extends ConsumerState<MapScreen> {
       floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       bottomNavigationBar: BottomNavigationBar(
         type: BottomNavigationBarType.fixed,
-        items: const [
-          BottomNavigationBarItem(
+        items: [
+          const BottomNavigationBarItem(
             icon: Icon(Icons.home),
             label: 'Mapa',
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.directions_boat),
             label: 'Embarcações',
           ),
-          BottomNavigationBarItem(
+          const BottomNavigationBarItem(
             icon: Icon(Icons.route),
             label: 'Rotas',
           ),
           BottomNavigationBarItem(
+            icon: _InboxBadge(),
+            label: 'Mensagens',
+          ),
+          const BottomNavigationBarItem(
             icon: Icon(Icons.person),
             label: 'Perfil',
           ),
@@ -170,7 +247,6 @@ class _MapScreenState extends ConsumerState<MapScreen> {
         onTap: (index) {
           switch (index) {
             case 0:
-              // Já na tela de mapa
               break;
             case 1:
               context.push('/boat-list');
@@ -179,6 +255,13 @@ class _MapScreenState extends ConsumerState<MapScreen> {
               context.push('/routes');
               break;
             case 3:
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (_) => const BarqueiroInboxScreen()),
+              );
+              break;
+            case 4:
               context.push('/profile');
               break;
           }
@@ -188,9 +271,13 @@ class _MapScreenState extends ConsumerState<MapScreen> {
   }
 
   void _stopTracking(BuildContext context, WidgetRef ref) {
+    // Reseta o estado do geofence antes de encerrar o rastreamento
+    ref.read(geofenceServiceProvider).resetStatus();
     ref.read(isTrackingProvider.notifier).state = false;
     ref.read(currentTripIdProvider.notifier).state = null;
     ref.read(selectedBoatForTrackingProvider.notifier).state = null;
+    // Limpa o evento de geofence do UI
+    ref.read(latestGeofenceEventProvider.notifier).state = null;
     context.showSuccessSnackBar('Rastreamento encerrado.');
   }
 
@@ -229,6 +316,22 @@ class _MapScreenState extends ConsumerState<MapScreen> {
           ),
         ],
       ),
+    );
+  }
+}
+
+/// Ícone da tab "Mensagens" com badge indicando se há conversas.
+class _InboxBadge extends ConsumerWidget {
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final inboxAsync = ref.watch(barqueiroChatInboxProvider);
+    final count = inboxAsync.valueOrNull?.length ?? 0;
+
+    if (count == 0) return const Icon(Icons.chat_bubble_outline);
+
+    return Badge(
+      label: Text('$count'),
+      child: const Icon(Icons.chat_bubble_outline),
     );
   }
 }

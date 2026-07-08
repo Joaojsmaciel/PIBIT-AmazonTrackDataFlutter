@@ -114,7 +114,7 @@ class AuthRepository {
     return _authDatasource.getCurrentUserId();
   }
 
-  Future<UserModel?> signInWithGoogle() async {
+  Future<UserModel?> signInWithGoogle({UserType userType = UserType.passageiro}) async {
     try {
       final userCredential = await _authDatasource.signInWithGoogle();
       final uid = userCredential.user!.uid;
@@ -127,7 +127,7 @@ class AuthRepository {
           email: firebaseUser.email ?? '',
           fullName: firebaseUser.displayName ?? '',
           cpf: '',
-          userType: UserType.passageiro,
+          userType: userType,
           createdAt: DateTime.now().millisecondsSinceEpoch,
         );
         await _firestoreDatasource.createUser(newUser);

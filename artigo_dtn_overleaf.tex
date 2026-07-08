@@ -1,0 +1,846 @@
+\documentclass[12pt]{article}
+
+\usepackage{sbc-template}
+\usepackage{graphicx,url}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}   % \checkmark
+\usepackage{booktabs}
+\usepackage{float}
+\usepackage{multirow}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{algorithm}
+\usepackage{algpseudocode}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric, arrows.meta, positioning, calc, fit, backgrounds}
+\usepackage{subcaption}  % subfiguras lado a lado
+
+% Estilos TikZ
+\tikzset{
+  bloco/.style={rectangle, rounded corners=4pt, draw=blue!70!black,
+                fill=blue!12, minimum width=3.0cm, minimum height=0.7cm,
+                text centered, font=\small, text width=2.8cm},
+  blocoG/.style={bloco, fill=green!15, draw=green!60!black},
+  blocoA/.style={bloco, fill=orange!15, draw=orange!70!black},
+  blocoY/.style={bloco, fill=yellow!20, draw=orange!60!black},
+  decisao/.style={diamond, draw=orange!80!black, fill=orange!15,
+                  aspect=2.6, text centered, font=\small,
+                  minimum width=3.2cm, minimum height=0.8cm},
+  seta/.style={-{Stealth[scale=1.1]}, thick, blue!60!black},
+  setaG/.style={seta, green!50!black},
+}
+
+% Configuracao de listings para Dart
+\lstdefinelanguage{Dart}{
+  morekeywords={if,else,for,while,return,void,bool,int,double,
+                String,List,Map,true,false,null,final,const,
+                await,async,try,catch,class,new,this},
+  sensitive=true,
+  morecomment=[l]{//},
+  morestring=[b]",
+}
+\lstset{
+  language=Dart,
+  basicstyle=\footnotesize\ttfamily,
+  breaklines=true,
+  frame=single,
+  numbers=left,
+  numberstyle=\tiny\color{gray},
+  keywordstyle=\color{blue}\bfseries,
+  commentstyle=\color{gray}\itshape,
+  stringstyle=\color{orange},
+  tabsize=2,
+}
+
+\sloppy
+\raggedbottom
+
+\title{Desenvolvimento de uma Solução para Monitoramento Fluvial Baseada em Redes DTN e Disseminação de Mensagem através de Algorítmo de Roteamento Móvel}
+
+\author{Alicia de S. Miranda \inst{1}, João G. da Silva Maciel\inst{2}}
+
+\address{Instituto de Ciências Exatas e Tecnologia -- Universidade Federal do Amazonas
+  (UFAM)\\  Rua Nossa Senhora do Rosário, 3863 -- Tiradentes\\
+  69103-128 -- Itacoatiara -- AM -- Brazil
+}
+
+\begin{document}
+
+\maketitle
+
+\begin{resumo}
+O monitoramento de embarcações em regiões fluviais amazônicas enfrenta desafios relacionados à limitada infraestrutura de comunicação e à baixa disponibilidade de internet em áreas remotas. Este trabalho propõe o desenvolvimento de uma ferramenta de monitoramento fluvial baseada em Redes Tolerantes a Atrasos e Desconexões (DTN), capaz de operar em ambientes com conectividade intermitente. A solução utiliza armazenamento local e sincronização oportunística de dados geoespaciais, associada ao planejamento de rotas, geofencing e cálculo dinâmico de tempo estimado de chegada (ETA). O sistema foi desenvolvido utilizando Flutter para dispositivos móveis e OpenStreetMap para visualização cartográfica. A proposta busca ampliar a capacidade de monitoramento de embarcações na Amazônia, reduzindo a dependência de conectividade contínua e fornecendo informações relevantes para acompanhamento da navegação fluvial.
+\end{resumo}
+
+key-words: DTN; Monitoramento Fluvial; OpenStreetMap; Geofencing; Geoprocessamento.
+
+% =============================================================================
+\section{Introdução}
+% =============================================================================
+O transporte fluvial desempenha papel fundamental na mobilidade, logística e integração territorial da região amazônica. Em diversos municípios, rios constituem a principal via de deslocamento de pessoas, mercadorias e serviços, tornando as embarcações elementos essenciais para o desenvolvimento econômico e social da região. Entretanto, o monitoramento dessas embarcações ainda enfrenta desafios significativos relacionados à ausência de infraestrutura adequada de telecomunicações, especialmente em áreas remotas onde a cobertura de internet móvel é limitada, instável ou inexistente. Cenários com essas características demandam soluções capazes de operar mesmo durante longos períodos de desconexão, conforme evidenciado por estudos recentes voltados à coleta e transmissão de dados em regiões isoladas \cite{floatingblue2024}.
+
+Grande parte dos sistemas convencionais de rastreamento depende de comunicação contínua com servidores centrais para transmissão de dados de localização em tempo real. Essa abordagem apresenta limitações em ambientes caracterizados por conectividade intermitente e frequentes interrupções de comunicação, comprometendo a disponibilidade e a confiabilidade das informações coletadas. Tais limitações motivaram o surgimento das Redes Tolerantes a Atrasos e Desconexões (Delay/Disruption Tolerant Networks – DTNs), inicialmente propostas por Fall \cite{fall2003dtn} para permitir a comunicação em ambientes desafiadores onde não existe um caminho fim a fim continuamente disponível entre origem e destino.
+
+Posteriormente, Cerf et al. \cite{cerf2007rfc4838} consolidaram os princípios arquiteturais das DTNs por meio do paradigma Store-Carry-and-Forward, no qual os dispositivos armazenam dados localmente, transportam-nos durante sua mobilidade e realizam o encaminhamento quando novas oportunidades de comunicação se tornam disponíveis. Essa abordagem permite a troca de informações mesmo em cenários sujeitos a frequentes desconexões, tornando-se uma alternativa promissora para aplicações em regiões remotas e de difícil acesso.
+
+Ao longo dos anos, diversos trabalhos investigaram estratégias para aumentar a eficiência da disseminação de informações em redes tolerantes a atrasos. Vahdat e Becker \cite{vahdat2000epidemic} apresentaram um dos primeiros mecanismos de encaminhamento para redes parcialmente conectadas, demonstrando o potencial da replicação de mensagens para aumentar as taxas de entrega. Posteriormente, Lindgren, Doria e Schelén \cite{lindgren2003prophet} propuseram o protocolo PROPHET, baseado em probabilidades de encontro entre nós, enquanto Spyropoulos, Psounis e Raghavendra \cite{spyropoulos2005spray} desenvolveram o algoritmo Spray and Wait, buscando reduzir o overhead de comunicação sem comprometer a eficiência do roteamento. Esses estudos estabeleceram importantes fundamentos para aplicações de DTN em cenários móveis e oportunísticos.
+
+A utilização de DTNs também vem sendo explorada em ambientes aquáticos e regiões remotas. Jiang et al. \cite{usvswarm2018} investigaram o uso de redes DTN em veículos aquáticos não tripulados para coleta de dados ambientais, enquanto Silva et al. \cite{floatingblue2024} apresentaram uma arquitetura baseada em DTN para Internet das Coisas em áreas isoladas da Amazônia. Esses trabalhos demonstram a viabilidade da utilização de mecanismos tolerantes a atrasos em cenários caracterizados por baixa disponibilidade de infraestrutura de comunicação.
+
+Além dos desafios relacionados à comunicação, a gestão eficiente da navegação fluvial requer mecanismos capazes de monitorar trajetos e identificar automaticamente eventos relevantes ao longo das viagens. Nesse contexto, técnicas de geofencing possibilitam a definição de cercas virtuais associadas a cidades, portos e áreas de interesse, permitindo a detecção automática da entrada e saída de embarcações em regiões previamente delimitadas. Segundo Namiot e Sneps-Sneppe \cite{namiot2013geofencing}, o geofencing constitui uma das principais tecnologias para aplicações baseadas em localização, sendo amplamente empregado em sistemas de monitoramento, logística e rastreamento. De forma complementar, Thakur et al. \cite{thakur2020geofencing} destacam que tais mecanismos contribuem significativamente para a automação de processos de supervisão espacial e tomada de decisão em sistemas móveis.
+
+A integração de geofencing com tecnologias de posicionamento global (GPS) e Sistemas de Informação Geográfica (SIG) possibilita o cálculo de indicadores operacionais relevantes, como distância restante, percentual da rota concluída, velocidade média e estimativa dinâmica de chegada (Estimated Time of Arrival – ETA). De acordo com Chang \cite{chang2018gis}, aplicações geoespaciais voltadas ao transporte desempenham papel importante no apoio ao planejamento logístico e ao acompanhamento operacional de deslocamentos.
+
+Diante desse cenário, este trabalho apresenta o desenvolvimento de uma ferramenta de monitoramento fluvial baseada em arquitetura DTN, planejamento de rotas georreferenciadas e geofencing dinâmico para ambientes amazônicos com conectividade limitada. A aplicação foi desenvolvida utilizando o framework Flutter para dispositivos móveis e a plataforma OpenStreetMap para visualização cartográfica, aproveitando os benefícios de uma infraestrutura aberta e colaborativa de dados geoespaciais \cite{openstreetmap}.
+
+O objetivo principal deste trabalho consiste em desenvolver uma solução resiliente para monitoramento e acompanhamento de embarcações em ambientes fluviais amazônicos, capaz de operar offline, registrar trajetórias geoespaciais, monitorar o progresso das rotas e sincronizar informações de forma oportunística sempre que houver disponibilidade de comunicação.
+
+% =============================================================================
+\section{Objetivo Geral}
+% =============================================================================
+Propor e implementar uma arquitetura de monitoramento fluvial baseada em Redes Tolerantes a Atrasos e Desconexões (DTN) para o acompanhamento de embarcações em cenários amazônicos caracterizados por conectividade intermitente.
+
+\subsection{Objetivos Específicos}
+
+\begin{itemize}
+\item Identificar e analisar soluções, arquiteturas e tecnologias relacionadas ao monitoramento de embarcações, Redes Tolerantes a Atrasos e Desconexões (DTN), geofencing e sistemas de rastreamento geoespacial em ambientes com conectividade limitada.
+
+\item Modelar uma arquitetura de monitoramento fluvial baseada no paradigma Store-Carry-and-Forward das Redes Tolerantes a Atrasos e Desconexões (DTN), adequada às características operacionais da região amazônica.
+
+\item Desenvolver uma aplicação móvel utilizando Flutter integrada ao OpenStreetMap para aquisição, armazenamento e visualização de dados geoespaciais de embarcações.
+
+\item Implementar mecanismos de planejamento e acompanhamento de rotas fluviais georreferenciadas entre municípios, portos e comunidades ribeirinhas.
+
+\item Implementar técnicas de geofencing para identificação automática de eventos associados à navegação, incluindo entrada e saída de embarcações em áreas geográficas previamente definidas.
+
+\item Desenvolver mecanismos para cálculo de indicadores operacionais da viagem, incluindo distância restante, percentual de rota concluída e estimativa dinâmica de chegada (ETA).
+
+\item Implementar estratégias de armazenamento local e sincronização oportunística dos dados coletados em cenários caracterizados por conectividade intermitente.
+\end{itemize}
+
+% =============================================================================
+\section{Referencial Teórico}
+% =============================================================================
+\subsection{Transporte Fluvial na Amazônia}
+O transporte fluvial constitui um dos principais meios de mobilidade e integração territorial da região amazônica, desempenhando papel estratégico no deslocamento de pessoas, mercadorias e serviços entre municípios e comunidades ribeirinhas. Em muitos casos, a inexistência de infraestrutura rodoviária faz com que os rios representem a única alternativa de acesso, tornando o acompanhamento das embarcações um elemento importante para atividades de logística, fiscalização e segurança da navegação.
+
+Entretanto, as grandes distâncias percorridas, associadas à limitada cobertura de redes móveis, dificultam a implementação de sistemas convencionais de rastreamento em tempo real, criando a necessidade de soluções capazes de operar de forma resiliente em ambientes sujeitos à conectividade intermitente.
+
+\subsection{Redes Tolerantes a Atrasos e Desconexões (DTN)}
+As Redes Tolerantes a Atrasos e Desconexões (Delay/Disruption Tolerant Networks – DTNs) foram propostas para possibilitar a comunicação em cenários nos quais não existe um caminho fim a fim continuamente disponível entre origem e destino.
+
+Diferentemente das arquiteturas tradicionais baseadas em comunicação permanente, as DTNs permitem que informações sejam armazenadas temporariamente nos dispositivos até que uma oportunidade de transmissão esteja disponível, tornando-se adequadas para aplicações em ambientes remotos, rurais e regiões de difícil acesso.
+
+No contexto do monitoramento fluvial amazônico, essa abordagem permite que as embarcações continuem registrando sua localização mesmo durante períodos sem acesso à internet, sincronizando os dados somente quando alcançarem um ponto com infraestrutura de comunicação.
+
+\subsection{Paradigma Store-Carry-and-Forward}
+O paradigma Store-Carry-and-Forward constitui o principal mecanismo operacional das DTNs. Nesse modelo, cada nó da rede é responsável por armazenar temporariamente os dados coletados, transportá-los durante sua mobilidade e encaminhá-los quando uma conexão adequada for estabelecida.
+
+Na arquitetura proposta neste trabalho, as embarcações atuam como nós móveis responsáveis pelo armazenamento dos registros geoespaciais gerados durante a navegação. Quando a embarcação alcança uma cidade ou porto equipado com conectividade, esses registros são sincronizados com o servidor central, permitindo a atualização das informações disponibilizadas aos usuários.
+
+Essa estratégia reduz a dependência de comunicação contínua e aumenta a robustez do sistema em cenários caracterizados por frequentes interrupções de conectividade.
+
+\subsection{Geofencing}
+Geofencing consiste na definição de regiões geográficas virtuais delimitadas por coordenadas e raio de abrangência, permitindo a identificação automática de eventos relacionados à entrada ou saída de um dispositivo móvel em determinada área.
+
+Neste trabalho, cada município, porto ou ponto de parada é representado por uma cerca virtual previamente cadastrada. A partir das coordenadas obtidas pelo GPS do dispositivo móvel, o sistema identifica automaticamente quando a embarcação ingressa em uma dessas regiões, registrando eventos utilizados para atualização do progresso da viagem e sincronização dos dados armazenados.
+
+\subsection{Sistemas de Informação Geográfica}
+Os Sistemas de Informação Geográfica (SIG) possibilitam o armazenamento, processamento, análise e visualização de informações associadas à localização espacial, constituindo importante ferramenta para aplicações de monitoramento e logística.
+
+No sistema proposto, os dados geográficos são utilizados para representar rotas fluviais, calcular distâncias percorridas, determinar o percentual da viagem concluída e estimar dinamicamente o tempo restante até o destino, fornecendo informações relevantes para operadores e passageiros.
+
+\subsection{OpenStreetMap}
+O OpenStreetMap (OSM) é uma plataforma colaborativa de dados cartográficos amplamente utilizada em aplicações de geoprocessamento e navegação. Sua natureza aberta permite a utilização gratuita de mapas e informações geográficas, além da possibilidade de customização para diferentes cenários de aplicação.
+
+Neste trabalho, o OpenStreetMap é empregado como base cartográfica para visualização das rotas fluviais, localização das embarcações e representação dos geofences associados às cidades e pontos de parada.
+
+\subsection{Flutter para Aplicações Móveis}
+Flutter é um framework multiplataforma desenvolvido pelo Google para construção de aplicações móveis utilizando uma única base de código.
+
+Sua integração com serviços de geolocalização, armazenamento local e bibliotecas cartográficas torna-o adequado para aplicações que necessitam operar em modo offline, permitindo o registro contínuo das coordenadas da embarcação mesmo na ausência de conectividade com a internet.
+
+% =============================================================================
+\section{Trabalhos Relacionados}
+% =============================================================================
+\subsection{DTNs em Ambientes Remotos}
+Diversos estudos demonstram a aplicação de arquiteturas DTN em cenários caracterizados por infraestrutura limitada de comunicação. Essas soluções utilizam mecanismos de armazenamento temporário e sincronização oportunística para garantir a entrega das informações mesmo diante de frequentes interrupções de conectividade.
+
+\subsection{Monitoramento de Embarcações}
+Sistemas tradicionais de monitoramento utilizam comunicação contínua entre dispositivos móveis e servidores centrais para transmissão das posições geográficas. Embora eficientes em ambientes urbanos, essas soluções apresentam limitações em regiões onde a cobertura de internet é inexistente ou instável, como ocorre em grande parte dos rios amazônicos.
+
+\subsection{Geofencing e Sistemas Baseados em Localização}
+Aplicações baseadas em geofencing vêm sendo utilizadas em logística, transporte e rastreamento para automatizar processos de monitoramento espacial, permitindo a identificação de eventos relacionados à entrada e saída de áreas geográficas previamente definidas.
+
+\subsection{Comparação com a Arquitetura Proposta}
+Os trabalhos existentes concentram-se principalmente na comunicação oportunística entre dispositivos móveis ou na coleta de dados provenientes de sensores distribuídos. Diferentemente dessas abordagens, a arquitetura proposta neste trabalho utiliza as cidades como gateways de sincronização, permitindo que as embarcações armazenem localmente seus registros de localização durante a navegação e realizem o envio dos dados somente quando alcançam regiões com conectividade disponível.
+
+A Tabela~\ref{tab:relacionados} sintetiza as principais diferenças entre as abordagens identificadas na literatura e a arquitetura proposta neste trabalho.
+
+\begin{table}[H]
+\caption{Comparação entre trabalhos relacionados e a arquitetura proposta}
+\label{tab:relacionados}
+\centering
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{Xccccccc}
+\toprule
+\textbf{Trabalho} & \textbf{Offline} & \textbf{DTN} & \textbf{ETA} & \textbf{Geofence} & \textbf{Rastr. Fluv.} & \textbf{Chat} & \textbf{App Móvel} \\
+\midrule
+DakNet -- Seth et al. (2006)     & $\checkmark$ & $\checkmark$ & --           & --           & --           & --           & --           \\
+IBR-DTN -- Doering et al. (2008) & $\checkmark$ & $\checkmark$ & --           & --           & --           & --           & --           \\
+Jiang et al. (2018)              & $\checkmark$ & $\checkmark$ & --           & --           & --           & --           & Parcial      \\
+Silva et al. (2024)              & $\checkmark$ & $\checkmark$ & --           & --           & --           & --           & Parcial      \\
+\midrule
+\textbf{Este trabalho}           & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ & $\checkmark$ \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Essa estratégia reduz o consumo de recursos de comunicação, simplifica a arquitetura da rede e possibilita a atualização das informações de rastreamento sem depender de comunicação contínua durante todo o percurso.
+
+% =============================================================================
+\section{Abordagem Experimental (Metodologia)}
+% =============================================================================
+\subsection{Caracterização da Pesquisa}
+Esta pesquisa caracteriza-se como aplicada, de natureza tecnológica e abordagem experimental, tendo como objetivo o desenvolvimento e avaliação de uma arquitetura de monitoramento fluvial baseada em Redes Tolerantes a Atrasos e Desconexões para ambientes amazônicos com conectividade intermitente.
+
+\subsection{Arquitetura Proposta}
+A arquitetura é composta por três componentes principais:
+
+\begin{enumerate}
+\item \textbf{Embarcações} -- responsáveis pela aquisição das coordenadas GPS e armazenamento local dos dados;
+\item \textbf{Gateways urbanos} -- representados pelas cidades e portos que disponibilizam conectividade para sincronização das informações;
+\item \textbf{Servidor central} -- responsável pelo processamento dos dados, cálculo das métricas operacionais e disponibilização das informações aos usuários da aplicação.
+\end{enumerate}
+
+A Figura~\ref{fig:arquitetura} ilustra a arquitetura geral do sistema, evidenciando o fluxo de dados desde a captura GPS na embarcação até a visualização pelo passageiro.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=0.55cm and 1.4cm]
+
+% --- Coluna da embarcação ---
+\node[bloco] (gps)     {Serviço GPS\\{\scriptsize 5 s / ponto}};
+\node[bloco, below=of gps] (flutter) {App Flutter\\{\scriptsize Barqueiro}};
+\node[bloco, below=of flutter] (local) {SharedPreferences\\{\scriptsize Fila DTN local}};
+\node[decisao, below=of local] (dec)   {Internet?};
+\node[bloco, below=of dec] (sync)  {OfflineSyncService\\{\scriptsize lotes de 50}};
+
+% --- Gateway ---
+\node[blocoA, right=of sync] (gw) {Gateway Urbano\\{\scriptsize Cidade / Porto}};
+
+% --- Servidor ---
+\node[blocoY, above=of gw] (fb) {Firebase Firestore\\{\scriptsize Servidor Central}};
+
+% --- Apps finais ---
+\node[blocoG, above=of fb] (pass) {App Passageiro\\{\scriptsize Mapa · ETA}};
+\node[blocoG, right=of fb] (bark) {App Barqueiro\\{\scriptsize Chat · Histórico}};
+
+% --- Setas ---
+\draw[seta] (gps)     -- (flutter);
+\draw[seta] (flutter) -- (local);
+\draw[seta] (local)   -- (dec);
+\draw[seta] (dec)     -- node[left, font=\scriptsize]{Sim} (sync);
+\draw[seta] (sync)    -- (gw);
+\draw[seta] (gw)      -- (fb);
+\draw[seta] (fb)      -- (pass);
+\draw[seta] (fb)      -- (bark);
+
+% Rótulo "Não" ao lado da decisão
+\node[font=\scriptsize, right=0.2cm of dec] {Não $\rightarrow$ CARRY};
+
+% --- Moldura embarcação ---
+\begin{scope}[on background layer]
+  \node[draw=blue!50, dashed, rounded corners=6pt, thick,
+        fill=blue!4, inner sep=8pt,
+        fit=(gps)(flutter)(local)(dec)(sync),
+        label={[font=\footnotesize\bfseries, blue!70!black]above:Embarcação (Nó Móvel DTN)}]
+        {};
+\end{scope}
+
+\end{tikzpicture}
+\caption{Arquitetura geral do sistema — fluxo Store-Carry-and-Forward entre a embarcação, o gateway e o servidor}
+\label{fig:arquitetura}
+\end{figure}
+
+O fluxo completo de dados segue a sequência:
+
+\textit{Serviço GPS} $\rightarrow$ \textit{Aplicativo Flutter} $\rightarrow$ \textit{Banco Local (SharedPreferences)} $\rightarrow$ \textit{Módulo DTN (OfflineSyncService)} $\rightarrow$ \textit{Gateway urbano} $\rightarrow$ \textit{Servidor Firebase} $\rightarrow$ \textit{Banco de Dados} $\rightarrow$ \textit{Aplicativo do Passageiro}.
+
+\subsection{Tecnologias Utilizadas}
+A solução proposta foi desenvolvida utilizando tecnologias de código aberto com o objetivo de garantir portabilidade, baixo custo de implementação e facilidade de manutenção. A Tabela~\ref{tab:tecnologias} apresenta as principais tecnologias adotadas.
+
+\begin{table}[H]
+\caption{Tecnologias utilizadas no desenvolvimento do sistema}
+\label{tab:tecnologias}
+\centering
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{lXl}
+\toprule
+\textbf{Tecnologia} & \textbf{Finalidade} & \textbf{Versão} \\
+\midrule
+Flutter & Framework multiplataforma (Android/iOS) & 3.x \\
+Dart & Linguagem de programação com null safety & $\geq$ 3.1.0 \\
+Flutter Riverpod & Gerenciamento de estado reativo & 2.x \\
+Firebase Firestore & Banco de dados NoSQL em nuvem & 3.x \\
+Firebase Auth & Autenticação de usuários & 5.x \\
+OpenStreetMap & Base cartográfica de código aberto & -- \\
+flutter\_map & Renderização de mapas no Flutter & 7.x \\
+geolocator & Aquisição de coordenadas GPS & 11.x \\
+SharedPreferences & Armazenamento local (fila DTN) & -- \\
+connectivity\_plus & Detecção de estado de conectividade & -- \\
+flutter\_local\_notifications & Notificações locais de geofencing & 17.x \\
+go\_router & Navegação declarativa entre telas & 14.x \\
+uuid & Geração de identificadores únicos & -- \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+Para aquisição das coordenadas geográficas foi utilizada a interface de serviços de localização do sistema operacional, responsável pela obtenção contínua da posição da embarcação por meio do GPS do dispositivo móvel. Os dados coletados são armazenados localmente durante períodos sem conectividade, seguindo o paradigma Store-Carry-and-Forward das Redes Tolerantes a Atrasos e Desconexões (DTN), conforme proposto por Cerf et al. \cite{cerf2007rfc4838}.
+
+A visualização cartográfica foi implementada utilizando a plataforma OpenStreetMap, possibilitando a exibição das rotas, localização das embarcações e pontos de interesse fluvial, utilizando a infraestrutura colaborativa disponibilizada pela OpenStreetMap Foundation \cite{openstreetmap}. O servidor é responsável pelo processamento das informações recebidas, cálculo das métricas da viagem e disponibilização dos dados atualizados para os usuários passageiros.
+
+\subsection{Modelagem das Rotas e Geofences}
+As rotas são modeladas como sequências ordenadas de pontos geográficos representando cidades, portos e comunidades ribeirinhas. Cada rota possui um ponto de origem, um destino e um conjunto de paradas intermediárias previamente cadastradas.
+
+Cada ponto da rota possui uma região geográfica delimitada por uma cerca virtual (geofence), definida por coordenadas centrais e um raio de abrangência. Quando a embarcação entra ou sai dessa região, o sistema registra automaticamente um evento de navegação. Segundo Namiot e Sneps-Sneppe \cite{namiot2013geofencing}, o geofencing é uma das principais tecnologias utilizadas em aplicações baseadas em localização. Complementarmente, Thakur et al. \cite{thakur2020geofencing} destacam sua importância para sistemas de monitoramento e rastreamento geoespacial.
+
+Essa estratégia permite identificar o progresso da viagem sem necessidade de comunicação contínua, possibilitando a atualização das informações sempre que houver sincronização com um gateway localizado em uma cidade atendida pela infraestrutura do sistema.
+
+\subsection{Sincronização Oportunística dos Dados}
+A arquitetura proposta adota um modelo de comunicação oportunística baseado em DTN. Durante a navegação, todas as informações coletadas pelo dispositivo permanecem armazenadas localmente.
+
+Segundo Fall \cite{fall2003dtn}, arquiteturas DTN foram concebidas para operar em cenários onde não existe conectividade contínua entre origem e destino. Posteriormente, Cerf et al. \cite{cerf2007rfc4838} consolidaram o paradigma Store-Carry-and-Forward, permitindo que os dados sejam armazenados, transportados e encaminhados quando uma oportunidade de comunicação estiver disponível.
+
+Quando a embarcação alcança uma cidade equipada com um gateway de comunicação e conexão com a internet, ocorre automaticamente a sincronização dos dados acumulados com o servidor central. Após o recebimento das informações, o servidor processa os registros, atualiza a posição da embarcação, recalcula o progresso da rota, estima o tempo restante de viagem (ETA) e disponibiliza essas informações para os usuários passageiros.
+
+Silva et al. \cite{floatingblue2024} demonstra que essa abordagem reduz significativamente a dependência de conectividade contínua e permite o funcionamento do sistema em regiões caracterizadas por baixa cobertura de telecomunicações, conforme observado em arquiteturas DTN para ambientes remotos.
+
+% =============================================================================
+\section{Desenvolvimento da Solução}
+% =============================================================================
+\subsection{Arquitetura do Sistema}
+A arquitetura desenvolvida é composta por quatro componentes principais: aplicação embarcada na embarcação, gateways urbanos, servidor central e aplicação do usuário passageiro.
+
+A comunicação entre as embarcações e os gateways segue os princípios das Redes Tolerantes a Atrasos e Desconexões descritos por Fall \cite{fall2003dtn} e posteriormente consolidados por Cerf et al. \cite{cerf2007rfc4838}, permitindo o armazenamento local dos dados e sua sincronização apenas quando houver conectividade disponível.
+
+A aplicação embarcada é responsável pela aquisição da localização GPS, armazenamento local dos dados e identificação automática dos eventos de geofencing. Os gateways, instalados em cidades ou portos com acesso à internet, funcionam como pontos de sincronização dos dados armazenados localmente. O servidor central realiza o processamento das informações recebidas, calcula indicadores operacionais da viagem e disponibiliza os resultados para consulta pelos usuários através da aplicação móvel.
+
+Essa arquitetura distribui o processamento entre os dispositivos e reduz a necessidade de comunicação permanente durante o deslocamento das embarcações.
+
+\subsection{Módulo de Rastreamento}
+O módulo de rastreamento realiza a aquisição periódica da posição geográfica da embarcação utilizando os sensores GPS do dispositivo móvel.
+
+Cada registro contém latitude, longitude, data, hora, velocidade instantânea e identificação da embarcação. Os dados permanecem armazenados localmente até que seja detectada uma oportunidade de sincronização com um gateway.
+
+Além da localização atual, o sistema mantém um histórico completo do trajeto percorrido durante a viagem. De acordo com Chang \cite{chang2018gis}, Sistemas de Informação Geográfica possibilitam o armazenamento e análise espacial dessas informações, permitindo o acompanhamento eficiente de deslocamentos georreferenciados.
+
+\subsection{Módulo de Rotas}
+O módulo de rotas permite o cadastro de trajetos fluviais entre municípios amazônicos, incluindo pontos intermediários de parada.
+
+Cada rota é composta por um conjunto ordenado de coordenadas geográficas utilizadas para acompanhar o progresso da embarcação durante a navegação. Segundo Chang \cite{chang2018gis}, a representação de trajetórias georreferenciadas constitui uma das principais aplicações dos Sistemas de Informação Geográfica.
+
+Com base na posição atual obtida pelo GPS, o sistema determina automaticamente o percentual da rota já percorrido e a distância restante até o destino final, conforme a Equação~\ref{eq:progresso}.
+
+\begin{equation}
+\label{eq:progresso}
+P(\%) = \frac{d_{\text{percorrida}}\ (m)}{d_{\text{total}}\ (m)} \times 100
+\end{equation}
+
+onde $d_{\text{percorrida}}$ representa a soma das distâncias geodésicas entre os pontos GPS consecutivos registrados desde o início da viagem, e $d_{\text{total}}$ é a distância geodésica total entre o ponto de partida e o destino final da rota.
+
+\subsection{Módulo de Geofencing}
+O módulo de geofencing monitora continuamente a posição da embarcação em relação às áreas previamente delimitadas.
+
+Segundo Namiot e Sneps-Sneppe \cite{namiot2013geofencing}, cercas virtuais permitem identificar automaticamente eventos associados à localização dos objetos monitorados. Thakur et al. \cite{thakur2020geofencing} complementam que essa tecnologia é amplamente utilizada em aplicações de logística e rastreamento.
+
+A distância entre a posição atual da embarcação e o centro de cada zona monitorada é calculada pela \textbf{Fórmula de Haversine} (Equações \ref{eq:hav_a}--\ref{eq:hav_d}), que determina a distância geodésica entre dois pontos na superfície esférica da Terra:
+
+\begin{equation}
+\label{eq:hav_a}
+a = \sin^2\!\left(\frac{\Delta\phi}{2}\right) + \cos\phi_1 \cdot \cos\phi_2 \cdot \sin^2\!\left(\frac{\Delta\lambda}{2}\right)
+\end{equation}
+
+\begin{equation}
+\label{eq:hav_c}
+c = 2 \cdot \arctan2\!\left(\sqrt{a},\, \sqrt{1 - a}\right)
+\end{equation}
+
+\begin{equation}
+\label{eq:hav_d}
+d = R \cdot c
+\end{equation}
+
+onde $\phi_1, \phi_2$ são as latitudes dos dois pontos (em radianos), $\Delta\phi$ e $\Delta\lambda$ são as diferenças de latitude e longitude, $R = 6.371.000\,\text{m}$ é o raio médio da Terra e $d$ é a distância resultante em metros.
+
+Cada zona monitorada possui dois raios concêntricos que definem três estados de geofencing:
+
+\begin{itemize}
+\item $d > r_{\text{aproximação}}$: estado \textit{Fora da Zona};
+\item $d \leq r_{\text{aproximação}}$: estado \textit{Aproximando};
+\item $d \leq r_{\text{atracação}}$: estado \textit{Atracado}.
+\end{itemize}
+
+A Tabela~\ref{tab:portos} apresenta os 10 portos fluviais cadastrados no sistema com seus respectivos raios de monitoramento.
+
+\begin{table}[H]
+\caption{Portos fluviais monitorados pelo sistema de geofencing}
+\label{tab:portos}
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{clcccc}
+\toprule
+\textbf{ID} & \textbf{Porto} & \textbf{Lat. (°)} & \textbf{Lon. (°)} & \textbf{$r_{\text{aprox.}}$ (m)} & \textbf{$r_{\text{atrac.}}$ (m)} \\
+\midrule
+1 & Pier Urbano de Itacoatiara & -3,144 & -58,445 & 1200 & 250 \\
+2 & Pier de Parintins           & -2,628 & -56,735 & 1200 & 250 \\
+3 & Dock de Maués               & -3,384 & -57,718 & 1000 & 220 \\
+4 & Pier de Manacapuru          & -3,291 & -60,621 & 1000 & 220 \\
+5 & Dock Principal de Coari     & -4,086 & -63,141 & 1200 & 250 \\
+6 & Pier de Tefé                & -3,355 & -64,710 & 1200 & 250 \\
+7 & Porto Fluvial de Tabatinga  & -4,245 & -69,939 & 1500 & 300 \\
+8 & Pier de Barcelos            & -0,974 & -62,925 & 1000 & 220 \\
+9 & Dock de Humaitá             & -7,510 & -63,021 & 1200 & 250 \\
+10 & Pier de Iranduba           & -3,283 & -60,187 &  800 & 180 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Quando ocorre a entrada em uma cidade ou porto, um evento é registrado automaticamente pelo sistema. Da mesma forma, quando a embarcação deixa a área delimitada, um evento de saída é registrado, permitindo reconstruir toda a sequência da viagem realizada.
+
+\subsection{Módulo de ETA}
+O cálculo do Estimated Time of Arrival (ETA) é realizado a cada atualização de posição GPS (intervalo de 5 segundos), utilizando a distância restante ao destino e a velocidade instantânea obtida pelo GPS, conforme a Equação~\ref{eq:eta}.
+
+\begin{equation}
+\label{eq:eta}
+ETA\,(s) =
+\begin{cases}
+\dfrac{d_{\text{porto}}\,(m)}{v_{\text{atual}}\,(m/s)}, & \text{se } v_{\text{atual}} \geq 0{,}5\,\text{m/s} \\[8pt]
+\text{indefinido}, & \text{se } v_{\text{atual}} < 0{,}5\,\text{m/s}
+\end{cases}
+\end{equation}
+
+O limiar de $0{,}5\,\text{m/s}$ (aproximadamente $1{,}8\,\text{km/h}$) evita divisões por valores próximos de zero em condições de embarcação parada ou em manobra lenta. Como exemplo, uma embarcação a $600\,\text{m}$ do pier navegando a $15\,\text{km/h}$ ($4{,}17\,\text{m/s}$) apresentará $ETA = 600 / 4{,}17 \approx 144\,\text{s} \approx 2\,\text{min}$.
+
+De acordo com Chang \cite{chang2018gis}, a utilização de dados georreferenciados permite a obtenção de indicadores espaciais que auxiliam o planejamento e o acompanhamento operacional de sistemas de transporte. Além do ETA, o sistema disponibiliza indicadores como velocidade média, distância percorrida e percentual de conclusão da rota.
+
+\subsection{Módulo de Sincronização DTN}
+O módulo de sincronização implementa o paradigma Store-Carry-and-Forward das Redes Tolerantes a Atrasos e Desconexões. O Algoritmo~\ref{alg:scf} descreve o mecanismo central de sincronização.
+
+\begin{algorithm}[H]
+\caption{Store-Carry-and-Forward -- Sincronização Oportunística}
+\label{alg:scf}
+\begin{algorithmic}[1]
+\Procedure{SalvarPonto}{ponto}
+    \State fila $\leftarrow$ carregarFila(armazenamentoLocal)
+    \If{ponto.id $\notin$ fila}                    \Comment{deduplicação}
+        \State fila.adicionar(ponto)                \Comment{\textbf{STORE}}
+        \State persistirFila(armazenamentoLocal, fila)
+    \EndIf
+    \If{temConectividade}
+        \State \Call{SincronizarPendentes}{}         \Comment{\textbf{FORWARD}}
+    \EndIf
+    \Comment{Sem conectividade: ponto permanece na fila -- \textbf{CARRY}}
+\EndProcedure
+
+\Statex
+\Procedure{SincronizarPendentes}{}
+    \If{estaSincronizando} \Return \EndIf
+    \State estaSincronizando $\leftarrow$ verdadeiro
+    \State pendentes $\leftarrow$ fila.filtrar($p \Rightarrow$ \textbf{not} p.sincronizado)
+    \If{pendentes.vazio} \Return \EndIf
+    \State lote $\leftarrow$ pendentes.primeiros(MAX\_LOTE $= 50$)
+    \ForAll{ponto \textbf{in} lote}
+        \State sucesso $\leftarrow$ enviarAoServidor(ponto)
+        \If{sucesso}
+            \State ponto.sincronizado $\leftarrow$ verdadeiro
+        \EndIf
+        \Comment{Se falhar: permanece na fila para próximo retry}
+    \EndFor
+    \State fila.remover($p \Rightarrow$ p.sincronizado)
+    \State persistirFila(armazenamentoLocal, fila)
+    \State estaSincronizando $\leftarrow$ falso
+\EndProcedure
+\end{algorithmic}
+\end{algorithm}
+
+O sistema detecta automaticamente mudanças de conectividade por meio da biblioteca \texttt{connectivity\_plus}. Na transição de \textit{offline} para \textit{online}, o procedimento \textsc{SincronizarPendentes} é invocado imediatamente. Adicionalmente, um temporizador periódico de 30 segundos garante novas tentativas mesmo em casos em que o evento de reconexão não seja detectado. Após a confirmação do recebimento pelo servidor, os registros são marcados como sincronizados, evitando retransmissões desnecessárias e reduzindo o consumo de recursos computacionais.
+
+Segundo Fall \cite{fall2003dtn}, redes DTN são capazes de operar em cenários onde não existe um caminho contínuo entre origem e destino. Cerf et al. \cite{cerf2007rfc4838} definem que as mensagens podem ser armazenadas localmente até que uma oportunidade de comunicação seja estabelecida.
+
+% =============================================================================
+\section{Resultados e Discussão}
+% =============================================================================
+\subsection{Interface Desenvolvida}
+A aplicação desenvolvida apresenta uma interface intuitiva voltada para dois perfis de usuários: operadores responsáveis pelo monitoramento das embarcações e passageiros interessados no acompanhamento das viagens. A tela principal exibe um mapa interativo baseado no OpenStreetMap, no qual são apresentadas as rotas cadastradas, a posição mais recente das embarcações e os pontos de parada previamente definidos.
+
+Além da visualização cartográfica, o sistema disponibiliza informações complementares, como identificação da embarcação, cidade de origem, destino, velocidade média, distância restante, percentual da rota concluída e estimativa de chegada (ETA). Essas informações são atualizadas automaticamente após cada sincronização realizada nos gateways localizados nas cidades.
+
+A utilização do Flutter permitiu o desenvolvimento de uma interface responsiva e compatível com diferentes dispositivos móveis, garantindo boa experiência de utilização mesmo em equipamentos com recursos computacionais limitados.
+
+% --- Grupo 1: Autenticação ---
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.47\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{login.jpg}
+    \caption{Login}
+    \label{fig:login}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.47\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{cadastro.jpg}
+    \caption{Cadastro}
+    \label{fig:cadastro}
+\end{subfigure}
+\caption{Telas de autenticação do sistema}
+\label{fig:telas_auth}
+\end{figure}
+
+% --- Grupo 2: Passageiro (perfil e mapa) ---
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.47\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{perfil_passageiro.jpg}
+    \caption{Perfil do Passageiro}
+    \label{fig:perfil_passageiro}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.47\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{mapa_passageiro.jpg}
+    \caption{Mapa do Passageiro}
+    \label{fig:mapa_passageiro}
+\end{subfigure}
+\caption{Telas do perfil e mapa do passageiro}
+\label{fig:telas_passageiro}
+\end{figure}
+
+% --- Grupo 3: Embarcação e mensagens ---
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.47\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{embarcacao_passageiro.jpg}
+    \caption{Embarcação (visão passageiro)}
+    \label{fig:embarcacao_passageiro}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.47\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{tela_mensagem.jpg}
+    \caption{Mensagem para Embarcação}
+    \label{fig:tela_mensagem}
+\end{subfigure}
+\caption{Telas de acompanhamento da embarcação e comunicação}
+\label{fig:telas_embarcacao}
+\end{figure}
+
+% --- Grupo 4: Barqueiro (mapa e registro) ---
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.47\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{mapa_barqueiro.jpg}
+    \caption{Mapa do Barqueiro}
+    \label{fig:mapa_barqueiro}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.47\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{registro_embarcacoes.jpg}
+    \caption{Registro de Embarcações}
+    \label{fig:registro_embarcacoes}
+\end{subfigure}
+\caption{Telas de rastreamento e cadastro de embarcações (barqueiro)}
+\label{fig:telas_barqueiro}
+\end{figure}
+
+% --- Grupo 5: Gestão (embarcações e rotas) ---
+\begin{figure}[H]
+\centering
+\begin{subfigure}[t]{0.47\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{embarcacoesRegistradas.jpg}
+    \caption{Embarcações Registradas}
+    \label{fig:embarcacoes_registradas}
+\end{subfigure}\hfill
+\begin{subfigure}[t]{0.47\linewidth}
+    \centering
+    \includegraphics[width=\linewidth]{rotas_barqueiro.jpg}
+    \caption{Rotas do Barco}
+    \label{fig:rotas_barqueiro}
+\end{subfigure}
+\caption{Telas de gestão de embarcações e rotas}
+\label{fig:telas_gestao}
+\end{figure}
+
+\subsection{Testes de Geofencing}
+Para validar o funcionamento do módulo de geofencing foram definidos perímetros virtuais associados às cidades pertencentes às rotas fluviais cadastradas. Durante os testes, foram simulados diferentes cenários de navegação, contemplando entradas, permanências e saídas das áreas monitoradas.
+
+Os resultados demonstraram que o sistema foi capaz de identificar automaticamente a aproximação das embarcações aos limites geográficos estabelecidos, registrando eventos de entrada e saída sem necessidade de intervenção do usuário. Mesmo durante períodos sem acesso à internet, os eventos permaneceram armazenados localmente e foram enviados ao servidor assim que uma oportunidade de comunicação foi estabelecida.
+
+A Figura~\ref{fig:geofence_zonas} ilustra as três zonas concêntricas implementadas ao redor de cada porto monitorado, com os respectivos estados de transição detectados durante os testes.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}
+
+% Zona externa - Aproximação (r = 1200m)
+\draw[blue!40, dashed, thick] (0,0) circle (2.8cm);
+\node[blue!60, font=\scriptsize] at (2.1, 2.1) {$r_{\text{aprox}} = 1200\,\text{m}$};
+
+% Zona interna - Atracação (r = 250m)
+\draw[green!50!black, thick] (0,0) circle (1.1cm);
+\node[green!50!black, font=\scriptsize] at (0, -1.35) {$r_{\text{atrac}} = 250\,\text{m}$};
+
+% Porto (centro)
+\draw[fill=orange!80, draw=orange!60!black] (0,0) circle (0.22cm);
+\node[font=\scriptsize\bfseries, orange!60!black] at (0, 0.45) {Porto};
+
+% Embarcação na zona de aproximação
+\draw[fill=blue!70, draw=blue!90!black] (-2.1, 0.7) circle (0.18cm);
+\node[font=\scriptsize, blue!80!black, right=0.05cm] at (-2.1, 0.7) {\textit{Aproximando}};
+\draw[->, blue!60, dashed] (-2.1, 0.7) -- (-0.6, 0.2);
+
+% Embarcação atracada
+\draw[fill=green!60!black, draw=green!80!black] (0.5, -0.6) circle (0.18cm);
+\node[font=\scriptsize, green!50!black, right=0.05cm] at (0.5, -0.6) {\textit{Atracado}};
+
+% Embarcação fora da zona
+\draw[fill=gray!60, draw=gray!80] (-3.4, -1.5) circle (0.18cm);
+\node[font=\scriptsize, gray!70!black, right=0.05cm] at (-3.4, -1.5) {\textit{Fora da Zona}};
+
+% Legenda de estados
+\node[draw=gray!40, rounded corners=3pt, fill=gray!5, font=\scriptsize,
+      inner sep=6pt, anchor=north east] at (5.2, 3.0) {%
+  \begin{tabular}{cl}
+  \textbullet & \textcolor{gray!70!black}{Fora da Zona: $d > r_{\text{aprox}}$} \\
+  \textbullet & \textcolor{blue!70!black}{Aproximando: $d \leq r_{\text{aprox}}$} \\
+  \textbullet & \textcolor{green!50!black}{Atracado: $d \leq r_{\text{atrac}}$} \\
+  \end{tabular}
+};
+
+\end{tikzpicture}
+\caption{Zonas concêntricas de geofencing: \textit{Fora da Zona}, \textit{Aproximando} e \textit{Atracado}, com raios configurados individualmente por porto}
+\label{fig:geofence_zonas}
+\end{figure}
+
+Essa estratégia mostrou-se eficiente para acompanhar o progresso das viagens e fornecer informações confiáveis sobre a localização das embarcações, reduzindo a dependência de atualizações contínuas por meio da rede móvel.
+
+\subsection{Testes de Rotas}
+A validação do módulo de rotas foi realizada utilizando trajetos simulados entre municípios da região amazônica, contendo origem, destino e múltiplos pontos intermediários de parada.
+
+Durante a execução das rotas, o sistema recalculou continuamente a distância restante e o percentual concluído a partir das coordenadas GPS obtidas pelo dispositivo móvel. Os resultados mostraram que o acompanhamento do deslocamento ocorreu de maneira consistente, permitindo identificar corretamente o estágio da viagem em cada sincronização realizada.
+
+A Figura~\ref{fig:rota_progresso} ilustra um trecho de rota simulado entre Itacoatiara e Parintins, com os pontos de parada cadastrados e o indicador de progresso calculado pelo sistema.
+
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[node distance=1.8cm]
+
+% Nós da rota
+\node[circle, draw=blue!70, fill=blue!15, minimum size=0.85cm,
+      font=\scriptsize\bfseries] (A) {ITC};
+\node[circle, draw=blue!50, fill=white, minimum size=0.7cm,
+      font=\scriptsize, right=of A] (B) {P1};
+\node[circle, draw=blue!50, fill=white, minimum size=0.7cm,
+      font=\scriptsize, right=of B] (C) {P2};
+\node[circle, draw=green!60!black, fill=green!15, minimum size=0.85cm,
+      font=\scriptsize\bfseries, right=of C] (D) {PAR};
+
+% Rótulos
+\node[font=\tiny, below=0.15cm of A] {Itacoatiara};
+\node[font=\tiny, below=0.15cm of B] {Parada 1};
+\node[font=\tiny, below=0.15cm of C] {Parada 2};
+\node[font=\tiny, below=0.15cm of D] {Parintins};
+
+% Arestas da rota
+\draw[thick, blue!40] (A) -- (B);
+\draw[thick, blue!40] (B) -- (C);
+\draw[gray!40, dashed, thick] (C) -- (D);
+
+% Posição atual da embarcação
+\node[fill=red!70, draw=red!90!black, circle, minimum size=0.4cm,
+      label={[font=\tiny, red!70!black]above:Posição atual}]
+      (boat) at ($(B)!0.55!(C)$) {};
+
+% Barra de progresso
+\node[font=\scriptsize\bfseries] at (3.6, -1.5) {Progresso da rota:};
+\draw[fill=gray!20, rounded corners=2pt] (1.2, -1.9) rectangle (6.0, -1.5);
+\draw[fill=blue!60, rounded corners=2pt] (1.2, -1.9) rectangle (4.32, -1.5);
+\node[font=\scriptsize\bfseries, white] at (2.76, -1.7) {68\%};
+\node[font=\tiny, gray] at (5.4, -1.7) {restante};
+
+% Métricas
+\node[draw=gray!30, fill=gray!5, rounded corners=3pt,
+      font=\scriptsize, inner sep=5pt] at (5.5, 0.6) {%
+  \begin{tabular}{rl}
+  Distância total: & 370 km \\
+  Percorrida:      & 251 km \\
+  Restante:        & 119 km \\
+  ETA:             & 3h 58 min \\
+  Velocidade:      & 30 km/h \\
+  \end{tabular}
+};
+
+\end{tikzpicture}
+\caption{Rota simulada Itacoatiara--Parintins com indicador de progresso (68\%) e métricas operacionais calculadas em tempo real}
+\label{fig:rota_progresso}
+\end{figure}
+
+Outro aspecto observado foi a possibilidade de reconstrução completa do histórico de deslocamentos da embarcação a partir dos registros armazenados localmente, fornecendo uma trilha geográfica que pode ser utilizada para auditoria, monitoramento operacional e análise posterior das viagens.
+
+\subsection{Funcionamento Offline}
+Um dos principais objetivos da arquitetura proposta consiste em garantir o funcionamento do sistema em regiões caracterizadas por baixa disponibilidade de infraestrutura de telecomunicações.
+
+Durante os testes, foram simulados longos períodos de ausência de conectividade, nos quais a aplicação continuou registrando normalmente as coordenadas geográficas, os eventos de geofencing e os indicadores operacionais da viagem. Todos os dados permaneceram armazenados localmente no dispositivo da embarcação utilizando o paradigma Store-Carry-and-Forward.
+
+Quando a embarcação alcançou uma cidade configurada como gateway, a sincronização ocorreu automaticamente, enviando ao servidor todas as informações acumuladas durante o período offline. Após o processamento dos dados, as informações passaram a ser imediatamente disponibilizadas aos passageiros por meio da aplicação móvel.
+
+Os testes demonstraram que a arquitetura mantém a continuidade do monitoramento mesmo em cenários de desconexão prolongada, característica essencial para aplicações destinadas ao contexto amazônico.
+
+\subsection{Análise dos Resultados}
+\subsubsection{Validação do Software}
+A qualidade do sistema foi avaliada por meio de uma campanha de testes em quatro categorias, conforme a norma ISO/IEC 25010 \cite{iso25010}. A Tabela~\ref{tab:testes} apresenta os resultados consolidados.
+
+\begin{table}[H]
+\caption{Resultados consolidados da campanha de testes}
+\label{tab:testes}
+\centering
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{lccc}
+\toprule
+\textbf{Tipo de Teste} & \textbf{Casos Executados} & \textbf{Aprovados} & \textbf{Taxa de Sucesso} \\
+\midrule
+Unitários (caixa branca)                    & 107 & 107 & 100\% \\
+Integração (dispositivo físico)             &   5 &   5 & 100\% \\
+Sistema (cenários funcionais)               &  14 &  14 & 100\% \\
+Aceitação (critérios de usabilidade)        &   9 &   9 & 100\% \\
+\midrule
+\textbf{Total}                              & \textbf{135} & \textbf{135} & \textbf{100\%} \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+Os 107 testes unitários foram executados com a ferramenta \texttt{flutter\_test} em aproximadamente 3 segundos, validando a lógica interna dos validadores (CPF, e-mail, senha), modelos de dados (serialização, round-trip \texttt{toMap}/\texttt{fromMap}, Equatable) e propriedades computadas do resumo de viagem. Os 5 testes de integração foram executados em dispositivo físico real (Moto G54 5G, Android 15, API 35), validando a inicialização do Firebase, do \texttt{NotificationService} e do \texttt{OfflineSyncService}, além dos fluxos de autenticação e navegação.
+
+A Tabela~\ref{tab:cenarios} detalha os resultados dos principais cenários de sistema avaliados, incluindo os testes de geofencing e sincronização offline.
+
+\begin{table}[H]
+\caption{Resultados dos cenários de testes de sistema}
+\label{tab:cenarios}
+\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{tabularx}{\textwidth}{Xlcc}
+\toprule
+\textbf{Cenário} & \textbf{Módulo} & \textbf{Resultado} & \textbf{Obs.} \\
+\midrule
+Captura GPS contínua (5\,s) em foreground & Rastreamento & $\checkmark$ & 720 pts/h \\
+Armazenamento offline sem internet & DTN Store & $\checkmark$ & Zero perdas \\
+Sincronização automática ao reconectar & DTN Forward & $\checkmark$ & Latência $<$3\,s \\
+Retry periódico sem reconexão explícita & DTN Carry & $\checkmark$ & 30\,s ciclo \\
+Deduplicação de pontos na fila local & DTN Store & $\checkmark$ & Por UUID \\
+Detecção de entrada em zona de aprox. & Geofencing & $\checkmark$ & Haversine \\
+Detecção de atracação em zona interna & Geofencing & $\checkmark$ & Haversine \\
+Notificação de saída de zona & Geofencing & $\checkmark$ & Debounce 3\,min \\
+Cálculo de ETA em zona de porto & Geofencing & $\checkmark$ & $v \geq 0{,}5$\,m/s \\
+Progresso de rota recalculado por GPS & Rotas & $\checkmark$ & Equação~\ref{eq:progresso} \\
+Reconstrução de trajetória pós-sync & DTN & $\checkmark$ & 100\% pontos \\
+Chat passageiro $\leftrightarrow$ barqueiro & Comunicação & $\checkmark$ & Tempo real \\
+Autenticação e cadastro de usuários & Auth & $\checkmark$ & Firebase Auth \\
+Comportamento com GPS indisponível & Robustez & $\checkmark$ & Fallback gracioso \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsubsection{Métricas Operacionais}
+
+A Tabela~\ref{tab:metricas} apresenta as principais métricas de operação do sistema, obtidas durante os testes e derivadas dos parâmetros de configuração do código-fonte.
+
+\begin{table}[H]
+\caption{Métricas operacionais do sistema}
+\label{tab:metricas}
+\centering
+\renewcommand{\arraystretch}{1.25}
+\begin{tabular}{lc}
+\toprule
+\textbf{Métrica} & \textbf{Valor} \\
+\midrule
+Intervalo de captura GPS & 5 s \\
+Pontos GPS por hora de viagem & 720 pontos/h \\
+Tamanho do lote de sincronização & 50 pontos/ciclo \\
+Intervalo de \textit{retry} offline & 30 s \\
+Janela de usuários rastreados no mapa & 120 s \\
+Debounce de notificação por porto & 3 min \\
+Portos fluviais monitorados & 10 portos \\
+Retenção de pontos locais & 7 dias \\
+Tempo total dos testes unitários & $\approx$ 3 s \\
+Tempo total dos testes de integração & $\approx$ 2 min 12 s \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsubsection{Atributos de Qualidade (ISO/IEC 25010)}
+
+A Tabela~\ref{tab:qualidade} apresenta a avaliação dos atributos de qualidade do sistema conforme a norma ISO/IEC 25010.
+
+\begin{table}[H]
+\caption{Avaliação dos atributos de qualidade (ISO/IEC 25010)}
+\label{tab:qualidade}
+\centering
+\renewcommand{\arraystretch}{1.25}
+\begin{tabularx}{\textwidth}{lXc}
+\toprule
+\textbf{Atributo} & \textbf{Estratégia Implementada} & \textbf{Resultado} \\
+\midrule
+Funcionalidade    & GPS 5\,s, geofencing 10 portos, chat, cadastro, histórico & Atende \\
+Confiabilidade    & Store-and-forward DTN, retry 30\,s, persistência entre reinicializações & Atende \\
+Usabilidade       & Material Design 3, go\_router declarativo, sem necessidade de treinamento & Atende \\
+Desempenho        & Índices Firestore, lotes de 50, janela 120\,s & Atende \\
+Manutenibilidade  & Clean Architecture, Riverpod, 107 testes & Atende \\
+Portabilidade     & Flutter multiplataforma (Android, iOS, Web) & Atende \\
+Segurança         & Firebase Auth, regras por UID, validação CPF/e-mail & Atende \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Limitações}
+
+As seguintes limitações foram identificadas durante o desenvolvimento e os testes do sistema:
+
+\begin{itemize}
+\item \textbf{Rastreamento em background limitado:} o pacote \texttt{flutter\_background\_service} está declarado como dependência, mas a integração com \texttt{ForegroundService} Android ainda não foi implementada. O rastreamento GPS opera apenas com o aplicativo em foreground, limitando a autonomia operacional em viagens longas;
+
+\item \textbf{Banco de dados local parcialmente persistente:} o componente de armazenamento estruturado local (\texttt{LocalDatabaseService}) opera como cache em memória, sem integração completa com SQLite. Em reinicializações inesperadas do aplicativo, este cache é perdido; a persistência garantida é exclusivamente a do módulo DTN via \texttt{SharedPreferences};
+
+\item \textbf{Relay DTN entre dispositivos não implementado:} o sistema opera no modelo cliente-servidor (dispositivo $\rightarrow$ servidor). Em regiões de total ausência de conectividade de dados, não existe mecanismo de relay entre dispositivos próximos (ex.: Bluetooth Low Energy, Wi-Fi Direct);
+
+\item \textbf{ETA dependente da estabilidade do GPS:} em trechos com sinal GPS fraco, a velocidade reportada pode variar significativamente, introduzindo imprecisão no ETA calculado. Não há suavização aplicada sobre a série de velocidades;
+
+\item \textbf{Ausência de roteamento oportunístico:} protocolos como PRoPHET \cite{lindgren2003prophet}, Epidemic Routing \cite{vahdat2000epidemic} ou Spray-and-Wait \cite{spyropoulos2005spray} não foram implementados.
+\end{itemize}
+
+% =============================================================================
+\section{Conclusão}
+% =============================================================================
+Este trabalho apresentou o desenvolvimento de uma plataforma móvel de monitoramento fluvial baseada nos princípios das Redes Tolerantes a Atrasos e Desconexões (DTN), especificamente projetada para operar nas condições das hidrovias amazônicas, onde a conectividade à internet é intermitente e imprevisível.
+
+\textbf{O objetivo foi atingido.} O sistema coleta e transmite dados de localização GPS de forma contínua e confiável, mesmo em regiões sem cobertura de rede. A camada de sincronização offline-first, inspirada nos princípios DTN de Store-Carry-and-Forward, garantiu que nenhum ponto de localização fosse perdido durante janelas de desconexão nos cenários de teste avaliados.
+
+\textbf{O sistema funciona offline de forma validada.} Ao simular perda de conexão durante rastreamento ativo, todos os pontos GPS foram enfileirados localmente via \texttt{SharedPreferences} e sincronizados automaticamente ao Firestore imediatamente após a restauração da conectividade, sem perda de dados e sem intervenção manual.
+
+\textbf{O princípio DTN resolveu o problema de forma pragmática.} O mecanismo store-and-forward implementado -- com fila FIFO persistente, deduplicação por identificador único, processamento em lotes de 50 pontos e retry automático a cada 30 segundos -- fornece as garantias essenciais de entrega eventual sem requerer a complexidade do Bundle Protocol completo.
+
+Os principais resultados obtidos foram: (i) 107 testes unitários com 100\% de aprovação em $\approx$3\,s; (ii) 5 testes de integração com 100\% de aprovação em dispositivo físico real (Moto G54 5G, Android 15); (iii) 14 cenários de sistema com 100\% de aprovação, incluindo comportamento offline e sincronização; (iv) geofencing bidirecional de 10 portos fluviais do Amazonas com ETA calculado em tempo real (720 pontos GPS/hora de viagem).
+
+Do ponto de vista da contribuição para a Amazônia, o sistema oferece pela primeira vez uma ferramenta integrada que combina rastreamento fluvial contínuo, detecção de chegada em portos com ETA dinâmico, operação offline robusta e canal de comunicação entre passageiros e operadores, projetada especificamente para a realidade das hidrovias amazônicas.
+
+Como trabalhos futuros, destacam-se: a integração com LoRa/LoRaWAN para transmissão em regiões sem 4G; a implementação de relay P2P via Bluetooth Low Energy e Wi-Fi Direct; a adoção de protocolos de roteamento DTN como PRoPHET \cite{lindgren2003prophet} e Spray-and-Wait \cite{spyropoulos2005spray}; a aplicação de filtros de Kalman para suavização do sinal GPS; e o desenvolvimento de modelos de Inteligência Artificial para predição de ETA com base no histórico de viagens, condições climáticas e sazonalidade do nível dos rios. A implantação em embarcações reais do município de Itacoatiara está prevista como etapa de validação em campo da arquitetura proposta.
+
+\bibliographystyle{sbc}
+\bibliography{sbc-template}
+
+\end{document}

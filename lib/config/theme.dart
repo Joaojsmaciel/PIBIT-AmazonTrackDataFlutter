@@ -14,7 +14,6 @@ class AppTheme {
   // Cores para usuários
   static const Color passengerColor = Color(0xFF4CAF50);
   static const Color boatmanColor = Color(0xFF2196F3);
-  static const Color mototaxiColor = Color(0xFFFF9800);
 
   static ThemeData get lightTheme {
     return ThemeData(

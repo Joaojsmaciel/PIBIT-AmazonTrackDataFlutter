@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import 'package:amazon_track_data/data/models/user_model.dart';
 import 'package:amazon_track_data/presentation/providers/auth_provider.dart';
 import 'package:amazon_track_data/presentation/providers/service_provider.dart';
+import 'onboarding_screen.dart';
 
 class SplashScreen extends ConsumerWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -24,7 +25,11 @@ class SplashScreen extends ConsumerWidget {
             }
           });
         } else {
-          context.go('/login');
+          Future.microtask(() async {
+            final shown = await OnboardingScreen.hasBeenShown();
+            if (!context.mounted) return;
+            context.go(shown ? '/login' : '/onboarding');
+          });
         }
       });
     });

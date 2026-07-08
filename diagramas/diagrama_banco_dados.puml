@@ -1,0 +1,202 @@
+@startuml diagrama_banco_dados
+skinparam classAttributeIconSize 0
+skinparam classFontSize 11
+skinparam classBackgroundColor #FFFDE7
+skinparam classBorderColor #F57F17
+skinparam arrowColor #E65100
+skinparam packageBackgroundColor #FFF8E1
+skinparam packageBorderColor #FFB300
+hide circle
+hide methods
+
+title Diagrama de Banco de Dados — Firebase Firestore\n(Coleções e Documentos)
+
+' ─────────────────────────────────────────
+'  COLEÇÃO: users
+' ─────────────────────────────────────────
+package "Coleção: users" {
+  class "users/{uid}" as USERS << (D, #FFCC80) Documento >> {
+    __PK__
+    uid : String
+    --
+    email : String
+    fullName : String
+    cpf : String
+    userType : String  /'passageiro | barqueiro'/
+    createdAt : int  /'timestamp ms'/
+    isActive : bool
+  }
+}
+
+' ─────────────────────────────────────────
+'  COLEÇÃO: boats
+' ─────────────────────────────────────────
+package "Coleção: boats" {
+  class "boats/{boatId}" as BOATS << (D, #FFCC80) Documento >> {
+    __PK__
+    id : String
+    --
+    __FK__
+    ownerId : String  /'→ users.uid'/
+    --
+    ownerName : String
+    name : String
+    photoUrl : String?
+    routes : List<String>  /'IDs de routes'/
+    routeCities : List<String>
+    capacity : int?
+    type : String
+    createdAt : int
+    isActive : bool
+  }
+}
+
+' ─────────────────────────────────────────
+'  COLEÇÃO: routes
+' ─────────────────────────────────────────
+package "Coleção: routes" {
+  class "routes/{routeId}" as ROUTES << (D, #FFCC80) Documento >> {
+    __PK__
+    id : String
+    --
+    name : String
+    estimatedDurationMinutes : int
+    isFrequent : bool
+    createdAt : int
+    isActive : bool
+    __Objeto aninhado__
+    origin : StopObject
+    destination : StopObject
+    stops : List<StopObject>
+  }
+
+  class "StopObject (embutido)" as STOP << (O, #FFE082) Objeto >> {
+    id : String
+    name : String
+    city : String
+    state : String  /'padrão: AM'/
+    latitude : double
+    longitude : double
+    radius : double  /'metros'/
+    type : String  /'porto|terminal|...'/
+    createdAt : int?
+  }
+}
+
+' ─────────────────────────────────────────
+'  COLEÇÃO: locations
+' ─────────────────────────────────────────
+package "Coleção: locations" {
+  class "locations/{docId}" as LOCATIONS << (D, #FFCC80) Documento >> {
+    __FK__
+    userId : String  /'→ users.uid'/
+    tripId : String  /'→ tripSummaries.tripId'/
+    boatId : String  /'→ boats.id'/
+    --
+    latitude : double
+    longitude : double
+    speed : double  /'m/s'/
+    altitude : double?
+    accuracy : double
+    bearing : double?
+    timestamp : int  /'ms epoch'/
+    userType : String
+    userName : String
+  }
+}
+
+' ─────────────────────────────────────────
+'  COLEÇÃO: tripSummaries
+' ─────────────────────────────────────────
+package "Coleção: tripSummaries" {
+  class "tripSummaries/{tripId}" as TRIPS << (D, #FFCC80) Documento >> {
+    __PK__
+    tripId : String
+    --
+    __FK__
+    userId : String  /'→ users.uid'/
+    boatId : String  /'→ boats.id'/
+    --
+    userName : String
+    startTimestamp : int
+    endTimestamp : int
+    startLat : double
+    startLng : double
+    endLat : double
+    endLng : double
+    pointCount : int
+    avgSpeedMs : double
+    totalDistanceMeters : double
+    departurePoint : String
+    arrivalPoint : String
+    stops : List<String>  /'stop IDs'/
+  }
+}
+
+' ─────────────────────────────────────────
+'  COLEÇÃO: chats  (+ subcoleção messages)
+' ─────────────────────────────────────────
+package "Coleção: chats" {
+  class "chats/{chatId}" as CHATS << (D, #FFCC80) Documento >> {
+    __PK__
+    chatId : String  /'uid1_uid2'/
+    --
+    participants : List<String>  /'[uid1, uid2]'/
+    participantNames : Map<uid,nome>
+    lastMessage : String
+    lastSenderId : String
+    lastSenderName : String
+    lastTimestamp : int
+  }
+
+  class "chats/{chatId}/messages/{msgId}" as MESSAGES << (D, #FFCC80) Documento >> {
+    __PK__
+    id : String
+    --
+    __FK__
+    chatId : String  /'→ chats.chatId'/
+    senderId : String  /'→ users.uid'/
+    --
+    senderName : String
+    text : String
+    timestamp : int
+    isRead : bool
+  }
+}
+
+' ─────────────────────────────────────────
+'  ARMAZENAMENTO LOCAL (SharedPreferences / DTN Queue)
+' ─────────────────────────────────────────
+package "Armazenamento Local (DTN Queue)" {
+  class "LocalLocationPoint\n[SharedPreferences JSON]" as LOCAL << (L, #B2EBF2) Local >> {
+    __PK__
+    id : String  /'UUID local'/
+    --
+    __FK__
+    userId : String
+    tripId : String
+    boatId : String
+    --
+    latitude : double
+    longitude : double
+    velocidade : double  /'m/s'/
+    timestamp : DateTime
+    sincronizado : bool
+  }
+}
+
+' ─────────────────────────────────────────
+'  RELACIONAMENTOS
+' ─────────────────────────────────────────
+USERS      "1" ||--o{ BOATS      : "possui\n(ownerId)"
+USERS      "1" ||--o{ TRIPS      : "realiza\n(userId)"
+USERS      "1" ||--o{ LOCATIONS  : "gera\n(userId)"
+BOATS      "1" ||--o{ TRIPS      : "associada a\n(boatId)"
+BOATS      "1" ||--o{ LOCATIONS  : "rastreada em\n(boatId)"
+ROUTES     "1" *--  "1..*" STOP  : "contém\n(embutido)"
+TRIPS      "1" ||--o{ LOCATIONS  : "agrega\n(tripId)"
+CHATS      "1" ||--o{ MESSAGES   : "subcoleção\nmessages"
+USERS      "2" }o--o{ CHATS      : "participam\n(participants)"
+LOCAL      "0..*" ..> LOCATIONS  : "sincroniza para\n(quando online)"
+
+@enduml
