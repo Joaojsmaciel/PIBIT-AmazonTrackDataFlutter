@@ -212,11 +212,52 @@ class _MapTab extends ConsumerWidget {
 
 // ─── Aba 1: Embarcações ───────────────────────────────────────────────────────
 
-class _BoatsTab extends ConsumerWidget {
+/// Filtros de status aplicáveis na aba de embarcações.
+enum _BoatStatusFilter { todos, emViagem, disponivel }
+
+class _BoatsTab extends ConsumerStatefulWidget {
   const _BoatsTab();
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<_BoatsTab> createState() => _BoatsTabState();
+}
+
+class _BoatsTabState extends ConsumerState<_BoatsTab> {
+  final TextEditingController _searchController = TextEditingController();
+  String _searchQuery = '';
+  _BoatStatusFilter _statusFilter = _BoatStatusFilter.todos;
+
+  @override
+  void dispose() {
+    _searchController.dispose();
+    super.dispose();
+  }
+
+  /// Retorna true se [boat] passa pelos filtros ativos.
+  bool _matches(BoatModel boat, Map<String, ActiveTripInfo> activeTrips) {
+    // Filtro de status
+    final isActive = activeTrips.containsKey(boat.id);
+    if (_statusFilter == _BoatStatusFilter.emViagem && !isActive) return false;
+    if (_statusFilter == _BoatStatusFilter.disponivel && isActive) return false;
+
+    // Filtro de texto
+    if (_searchQuery.isEmpty) return true;
+    final q = _searchQuery.toLowerCase();
+    if (boat.name.toLowerCase().contains(q)) return true;
+    if (boat.ownerName.toLowerCase().contains(q)) return true;
+    if (boat.type.toLowerCase().contains(q)) return true;
+    if (boat.routeCities.any((c) => c.toLowerCase().contains(q))) return true;
+    final trip = activeTrips[boat.id];
+    if (trip != null) {
+      if (trip.departurePoint.toLowerCase().contains(q)) return true;
+      if (trip.arrivalPoint.toLowerCase().contains(q)) return true;
+      if (trip.stops.any((s) => s.toLowerCase().contains(q))) return true;
+    }
+    return false;
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final boatsAsync = ref.watch(allBoatsProvider);
     final activeTripsAsync = ref.watch(activeBoatTripsProvider);
 
@@ -240,34 +281,140 @@ class _BoatsTab extends ConsumerWidget {
         ),
       ),
       data: (boats) {
-        if (boats.isEmpty) {
-          return const Center(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Icon(Icons.directions_boat, size: 64, color: Colors.grey),
-                SizedBox(height: 16),
-                Text(
-                  'Nenhuma embarcação cadastrada.',
-                  style: TextStyle(color: Colors.grey, fontSize: 16),
-                ),
-              ],
-            ),
-          );
-        }
-
         final activeTrips = activeTripsAsync.valueOrNull ?? {};
+        final filtered =
+            boats.where((b) => _matches(b, activeTrips)).toList();
 
-        return ListView.builder(
-          padding: const EdgeInsets.all(12),
-          itemCount: boats.length,
-          itemBuilder: (context, index) {
-            final boat = boats[index];
-            final activeTripInfo = activeTrips[boat.id];
-            return _BoatCard(boat: boat, activeTripInfo: activeTripInfo);
-          },
+        return Column(
+          children: [
+            // ── Barra de busca ──────────────────────────────────────────
+            Padding(
+              padding: const EdgeInsets.fromLTRB(12, 12, 12, 6),
+              child: TextField(
+                controller: _searchController,
+                decoration: InputDecoration(
+                  hintText: 'Buscar por nome, rota, cidade…',
+                  prefixIcon: const Icon(Icons.search),
+                  suffixIcon: _searchQuery.isNotEmpty
+                      ? IconButton(
+                          icon: const Icon(Icons.clear),
+                          onPressed: () {
+                            _searchController.clear();
+                            setState(() => _searchQuery = '');
+                          },
+                        )
+                      : null,
+                  isDense: true,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  contentPadding: const EdgeInsets.symmetric(vertical: 10),
+                ),
+                onChanged: (v) => setState(() => _searchQuery = v.trim()),
+              ),
+            ),
+            // ── Chips de filtro de status ───────────────────────────────
+            Padding(
+              padding: const EdgeInsets.fromLTRB(12, 0, 12, 6),
+              child: Row(
+                children: [
+                  _FilterChip(
+                    label: 'Todos',
+                    selected: _statusFilter == _BoatStatusFilter.todos,
+                    onSelected: (_) => setState(
+                        () => _statusFilter = _BoatStatusFilter.todos),
+                  ),
+                  const SizedBox(width: 8),
+                  _FilterChip(
+                    label: 'Em viagem',
+                    selected: _statusFilter == _BoatStatusFilter.emViagem,
+                    selectedColor: Colors.green,
+                    onSelected: (_) => setState(
+                        () => _statusFilter = _BoatStatusFilter.emViagem),
+                  ),
+                  const SizedBox(width: 8),
+                  _FilterChip(
+                    label: 'Disponível',
+                    selected: _statusFilter == _BoatStatusFilter.disponivel,
+                    selectedColor: Colors.grey,
+                    onSelected: (_) => setState(
+                        () => _statusFilter = _BoatStatusFilter.disponivel),
+                  ),
+                  const Spacer(),
+                  Text(
+                    '${filtered.length} embarcação${filtered.length == 1 ? '' : 'ões'}',
+                    style: TextStyle(fontSize: 12, color: Colors.grey[600]),
+                  ),
+                ],
+              ),
+            ),
+            const Divider(height: 1),
+            // ── Lista filtrada ──────────────────────────────────────────
+            Expanded(
+              child: filtered.isEmpty
+                  ? Center(
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          const Icon(Icons.search_off,
+                              size: 56, color: Colors.grey),
+                          const SizedBox(height: 12),
+                          Text(
+                            boats.isEmpty
+                                ? 'Nenhuma embarcação cadastrada.'
+                                : 'Nenhuma embarcação encontrada.',
+                            style: const TextStyle(
+                                color: Colors.grey, fontSize: 16),
+                          ),
+                        ],
+                      ),
+                    )
+                  : ListView.builder(
+                      padding: const EdgeInsets.all(12),
+                      itemCount: filtered.length,
+                      itemBuilder: (context, index) {
+                        final boat = filtered[index];
+                        return _BoatCard(
+                          boat: boat,
+                          activeTripInfo: activeTrips[boat.id],
+                        );
+                      },
+                    ),
+            ),
+          ],
         );
       },
+    );
+  }
+}
+
+class _FilterChip extends StatelessWidget {
+  final String label;
+  final bool selected;
+  final Color selectedColor;
+  final ValueChanged<bool> onSelected;
+
+  const _FilterChip({
+    required this.label,
+    required this.selected,
+    this.selectedColor = Colors.blue,
+    required this.onSelected,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return FilterChip(
+      label: Text(label, style: const TextStyle(fontSize: 12)),
+      selected: selected,
+      onSelected: onSelected,
+      selectedColor: selectedColor.withOpacity(0.15),
+      checkmarkColor: selectedColor,
+      side: BorderSide(
+        color: selected ? selectedColor : Colors.grey.shade300,
+      ),
+      showCheckmark: false,
+      padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 0),
+      visualDensity: VisualDensity.compact,
     );
   }
 }

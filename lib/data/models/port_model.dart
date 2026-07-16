@@ -132,5 +132,29 @@ class AmazonPorts {
       raioAproximacao: 800,
       raioAtracacao: 180,
     ),
+    PortModel(
+      id: 11,
+      nome: 'Porto de Santarém',
+      latitude: -2.43260,
+      longitude: -54.70850,
+      raioAproximacao: 1500,
+      raioAtracacao: 300,
+    ),
+    PortModel(
+      id: 12,
+      nome: 'Porto de Juruti',
+      latitude: -2.15310,
+      longitude: -56.08860,
+      raioAproximacao: 1200,
+      raioAtracacao: 250,
+    ),
+    PortModel(
+      id: 13,
+      nome: 'Porto de Óbidos',
+      latitude: -1.91880,
+      longitude: -55.52150,
+      raioAproximacao: 1200,
+      raioAtracacao: 250,
+    ),
   ];
 }
