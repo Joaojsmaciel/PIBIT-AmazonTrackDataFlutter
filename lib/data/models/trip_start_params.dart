@@ -6,12 +6,22 @@ class TripStartParams {
   final String departurePoint;
   final String arrivalPoint;
   final List<String> stops;
+  final int estimatedDurationMinutes;
+  final double? originLatitude;
+  final double? originLongitude;
+  final double? destinationLatitude;
+  final double? destinationLongitude;
 
   const TripStartParams({
     required this.boatId,
     required this.departurePoint,
     required this.arrivalPoint,
     this.stops = const [],
+    this.estimatedDurationMinutes = 0,
+    this.originLatitude,
+    this.originLongitude,
+    this.destinationLatitude,
+    this.destinationLongitude,
   });
 
   @override
@@ -21,7 +31,12 @@ class TripStartParams {
         other.boatId == boatId &&
         other.departurePoint == departurePoint &&
         other.arrivalPoint == arrivalPoint &&
-        listEquals(other.stops, stops);
+        listEquals(other.stops, stops) &&
+        other.estimatedDurationMinutes == estimatedDurationMinutes &&
+        other.originLatitude == originLatitude &&
+        other.originLongitude == originLongitude &&
+        other.destinationLatitude == destinationLatitude &&
+        other.destinationLongitude == destinationLongitude;
   }
 
   @override
@@ -30,5 +45,10 @@ class TripStartParams {
         departurePoint,
         arrivalPoint,
         Object.hashAll(stops),
+        estimatedDurationMinutes,
+        originLatitude,
+        originLongitude,
+        destinationLatitude,
+        destinationLongitude,
       );
 }

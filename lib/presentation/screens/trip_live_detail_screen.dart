@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_map/flutter_map.dart';
+import 'package:intl/intl.dart';
 import 'package:latlong2/latlong.dart';
 import 'package:amazon_track_data/presentation/providers/boat_provider.dart';
 import 'package:amazon_track_data/presentation/providers/location_provider.dart';
@@ -141,6 +142,7 @@ class _LiveMapTab extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final estimatedArrival = info.estimatedArrival;
     final trackedUsers = ref.watch(trackedUsersProvider);
     final boatPos = trackedUsers.valueOrNull
         ?.where((u) => u.boatId == boatId)
@@ -221,10 +223,14 @@ class _LiveMapTab extends ConsumerWidget {
                   Text('${info.speedKmh} km/h',
                       style: const TextStyle(fontWeight: FontWeight.bold)),
                   const Spacer(),
-                  const Icon(Icons.timeline, color: Colors.orange, size: 18),
+                  const Icon(Icons.schedule, color: Colors.orange, size: 18),
                   const SizedBox(width: 8),
-                  Text('${trail.length} pontos',
-                      style: const TextStyle(color: Colors.grey)),
+                  Text(
+                    estimatedArrival == null
+                        ? 'ETA —'
+                        : 'ETA ${DateFormat('HH:mm').format(estimatedArrival)}',
+                    style: const TextStyle(fontWeight: FontWeight.w600),
+                  ),
                 ],
               ),
             ),
@@ -254,6 +260,8 @@ class _ProgressTab extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          _EtaOverview(info: info),
+          const SizedBox(height: 16),
           _MetricsRow(info: info),
           const SizedBox(height: 24),
           const Text('Rota da Viagem',
@@ -271,6 +279,169 @@ class _ProgressTab extends StatelessWidget {
       ),
     );
   }
+}
+
+class _EtaOverview extends StatelessWidget {
+  final ActiveTripInfo info;
+  const _EtaOverview({required this.info});
+
+  @override
+  Widget build(BuildContext context) {
+    final arrival = info.estimatedArrival;
+    final remaining = info.remainingDuration;
+    final distance = info.distanceRemainingMeters;
+    final progress = info.progress;
+
+    return Card(
+      elevation: 2,
+      color: Colors.teal.withOpacity(0.06),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(14),
+        side: BorderSide(color: Colors.teal.withOpacity(0.25)),
+      ),
+      child: Padding(
+        padding: const EdgeInsets.all(16),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Row(
+              children: [
+                const CircleAvatar(
+                  backgroundColor: Color(0xFFE0F2F1),
+                  child: Icon(Icons.route, color: Colors.teal),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'Estimativa de chegada',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey,
+                        ),
+                      ),
+                      Text(
+                        arrival == null
+                            ? 'Calculando ETA…'
+                            : DateFormat('HH:mm').format(arrival),
+                        style: const TextStyle(
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.teal,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                if (info.arrivalPoint.isNotEmpty)
+                  Flexible(
+                    child: Text(
+                      info.arrivalPoint,
+                      textAlign: TextAlign.right,
+                      overflow: TextOverflow.ellipsis,
+                      style: const TextStyle(fontWeight: FontWeight.w600),
+                    ),
+                  ),
+              ],
+            ),
+            const SizedBox(height: 16),
+            Row(
+              children: [
+                Expanded(
+                  child: _EtaMetric(
+                    icon: Icons.timelapse,
+                    label: 'Tempo restante',
+                    value: _formatDuration(remaining),
+                  ),
+                ),
+                Expanded(
+                  child: _EtaMetric(
+                    icon: Icons.location_on_outlined,
+                    label: 'Distância',
+                    value: _formatDistance(distance),
+                  ),
+                ),
+              ],
+            ),
+            if (progress != null) ...[
+              const SizedBox(height: 14),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: LinearProgressIndicator(
+                  value: progress,
+                  minHeight: 7,
+                  backgroundColor: Colors.teal.withOpacity(0.12),
+                  color: Colors.teal,
+                ),
+              ),
+              const SizedBox(height: 5),
+              Text(
+                '${(progress * 100).round()}% do tempo estimado',
+                style: const TextStyle(fontSize: 11, color: Colors.grey),
+              ),
+            ],
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _EtaMetric extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final String value;
+
+  const _EtaMetric({
+    required this.icon,
+    required this.label,
+    required this.value,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Row(
+      children: [
+        Icon(icon, size: 18, color: Colors.teal),
+        const SizedBox(width: 6),
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                label,
+                style: const TextStyle(fontSize: 10, color: Colors.grey),
+              ),
+              Text(
+                value,
+                style: const TextStyle(
+                  fontSize: 13,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ],
+          ),
+        ),
+      ],
+    );
+  }
+}
+
+String _formatDuration(Duration? duration) {
+  if (duration == null) return '—';
+  if (duration == Duration.zero) return 'Chegando';
+  final hours = duration.inHours;
+  final minutes = duration.inMinutes.remainder(60);
+  return hours > 0 ? '${hours}h ${minutes}min' : '$minutes min';
+}
+
+String _formatDistance(double? meters) {
+  if (meters == null) return '—';
+  return meters >= 1000
+      ? '${(meters / 1000).toStringAsFixed(1)} km'
+      : '${meters.toStringAsFixed(0)} m';
 }
 
 class _MetricsRow extends StatelessWidget {

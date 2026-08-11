@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_map/flutter_map.dart';
 import 'package:go_router/go_router.dart';
+import 'package:intl/intl.dart';
 import 'package:amazon_track_data/data/models/boat_model.dart';
 import 'package:amazon_track_data/data/models/user_model.dart';
 import 'package:amazon_track_data/core/extensions/context_extensions.dart';
@@ -74,6 +75,14 @@ class _PassengerHomeScreenState extends ConsumerState<PassengerHomeScreen> {
     // Alimenta o GeofenceService com a posição do barco seguido.
     // Notificações só disparam enquanto watchedBoatId != null.
     final watchedBoatId = ref.watch(watchedBoatIdProvider);
+    ref.listen<String?>(watchedBoatIdProvider, (_, boatId) {
+      final geofence = ref.read(geofenceServiceProvider);
+      if (boatId == null) {
+        geofence.disableNotifications();
+      } else {
+        geofence.enableNotifications();
+      }
+    });
     ref.listen(trackedUsersProvider, (_, next) {
       if (watchedBoatId == null) return;
       next.whenData((users) {
@@ -184,15 +193,30 @@ class _MapTab extends ConsumerWidget {
     final mapCenter = ref.watch(mapCenterProvider);
     final currentUserAsync = ref.watch(currentUserProvider);
     final boatTrail = ref.watch(watchedBoatTrailProvider);
+    final watchedBoatId = ref.watch(watchedBoatIdProvider);
+    final activeTrips = ref.watch(activeBoatTripsProvider).valueOrNull;
+    final watchedTrip =
+        watchedBoatId == null ? null : activeTrips?[watchedBoatId];
 
     return userLocationAsync.when(
-      data: (userLocation) => MapWidget(
-        mapController: mapController,
-        center: mapCenter,
-        trackedUsers: trackedUsers,
-        userLocation: userLocation,
-        currentUserType: currentUserAsync.valueOrNull?.userType,
-        boatTrail: boatTrail.valueOrNull ?? const [],
+      data: (userLocation) => Stack(
+        children: [
+          MapWidget(
+            mapController: mapController,
+            center: mapCenter,
+            trackedUsers: trackedUsers,
+            userLocation: userLocation,
+            currentUserType: currentUserAsync.valueOrNull?.userType,
+            boatTrail: boatTrail.valueOrNull ?? const [],
+          ),
+          if (watchedTrip != null)
+            Positioned(
+              top: 12,
+              left: 12,
+              right: 12,
+              child: _WatchedTripEtaCard(info: watchedTrip),
+            ),
+        ],
       ),
       loading: () => const Center(child: CircularProgressIndicator()),
       error: (error, _) => Center(
@@ -208,6 +232,171 @@ class _MapTab extends ConsumerWidget {
       ),
     );
   }
+}
+
+class _WatchedTripEtaCard extends StatelessWidget {
+  final ActiveTripInfo info;
+  const _WatchedTripEtaCard({required this.info});
+
+  @override
+  Widget build(BuildContext context) {
+    final progress = info.progress;
+    final arrival = info.estimatedArrival;
+
+    return Card(
+      elevation: 5,
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+      child: Padding(
+        padding: const EdgeInsets.all(14),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            Row(
+              children: [
+                const CircleAvatar(
+                  backgroundColor: Color(0xFFE0F2F1),
+                  child: Icon(Icons.route, color: Colors.teal),
+                ),
+                const SizedBox(width: 10),
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text(
+                        'ROTA EM ANDAMENTO',
+                        style: TextStyle(fontSize: 9, color: Colors.grey),
+                      ),
+                      Text(
+                        '${info.departurePoint.isEmpty ? 'Partida' : info.departurePoint}'
+                        ' → '
+                        '${info.arrivalPoint.isEmpty ? 'Destino' : info.arrivalPoint}',
+                        overflow: TextOverflow.ellipsis,
+                        style: const TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
+                  decoration: BoxDecoration(
+                    color: Colors.green.withOpacity(0.12),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: const Text(
+                    'AO VIVO',
+                    style: TextStyle(
+                      color: Colors.green,
+                      fontSize: 9,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ],
+            ),
+            if (progress != null) ...[
+              const SizedBox(height: 12),
+              ClipRRect(
+                borderRadius: BorderRadius.circular(8),
+                child: LinearProgressIndicator(
+                  value: progress,
+                  minHeight: 6,
+                  color: Colors.teal,
+                  backgroundColor: Colors.teal.withOpacity(0.12),
+                ),
+              ),
+            ],
+            const SizedBox(height: 12),
+            Row(
+              children: [
+                Expanded(
+                  child: _LiveMetric(
+                    icon: Icons.speed,
+                    label: 'Velocidade',
+                    value: '${info.speedKmh} km/h',
+                  ),
+                ),
+                Expanded(
+                  child: _LiveMetric(
+                    icon: Icons.schedule,
+                    label: 'Chegada',
+                    value: arrival == null
+                        ? 'Calculando'
+                        : DateFormat('HH:mm').format(arrival),
+                  ),
+                ),
+                Expanded(
+                  child: _LiveMetric(
+                    icon: Icons.timelapse,
+                    label: 'Restante',
+                    value: _formatRemaining(info.remainingDuration),
+                  ),
+                ),
+                Expanded(
+                  child: _LiveMetric(
+                    icon: Icons.location_on_outlined,
+                    label: 'Distância',
+                    value: _formatRemainingDistance(
+                        info.distanceRemainingMeters),
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class _LiveMetric extends StatelessWidget {
+  final IconData icon;
+  final String label;
+  final String value;
+
+  const _LiveMetric({
+    required this.icon,
+    required this.label,
+    required this.value,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Icon(icon, size: 17, color: Colors.teal),
+        const SizedBox(height: 2),
+        Text(
+          value,
+          maxLines: 1,
+          overflow: TextOverflow.ellipsis,
+          style: const TextStyle(fontSize: 11, fontWeight: FontWeight.bold),
+        ),
+        Text(
+          label,
+          style: const TextStyle(fontSize: 9, color: Colors.grey),
+        ),
+      ],
+    );
+  }
+}
+
+String _formatRemaining(Duration? duration) {
+  if (duration == null) return '—';
+  if (duration == Duration.zero) return 'Chegando';
+  final hours = duration.inHours;
+  final minutes = duration.inMinutes.remainder(60);
+  return hours > 0 ? '${hours}h ${minutes}m' : '$minutes min';
+}
+
+String _formatRemainingDistance(double? meters) {
+  if (meters == null) return '—';
+  return meters >= 1000
+      ? '${(meters / 1000).toStringAsFixed(1)} km'
+      : '${meters.toStringAsFixed(0)} m';
 }
 
 // ─── Aba 1: Embarcações ───────────────────────────────────────────────────────
@@ -547,18 +736,23 @@ class _BoatCard extends ConsumerWidget {
                 ),
                 const Spacer(),
                 ElevatedButton.icon(
-                  onPressed: () {
-                    final geofence = ref.read(geofenceServiceProvider);
+                  onPressed: () async {
                     if (isWatching) {
-                      ref.read(watchedBoatIdProvider.notifier).state = null;
-                      geofence.disableNotifications();
-                      context.showSuccessSnackBar(
-                          'Deixou de acompanhar ${boat.name}');
+                      await ref
+                          .read(watchedBoatIdProvider.notifier)
+                          .setWatchedBoat(null);
+                      if (context.mounted) {
+                        context.showSuccessSnackBar(
+                            'Deixou de acompanhar ${boat.name}');
+                      }
                     } else {
-                      ref.read(watchedBoatIdProvider.notifier).state = boat.id;
-                      geofence.enableNotifications();
-                      context.showSuccessSnackBar(
-                          'Acompanhando ${boat.name}');
+                      await ref
+                          .read(watchedBoatIdProvider.notifier)
+                          .setWatchedBoat(boat.id);
+                      if (context.mounted) {
+                        context.showSuccessSnackBar(
+                            'Acompanhando ${boat.name}');
+                      }
                     }
                   },
                   icon: Icon(
@@ -813,6 +1007,9 @@ class _ProfileTab extends ConsumerWidget {
             onPressed: () async {
               Navigator.pop(dialogContext);
               try {
+                await ref
+                    .read(watchedBoatIdProvider.notifier)
+                    .setWatchedBoat(null);
                 await ref.read(signOutProvider.future);
                 ref.read(userSessionProvider.notifier).state = null;
                 ref.invalidate(currentUserProvider);

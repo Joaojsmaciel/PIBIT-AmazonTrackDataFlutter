@@ -524,6 +524,13 @@ function App() {
           <div>
             <Brand light />
             <p>Tecnologia para aproximar pessoas, rotas e comunidades pelos rios da Amazônia.</p>
+            <div className="project-credits">
+              <p><strong>Autor:</strong> João Gabriel da Silva Maciel</p>
+              <p><strong>Coautora:</strong> Alica de Souza Miranda</p>
+              <p><strong>Projeto:</strong> PIBITI/UFAM</p>
+              <p><strong>Laboratório:</strong> NUPEC/LAMAP</p>
+              <p><strong>Orientador:</strong> Prof. Dr. Hidelbrando Ferreira Rodriguez</p>
+            </div>
           </div>
           <div className="footer__links">
             <a href="#recursos">Recursos</a>

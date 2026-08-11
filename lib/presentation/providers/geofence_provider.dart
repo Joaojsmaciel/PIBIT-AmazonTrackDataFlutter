@@ -1,4 +1,6 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:amazon_track_data/core/services/geofence_service.dart';
 import 'package:amazon_track_data/core/services/notification_service.dart';
@@ -63,9 +65,45 @@ final offlinePendingCountProvider = StreamProvider<int>((ref) {
   return service.pendingCount;
 });
 
+/// Mantém a embarcação acompanhada mesmo quando o processo do app é recriado.
+class WatchedBoatNotifier extends StateNotifier<String?> {
+  WatchedBoatNotifier(this._userId) : super(null) {
+    _restore();
+  }
+
+  final String _userId;
+
+  String get _storageKey => 'watched_boat_id_$_userId';
+
+  Future<void> _restore() async {
+    if (_userId.isEmpty) return;
+    final prefs = await SharedPreferences.getInstance();
+    final savedBoatId = prefs.getString(_storageKey);
+    if (savedBoatId != null && savedBoatId.isNotEmpty) {
+      state = savedBoatId;
+    }
+  }
+
+  Future<void> setWatchedBoat(String? boatId) async {
+    state = boatId;
+    if (_userId.isEmpty) return;
+
+    final prefs = await SharedPreferences.getInstance();
+    if (boatId == null || boatId.isEmpty) {
+      await prefs.remove(_storageKey);
+    } else {
+      await prefs.setString(_storageKey, boatId);
+    }
+  }
+}
+
 /// ID do barco que o passageiro escolheu acompanhar.
 /// [null] = nenhum barco sendo acompanhado.
-final watchedBoatIdProvider = StateProvider<String?>((ref) => null);
+final watchedBoatIdProvider =
+    StateNotifierProvider<WatchedBoatNotifier, String?>((ref) {
+  final userId = FirebaseAuth.instance.currentUser?.uid ?? '';
+  return WatchedBoatNotifier(userId);
+});
 
 /// Indica se há conectividade de internet no momento.
 final hasConnectivityProvider = Provider<bool>((ref) {

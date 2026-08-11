@@ -1,6 +1,3 @@
-import 'dart:async';
-
-import 'package:connectivity_plus/connectivity_plus.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:latlong2/latlong.dart';
@@ -9,9 +6,7 @@ import 'package:uuid/uuid.dart';
 import 'package:amazon_track_data/core/services/background_tracking_service.dart';
 import 'package:amazon_track_data/core/services/notification_service.dart';
 import 'package:amazon_track_data/core/constants/app_constants.dart';
-import 'package:amazon_track_data/core/utils/kalman_filter.dart';
-import 'package:amazon_track_data/data/models/local_location_point.dart';
-import 'package:amazon_track_data/data/models/location_model.dart';
+import 'package:amazon_track_data/data/models/active_tracking_session.dart';
 import 'package:amazon_track_data/data/models/tracked_user_model.dart';
 import 'package:amazon_track_data/data/models/trip_start_params.dart';
 import 'auth_provider.dart';
@@ -127,18 +122,49 @@ final isTrackingProvider = StateProvider<bool>((ref) => false);
 final currentTripIdProvider = StateProvider<String?>((ref) => null);
 final selectedBoatForTrackingProvider = StateProvider<String?>((ref) => null);
 
+/// Restaura o estado visual da viagem quando o processo principal do app é
+/// recriado. O serviço Android continua sendo a fonte de coleta em background.
+final restoreActiveTrackingProvider =
+    FutureProvider<ActiveTrackingSession?>((ref) async {
+  final session = await BackgroundTrackingService.restoreActiveSession();
+  if (session != null) {
+    ref.read(selectedBoatForTrackingProvider.notifier).state = session.boatId;
+    ref.read(currentTripIdProvider.notifier).state = session.tripId;
+    ref.read(isTrackingProvider.notifier).state = true;
+  }
+  return session;
+});
+
+/// Reata a interface ao stream do ForegroundService após uma reabertura.
+/// Assim o mapa e o geofence voltam a receber posições sem iniciar outra trip.
+final backgroundLocationBridgeProvider =
+    StreamProvider<Map<String, dynamic>>((ref) async* {
+  await for (final data in BackgroundTrackingService.locationStream) {
+    if (data == null || !ref.read(isTrackingProvider)) continue;
+
+    final lat = (data['latitude'] as num).toDouble();
+    final lon = (data['longitude'] as num).toDouble();
+    final smoothedSpeed = (data['smoothedSpeed'] as num).toDouble();
+
+    ref.read(liveLocationProvider.notifier).state = LatLng(lat, lon);
+    _addToTrail(ref, lat, lon);
+    ref
+        .read(geofenceServiceProvider)
+        .updatePosition(lat, lon, smoothedSpeed);
+
+    yield data;
+  }
+});
+
 // ---------------------------------------------------------------------------
 // Inicia rastreamento
 // ---------------------------------------------------------------------------
 
 /// Inicia o rastreamento GPS com Store-Carry-and-Forward (DTN).
 ///
-/// Estratégia dupla:
-///  1. **Foreground**: stream GPS direto no isolate principal → atualiza
-///     geofence e mapa com velocidade suavizada pelo filtro de Kalman.
-///  2. **Background**: [BackgroundTrackingService] (ForegroundService Android)
-///     continua capturando GPS mesmo com a tela apagada, salva no SQLite e
-///     sincroniza com o Firestore quando há internet.
+/// O [BackgroundTrackingService] é a fonte única de GPS para evitar pontos
+/// duplicados. Ele continua ativo com a tela apagada, salva no SQLite e
+/// sincroniza com o Firestore quando há internet.
 final startTrackingProvider =
     FutureProvider.family<void, TripStartParams>((ref, params) async {
   final boatId = params.boatId;
@@ -152,7 +178,6 @@ final startTrackingProvider =
 
   final locationRepo = ref.read(locationRepositoryProvider);
   final authRepo = ref.read(authRepositoryProvider);
-  final offlineSyncService = ref.read(offlineSyncServiceProvider);
 
   final userId = authRepo.getCurrentUserId();
 
@@ -176,7 +201,7 @@ final startTrackingProvider =
       ref.read(currentTripIdProvider.notifier).state = null;
       ref.read(selectedBoatForTrackingProvider.notifier).state = null;
     });
-    return;
+    throw StateError('Usuário não identificado. Entre novamente e tente.');
   }
 
   debugPrint(
@@ -191,6 +216,11 @@ final startTrackingProvider =
       departurePoint: params.departurePoint,
       arrivalPoint: params.arrivalPoint,
       stops: params.stops,
+      estimatedDurationMinutes: params.estimatedDurationMinutes,
+      originLatitude: params.originLatitude,
+      originLongitude: params.originLongitude,
+      destinationLatitude: params.destinationLatitude,
+      destinationLongitude: params.destinationLongitude,
     );
   } catch (e) {
     debugPrint('[tracking] aviso: falha ao salvar metadados: $e');
@@ -211,128 +241,18 @@ final startTrackingProvider =
       boatId: boatId,
       userName: user.fullName,
       userType: user.userType.name,
+      departurePoint: params.departurePoint,
+      arrivalPoint: params.arrivalPoint,
+      stops: params.stops,
     );
   } catch (e) {
-    debugPrint('[tracking] aviso: falha ao iniciar background service: $e');
-  }
-
-  // ── Escuta eventos do background service para atualizar geofence/mapa ─────
-  StreamSubscription<Map<String, dynamic>?>? bgSub;
-  bgSub = BackgroundTrackingService.locationStream.listen((data) {
-    if (data == null) return;
-    if (!ref.read(isTrackingProvider)) {
-      bgSub?.cancel();
-      return;
-    }
-    final lat = (data['latitude'] as num).toDouble();
-    final lon = (data['longitude'] as num).toDouble();
-    final smoothedSpeed = (data['smoothedSpeed'] as num).toDouble();
-
-    // Atualiza posição ao vivo no mapa
-    ref.read(liveLocationProvider.notifier).state = LatLng(lat, lon);
-
-    // Acumula ponto na trilha ponto a ponto
-    _addToTrail(ref, lat, lon);
-
-    // Atualiza estado de geofencing com velocidade Kalman
-    final geofenceService = ref.read(geofenceServiceProvider);
-    geofenceService.updatePosition(lat, lon, smoothedSpeed);
-  });
-
-  ref.onDispose(() => bgSub?.cancel());
-
-  // ── Foreground GPS: Kalman + SQLite + sync DTN ────────────────────────────
-  // O background service é a fonte principal quando a tela apaga; este loop
-  // complementa enquanto o app está em foreground e nunca deve terminar por
-  // falhas de IO — cada iteração é isolada com try-catch.
-  final kalman = KalmanFilter(initialValue: 0.0);
-
-  await for (final position
-      in locationRepo.getPositionStream(intervalSeconds: 5)) {
-    if (!ref.read(isTrackingProvider)) break;
-
-    final smoothedSpeed = kalman.update(position.speed);
-    final speedKmh = (smoothedSpeed * 3.6).toStringAsFixed(1);
-
-    final location = LocationModel(
-      userId: userId,
-      tripId: tripId,
-      boatId: boatId,
-      latitude: position.latitude,
-      longitude: position.longitude,
-      speed: smoothedSpeed,
-      accuracy: position.accuracy,
-      altitude: position.altitude,
-      bearing: position.bearing,
-      timestamp: position.timestamp,
-      userType: user.userType.name,
-      userName: user.fullName,
+    await notifService.cancelPersistentTracking();
+    ref.read(isTrackingProvider.notifier).state = false;
+    ref.read(currentTripIdProvider.notifier).state = null;
+    ref.read(selectedBoatForTrackingProvider.notifier).state = null;
+    throw StateError(
+      'Não foi possível iniciar a coleta em segundo plano: $e',
     );
-
-    // ── STORE: SQLite + Firestore; falhas não encerram o loop ─────────────
-    try {
-      await locationRepo.saveLocation(location);
-    } catch (e) {
-      debugPrint('[tracking] aviso: falha ao salvar ponto (continuando): $e');
-    }
-
-    // ── CARRY: fila SharedPreferences (fallback de curto prazo) ──────────
-    try {
-      await offlineSyncService.savePoint(LocalLocationPoint(
-        id: '${userId}_${location.timestamp}',
-        userId: userId,
-        tripId: tripId,
-        boatId: boatId,
-        latitude: position.latitude,
-        longitude: position.longitude,
-        velocidade: smoothedSpeed,
-        timestamp: DateTime.fromMillisecondsSinceEpoch(position.timestamp),
-      ));
-    } catch (_) {}
-
-    // ── FORWARD: sync SQLite → Firestore quando há conexão ───────────────
-    try {
-      final conn = await Connectivity().checkConnectivity();
-      final online = conn == ConnectivityResult.mobile ||
-          conn == ConnectivityResult.wifi ||
-          conn == ConnectivityResult.ethernet;
-      if (online) {
-        await locationRepo.syncOfflineLocations();
-      }
-    } catch (_) {}
-
-    // Geofence com velocidade Kalman
-    final geofenceService = ref.read(geofenceServiceProvider);
-    geofenceService.updatePosition(
-      position.latitude,
-      position.longitude,
-      smoothedSpeed,
-    );
-
-    // Posição ao vivo + rastro ponto a ponto
-    ref.read(liveLocationProvider.notifier).state =
-        LatLng(position.latitude, position.longitude);
-    _addToTrail(ref, position.latitude, position.longitude);
-
-    // Notificação persistente com velocidade Kalman
-    try {
-      final geofenceEvent = geofenceService.getPortoMaisProximo(
-        position.latitude,
-        position.longitude,
-        smoothedSpeed,
-      );
-      if (geofenceEvent != null) {
-        await notifService.showPersistentTracking(
-          title: 'Aproximando: ${geofenceEvent.porto.nome}',
-          body: 'ETA ${geofenceEvent.etaFormatado} · $speedKmh km/h',
-        );
-      } else {
-        await notifService.showPersistentTracking(
-          title: 'Amazon Track Data — Rastreamento ativo',
-          body: 'Velocidade: $speedKmh km/h · GPS coletando…',
-        );
-      }
-    } catch (_) {}
   }
 });
 
@@ -340,7 +260,7 @@ final startTrackingProvider =
 // Para rastreamento
 // ---------------------------------------------------------------------------
 
-final stopTrackingWithResetProvider = FutureProvider<void>((ref) async {
+final stopTrackingWithResetProvider = FutureProvider.autoDispose<void>((ref) async {
   await BackgroundTrackingService.stopTracking();
   await NotificationService().cancelPersistentTracking();
   ref.read(geofenceServiceProvider).resetStatus();
@@ -356,7 +276,7 @@ final stopTrackingWithResetProvider = FutureProvider<void>((ref) async {
   }
 });
 
-final stopTrackingProvider = FutureProvider<void>((ref) async {
+final stopTrackingProvider = FutureProvider.autoDispose<void>((ref) async {
   await BackgroundTrackingService.stopTracking();
   await NotificationService().cancelPersistentTracking();
   ref.read(isTrackingProvider.notifier).state = false;

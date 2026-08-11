@@ -1938,6 +1938,17 @@ footer {
   line-height: 1.7;
 }
 
+.project-credits {
+  margin-top: 16px;
+  color: rgba(255, 255, 255, 0.78);
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.project-credits p {
+  margin: 4px 0;
+}
+
 .footer__links {
   display: flex;
   gap: 32px;

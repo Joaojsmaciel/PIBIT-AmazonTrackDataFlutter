@@ -225,6 +225,11 @@ class LocationRepository {
     required String departurePoint,
     required String arrivalPoint,
     required List<String> stops,
+    required int estimatedDurationMinutes,
+    double? originLatitude,
+    double? originLongitude,
+    double? destinationLatitude,
+    double? destinationLongitude,
   }) async {
     await _firestoreDatasource.saveTripMeta(
       tripId: tripId,
@@ -233,6 +238,11 @@ class LocationRepository {
       departurePoint: departurePoint,
       arrivalPoint: arrivalPoint,
       stops: stops,
+      estimatedDurationMinutes: estimatedDurationMinutes,
+      originLatitude: originLatitude,
+      originLongitude: originLongitude,
+      destinationLatitude: destinationLatitude,
+      destinationLongitude: destinationLongitude,
     );
   }
 

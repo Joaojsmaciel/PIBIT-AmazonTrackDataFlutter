@@ -47,3 +47,5 @@ app.*.map.json
 # Website Vite
 website/node_modules/
 website/dist/
+.vercel
+.env*

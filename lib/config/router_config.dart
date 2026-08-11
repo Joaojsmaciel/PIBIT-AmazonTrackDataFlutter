@@ -7,6 +7,7 @@ import 'package:amazon_track_data/presentation/screens/map_screen.dart';
 import 'package:amazon_track_data/presentation/screens/boat_registration_screen.dart';
 import 'package:amazon_track_data/presentation/screens/boat_list_screen.dart';
 import 'package:amazon_track_data/presentation/screens/route_selection_screen.dart';
+import 'package:amazon_track_data/presentation/screens/route_registration_screen.dart';
 import 'package:amazon_track_data/presentation/screens/trip_detail_screen.dart';
 import 'package:amazon_track_data/presentation/screens/profile_screen.dart';
 import 'package:amazon_track_data/presentation/screens/passenger_home_screen.dart';
@@ -49,6 +50,10 @@ class AppRouter {
       GoRoute(
         path: '/routes',
         builder: (context, state) => const RouteSelectionScreen(),
+      ),
+      GoRoute(
+        path: '/route-registration',
+        builder: (context, state) => const RouteRegistrationScreen(),
       ),
       GoRoute(
         path: '/profile',

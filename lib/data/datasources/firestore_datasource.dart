@@ -425,6 +425,11 @@ class FirestoreDatasource {
     required String departurePoint,
     required String arrivalPoint,
     required List<String> stops,
+    required int estimatedDurationMinutes,
+    double? originLatitude,
+    double? originLongitude,
+    double? destinationLatitude,
+    double? destinationLongitude,
   }) async {
     try {
       await _firestore
@@ -437,6 +442,11 @@ class FirestoreDatasource {
         'departurePoint': departurePoint,
         'arrivalPoint': arrivalPoint,
         'stops': stops,
+        'estimatedDurationMinutes': estimatedDurationMinutes,
+        'originLatitude': originLatitude,
+        'originLongitude': originLongitude,
+        'destinationLatitude': destinationLatitude,
+        'destinationLongitude': destinationLongitude,
         'createdAt': DateTime.now().millisecondsSinceEpoch,
       });
     } on FirebaseException catch (e) {

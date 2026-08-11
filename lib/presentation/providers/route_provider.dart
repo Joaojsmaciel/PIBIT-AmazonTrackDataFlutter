@@ -1,11 +1,16 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:amazon_track_data/data/models/route_model.dart';
 import 'package:amazon_track_data/data/models/stop_model.dart';
+import 'auth_provider.dart';
 import 'service_provider.dart';
 
 final allRoutesProvider = FutureProvider<List<RouteModel>>((ref) async {
+  final userId = ref.watch(currentUserIdProvider);
   final routeRepo = ref.watch(routeRepositoryProvider);
-  return await routeRepo.getAllRoutes();
+  final routes = await routeRepo.getAllRoutes();
+  return routes
+      .where((route) => route.ownerId.isEmpty || route.ownerId == userId)
+      .toList();
 });
 
 // Alias para compatibilidade

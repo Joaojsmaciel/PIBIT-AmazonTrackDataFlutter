@@ -65,6 +65,8 @@ class _MapScreenState extends ConsumerState<MapScreen> {
     final mapCenter = ref.watch(mapCenterProvider);
     final currentUserAsync = ref.watch(currentUserProvider);
     final isTracking = ref.watch(isTrackingProvider);
+    final restoredTracking = ref.watch(restoreActiveTrackingProvider);
+    ref.watch(backgroundLocationBridgeProvider);
     final ports = ref.watch(portosProvider);
     final latestGeofenceEvent = ref.watch(latestGeofenceEventProvider);
     final offlinePending = ref.watch(offlinePendingCountProvider);
@@ -153,7 +155,9 @@ class _MapScreenState extends ConsumerState<MapScreen> {
           ),
           IconButton(
             icon: const Icon(Icons.exit_to_app),
-            onPressed: () => _handleLogout(context, ref),
+            onPressed: restoredTracking.isLoading
+                ? null
+                : () => _handleLogout(context, ref),
           ),
         ],
       ),
@@ -203,7 +207,7 @@ class _MapScreenState extends ConsumerState<MapScreen> {
             FloatingActionButton.extended(
               heroTag: 'start_route',
               backgroundColor: isTracking ? Colors.red : null,
-              onPressed: () {
+              onPressed: restoredTracking.isLoading ? null : () {
                 if (isTracking) {
                   _stopTracking(context, ref);
                 } else {
@@ -213,8 +217,16 @@ class _MapScreenState extends ConsumerState<MapScreen> {
                   );
                 }
               },
-              label: Text(isTracking ? 'Parar' : 'Iniciar'),
-              icon: Icon(isTracking ? Icons.stop : Icons.navigation),
+              label: Text(
+                restoredTracking.isLoading
+                    ? 'Restaurando'
+                    : isTracking
+                        ? 'Parar'
+                        : 'Iniciar',
+              ),
+              icon: restoredTracking.isLoading
+                  ? const Icon(Icons.sync)
+                  : Icon(isTracking ? Icons.stop : Icons.navigation),
             ),
           ],
         ),
@@ -270,18 +282,29 @@ class _MapScreenState extends ConsumerState<MapScreen> {
     );
   }
 
-  void _stopTracking(BuildContext context, WidgetRef ref) {
-    // Reseta o estado do geofence antes de encerrar o rastreamento
-    ref.read(geofenceServiceProvider).resetStatus();
-    ref.read(isTrackingProvider.notifier).state = false;
-    ref.read(currentTripIdProvider.notifier).state = null;
-    ref.read(selectedBoatForTrackingProvider.notifier).state = null;
-    // Limpa o evento de geofence do UI
-    ref.read(latestGeofenceEventProvider.notifier).state = null;
-    context.showSuccessSnackBar('Rastreamento encerrado.');
+  Future<void> _stopTracking(BuildContext context, WidgetRef ref) async {
+    try {
+      await ref.read(stopTrackingWithResetProvider.future);
+      ref.read(latestGeofenceEventProvider.notifier).state = null;
+      ref.invalidate(restoreActiveTrackingProvider);
+      if (context.mounted) {
+        context.showSuccessSnackBar('Rastreamento encerrado.');
+      }
+    } catch (e) {
+      if (context.mounted) {
+        context.showErrorSnackBar('Não foi possível encerrar: $e');
+      }
+    }
   }
 
   void _handleLogout(BuildContext context, WidgetRef ref) {
+    if (ref.read(isTrackingProvider)) {
+      context.showErrorSnackBar(
+        'Encerre a viagem antes de desconectar.',
+      );
+      return;
+    }
+
     showDialog(
       context: context,
       builder: (dialogContext) => AlertDialog(

@@ -93,19 +93,23 @@ class BoatDetailScreen extends ConsumerWidget {
                     isActive: isActive,
                     isWatching: isWatching,
                     activeTripInfo: activeTripInfo,
-                    onToggleWatch: () {
-                      final geofence = ref.read(geofenceServiceProvider);
+                    onToggleWatch: () async {
                       if (isWatching) {
-                        ref.read(watchedBoatIdProvider.notifier).state = null;
-                        geofence.disableNotifications();
-                        context.showSuccessSnackBar(
-                            'Deixou de acompanhar ${boat.name}');
+                        await ref
+                            .read(watchedBoatIdProvider.notifier)
+                            .setWatchedBoat(null);
+                        if (context.mounted) {
+                          context.showSuccessSnackBar(
+                              'Deixou de acompanhar ${boat.name}');
+                        }
                       } else {
-                        ref.read(watchedBoatIdProvider.notifier).state =
-                            boat.id;
-                        geofence.enableNotifications();
-                        context.showSuccessSnackBar(
-                            'Acompanhando ${boat.name}');
+                        await ref
+                            .read(watchedBoatIdProvider.notifier)
+                            .setWatchedBoat(boat.id);
+                        if (context.mounted) {
+                          context.showSuccessSnackBar(
+                              'Acompanhando ${boat.name}');
+                        }
                       }
                     },
                   ),

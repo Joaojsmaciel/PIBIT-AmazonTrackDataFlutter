@@ -16,6 +16,7 @@ import 'package:sqflite/sqflite.dart';
 
 import 'package:amazon_track_data/core/constants/firestore_paths.dart';
 import 'package:amazon_track_data/core/utils/kalman_filter.dart';
+import 'package:amazon_track_data/data/models/active_tracking_session.dart';
 import 'package:amazon_track_data/data/models/location_model.dart';
 import 'package:amazon_track_data/data/models/port_model.dart';
 import 'package:amazon_track_data/firebase_options.dart';
@@ -94,6 +95,9 @@ class BackgroundTrackingService {
   static const _kBoatId   = 'bg_boatId';
   static const _kUserName = 'bg_userName';
   static const _kUserType = 'bg_userType';
+  static const _kDeparturePoint = 'bg_departurePoint';
+  static const _kArrivalPoint = 'bg_arrivalPoint';
+  static const _kStops = 'bg_stops';
   static const _kActive   = 'bg_active';
 
   /// Inicia o serviço e persiste os parâmetros da viagem.
@@ -108,6 +112,9 @@ class BackgroundTrackingService {
     required String boatId,
     required String userName,
     required String userType,
+    required String departurePoint,
+    required String arrivalPoint,
+    required List<String> stops,
   }) async {
     // Persiste parâmetros — lidos pelo isolate no _onStart
     final prefs = await SharedPreferences.getInstance();
@@ -116,9 +123,17 @@ class BackgroundTrackingService {
     await prefs.setString(_kBoatId,   boatId);
     await prefs.setString(_kUserName, userName);
     await prefs.setString(_kUserType, userType);
+    await prefs.setString(_kDeparturePoint, departurePoint);
+    await prefs.setString(_kArrivalPoint, arrivalPoint);
+    await prefs.setStringList(_kStops, stops);
     await prefs.setBool(_kActive, true);
 
-    await _svc.startService();
+    try {
+      await _svc.startService();
+    } catch (_) {
+      await prefs.setBool(_kActive, false);
+      rethrow;
+    }
 
     // Envia evento também — redundante, mas garante compatibilidade
     await Future.delayed(const Duration(milliseconds: 1500));
@@ -129,6 +144,40 @@ class BackgroundTrackingService {
       'userName': userName,
       'userType': userType,
     });
+  }
+
+  /// Restaura a viagem ativa após a interface ser recriada.
+  ///
+  /// O SharedPreferences é a fonte de verdade porque permanece disponível
+  /// mesmo quando o processo do Flutter é removido dos aplicativos recentes.
+  /// Se o Android matou o serviço, ele também é iniciado novamente com os
+  /// parâmetros já persistidos.
+  static Future<ActiveTrackingSession?> restoreActiveSession() async {
+    final prefs = await SharedPreferences.getInstance();
+    if (!(prefs.getBool(_kActive) ?? false)) return null;
+
+    final userId = prefs.getString(_kUserId) ?? '';
+    final tripId = prefs.getString(_kTripId) ?? '';
+    final boatId = prefs.getString(_kBoatId) ?? '';
+    if (userId.isEmpty || tripId.isEmpty) {
+      await prefs.setBool(_kActive, false);
+      return null;
+    }
+
+    if (!await _svc.isRunning()) {
+      await _svc.startService();
+    }
+
+    return ActiveTrackingSession(
+      userId: userId,
+      tripId: tripId,
+      boatId: boatId,
+      userName: prefs.getString(_kUserName) ?? '',
+      userType: prefs.getString(_kUserType) ?? '',
+      departurePoint: prefs.getString(_kDeparturePoint) ?? '',
+      arrivalPoint: prefs.getString(_kArrivalPoint) ?? '',
+      stops: prefs.getStringList(_kStops) ?? const [],
+    );
   }
 
   /// Para o rastreamento, encerra o ForegroundService e limpa os parâmetros.
@@ -191,16 +240,32 @@ void _onStart(ServiceInstance service) async {
     kalman.reset(initialValue: 0.0);
     debugPrint('[BG] GPS iniciado: user=$userId trip=$tripId');
 
-    final locationSettings = AndroidSettings(
-      accuracy: LocationAccuracy.high,
-      intervalDuration: const Duration(seconds: 5),
-      distanceFilter: 0,
-      foregroundNotificationConfig: const ForegroundNotificationConfig(
-        notificationChannelName: 'Rastreamento de Embarcação',
-        notificationText: 'Coletando localização GPS…',
-        notificationTitle: 'Amazon Track Data',
-      ),
-    );
+    final LocationSettings locationSettings;
+    if (defaultTargetPlatform == TargetPlatform.android) {
+      locationSettings = AndroidSettings(
+        accuracy: LocationAccuracy.high,
+        intervalDuration: const Duration(seconds: 5),
+        distanceFilter: 0,
+        foregroundNotificationConfig: const ForegroundNotificationConfig(
+          notificationChannelName: 'Rastreamento de Embarcação',
+          notificationText: 'Coletando localização GPS…',
+          notificationTitle: 'Amazon Track Data',
+        ),
+      );
+    } else if (defaultTargetPlatform == TargetPlatform.iOS) {
+      locationSettings = AppleSettings(
+        accuracy: LocationAccuracy.high,
+        distanceFilter: 0,
+        pauseLocationUpdatesAutomatically: false,
+        allowBackgroundLocationUpdates: true,
+        showBackgroundLocationIndicator: true,
+      );
+    } else {
+      locationSettings = const LocationSettings(
+        accuracy: LocationAccuracy.high,
+        distanceFilter: 0,
+      );
+    }
 
     gpsSub = Geolocator.getPositionStream(
       locationSettings: locationSettings,
@@ -216,7 +281,7 @@ void _onStart(ServiceInstance service) async {
         boatId: boatId ?? '',
         latitude: pos.latitude,
         longitude: pos.longitude,
-        speed: pos.speed,
+        speed: smoothedSpeed,
         accuracy: pos.accuracy,
         altitude: pos.altitude,
         bearing: pos.heading,

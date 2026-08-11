@@ -3,6 +3,7 @@ import 'stop_model.dart';
 
 class RouteModel extends Equatable {
   final String id;
+  final String ownerId;
   final String name;
   final StopModel origin;
   final StopModel destination;
@@ -14,6 +15,7 @@ class RouteModel extends Equatable {
 
   const RouteModel({
     required this.id,
+    this.ownerId = '',
     required this.name,
     required this.origin,
     required this.destination,
@@ -27,6 +29,7 @@ class RouteModel extends Equatable {
   Map<String, dynamic> toMap() {
     return {
       'id': id,
+      'ownerId': ownerId,
       'name': name,
       'origin': origin.toMap(),
       'destination': destination.toMap(),
@@ -41,6 +44,7 @@ class RouteModel extends Equatable {
   factory RouteModel.fromMap(Map<String, dynamic> map) {
     return RouteModel(
       id: map['id'] ?? '',
+      ownerId: map['ownerId'] ?? '',
       name: map['name'] ?? '',
       origin: StopModel.fromMap(map['origin'] ?? {}),
       destination: StopModel.fromMap(map['destination'] ?? {}),
@@ -56,6 +60,7 @@ class RouteModel extends Equatable {
 
   RouteModel copyWith({
     String? id,
+    String? ownerId,
     String? name,
     StopModel? origin,
     StopModel? destination,
@@ -67,6 +72,7 @@ class RouteModel extends Equatable {
   }) {
     return RouteModel(
       id: id ?? this.id,
+      ownerId: ownerId ?? this.ownerId,
       name: name ?? this.name,
       origin: origin ?? this.origin,
       destination: destination ?? this.destination,
@@ -81,6 +87,7 @@ class RouteModel extends Equatable {
   @override
   List<Object?> get props => [
     id,
+    ownerId,
     name,
     origin,
     destination,

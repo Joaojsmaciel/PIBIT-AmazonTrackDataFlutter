@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:amazon_track_data/data/models/boat_model.dart';
+import 'package:amazon_track_data/data/models/route_model.dart';
 import 'package:amazon_track_data/data/models/trip_start_params.dart';
 import 'package:amazon_track_data/presentation/providers/boat_provider.dart';
 import 'package:amazon_track_data/presentation/providers/location_provider.dart';
+import 'package:amazon_track_data/presentation/providers/route_provider.dart';
 import 'package:amazon_track_data/core/extensions/context_extensions.dart';
 
 class BoatSelectionDialog extends ConsumerStatefulWidget {
@@ -17,8 +19,11 @@ class BoatSelectionDialog extends ConsumerStatefulWidget {
 class _BoatSelectionDialogState extends ConsumerState<BoatSelectionDialog> {
   int _step = 0;
   BoatModel? _selectedBoat;
+  RouteModel? _selectedRoute;
+  bool _useSavedRoute = true;
   final _departureCtrl = TextEditingController();
   final _arrivalCtrl = TextEditingController();
+  final _durationCtrl = TextEditingController(text: '60');
   final _stopCtrl = TextEditingController();
   final _stops = <String>[];
   final _formKey = GlobalKey<FormState>();
@@ -27,6 +32,7 @@ class _BoatSelectionDialogState extends ConsumerState<BoatSelectionDialog> {
   void dispose() {
     _departureCtrl.dispose();
     _arrivalCtrl.dispose();
+    _durationCtrl.dispose();
     _stopCtrl.dispose();
     super.dispose();
   }
@@ -107,6 +113,7 @@ class _BoatSelectionDialogState extends ConsumerState<BoatSelectionDialog> {
 
   // ── Passo 2: detalhes da rota ────────────────────────────────────────
   Widget _buildRouteStep() {
+    final routesAsync = ref.watch(allRoutesProvider);
     return SingleChildScrollView(
       padding: const EdgeInsets.all(20),
       child: Form(
@@ -143,63 +150,172 @@ class _BoatSelectionDialogState extends ConsumerState<BoatSelectionDialog> {
             ),
             const SizedBox(height: 20),
 
-            // Ponto de partida
-            TextFormField(
-              controller: _departureCtrl,
-              decoration: const InputDecoration(
-                labelText: 'Ponto de partida *',
-                prefixIcon: Icon(Icons.play_arrow, color: Colors.green),
-                border: OutlineInputBorder(),
-              ),
-              textCapitalization: TextCapitalization.words,
-              validator: (v) => (v == null || v.trim().isEmpty)
-                  ? 'Informe o ponto de partida'
-                  : null,
+            Wrap(
+              spacing: 8,
+              children: [
+                ChoiceChip(
+                  label: const Text('Rota habitual'),
+                  avatar: const Icon(Icons.bookmark_outline, size: 18),
+                  selected: _useSavedRoute,
+                  onSelected: (_) => setState(() => _useSavedRoute = true),
+                ),
+                ChoiceChip(
+                  label: const Text('Rota personalizada'),
+                  avatar: const Icon(Icons.edit_road, size: 18),
+                  selected: !_useSavedRoute,
+                  onSelected: (_) => setState(() {
+                    _useSavedRoute = false;
+                    _selectedRoute = null;
+                  }),
+                ),
+              ],
             ),
             const SizedBox(height: 16),
 
-            // Paradas
-            if (_stops.isNotEmpty) ...[
-              const Text('Paradas:',
-                  style: TextStyle(fontSize: 13, color: Colors.grey)),
-              const SizedBox(height: 6),
-              Wrap(
-                spacing: 6,
-                runSpacing: 4,
-                children: _stops.asMap().entries.map((e) {
-                  return Chip(
-                    label: Text(e.value,
-                        style: const TextStyle(fontSize: 12)),
-                    onDeleted: () => setState(() => _stops.removeAt(e.key)),
-                    deleteIcon: const Icon(Icons.close, size: 14),
-                    materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+            if (_useSavedRoute)
+              routesAsync.when(
+                loading: () => const Center(
+                  child: Padding(
+                    padding: EdgeInsets.all(16),
+                    child: CircularProgressIndicator(),
+                  ),
+                ),
+                error: (error, _) => Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
+                    Text('Erro ao carregar rotas: $error'),
+                    TextButton(
+                      onPressed: () => ref.invalidate(allRoutesProvider),
+                      child: const Text('Tentar novamente'),
+                    ),
+                  ],
+                ),
+                data: (routes) {
+                  if (routes.isEmpty) {
+                    return Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const Text(
+                          'Nenhuma rota habitual cadastrada. Use uma rota '
+                          'personalizada ou cadastre pelo botão + em '
+                          'Embarcações.',
+                        ),
+                        TextButton.icon(
+                          onPressed: () =>
+                              setState(() => _useSavedRoute = false),
+                          icon: const Icon(Icons.edit_road),
+                          label: const Text('Criar rota personalizada'),
+                        ),
+                      ],
+                    );
+                  }
+
+                  final sorted = [...routes]
+                    ..sort((a, b) {
+                      if (a.isFrequent == b.isFrequent) {
+                        return a.name.compareTo(b.name);
+                      }
+                      return a.isFrequent ? -1 : 1;
+                    });
+
+                  return DropdownButtonFormField<RouteModel>(
+                    value: _selectedRoute,
+                    isExpanded: true,
+                    decoration: const InputDecoration(
+                      labelText: 'Escolha a rota *',
+                      prefixIcon: Icon(Icons.route),
+                      border: OutlineInputBorder(),
+                    ),
+                    items: sorted
+                        .map(
+                          (route) => DropdownMenuItem(
+                            value: route,
+                            child: Text(
+                              '${route.isFrequent ? '★ ' : ''}'
+                              '${route.name}',
+                              overflow: TextOverflow.ellipsis,
+                            ),
+                          ),
+                        )
+                        .toList(),
+                    onChanged: (route) =>
+                        setState(() => _selectedRoute = route),
+                    validator: (route) =>
+                        route == null ? 'Selecione uma rota' : null,
                   );
-                }).toList(),
+                },
+              ),
+
+            if (!_useSavedRoute) ...[
+              TextFormField(
+                controller: _departureCtrl,
+                decoration: const InputDecoration(
+                  labelText: 'Ponto de partida *',
+                  prefixIcon: Icon(Icons.play_arrow, color: Colors.green),
+                  border: OutlineInputBorder(),
+                ),
+                textCapitalization: TextCapitalization.words,
+                validator: (v) => (v == null || v.trim().isEmpty)
+                    ? 'Informe o ponto de partida'
+                    : null,
               ),
               const SizedBox(height: 8),
-            ],
-            OutlinedButton.icon(
-              onPressed: _showAddStopDialog,
-              icon: const Icon(Icons.add_location_alt, size: 18),
-              label: const Text('Adicionar parada'),
-              style: OutlinedButton.styleFrom(
-                  visualDensity: VisualDensity.compact),
-            ),
-            const SizedBox(height: 16),
-
-            // Ponto de chegada
-            TextFormField(
-              controller: _arrivalCtrl,
-              decoration: const InputDecoration(
-                labelText: 'Ponto de chegada *',
-                prefixIcon: Icon(Icons.flag, color: Colors.red),
-                border: OutlineInputBorder(),
+              if (_stops.isNotEmpty) ...[
+                const Text('Paradas:',
+                    style: TextStyle(fontSize: 13, color: Colors.grey)),
+                const SizedBox(height: 6),
+                Wrap(
+                  spacing: 6,
+                  runSpacing: 4,
+                  children: _stops.asMap().entries.map((e) {
+                    return Chip(
+                      label: Text(e.value,
+                          style: const TextStyle(fontSize: 12)),
+                      onDeleted: () => setState(() => _stops.removeAt(e.key)),
+                      deleteIcon: const Icon(Icons.close, size: 14),
+                      materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
+                    );
+                  }).toList(),
+                ),
+                const SizedBox(height: 8),
+              ],
+              OutlinedButton.icon(
+                onPressed: _showAddStopDialog,
+                icon: const Icon(Icons.add_location_alt, size: 18),
+                label: const Text('Adicionar parada'),
+                style: OutlinedButton.styleFrom(
+                    visualDensity: VisualDensity.compact),
               ),
-              textCapitalization: TextCapitalization.words,
-              validator: (v) => (v == null || v.trim().isEmpty)
-                  ? 'Informe o ponto de chegada'
-                  : null,
-            ),
+              const SizedBox(height: 16),
+              TextFormField(
+                controller: _arrivalCtrl,
+                decoration: const InputDecoration(
+                  labelText: 'Ponto de chegada *',
+                  prefixIcon: Icon(Icons.flag, color: Colors.red),
+                  border: OutlineInputBorder(),
+                ),
+                textCapitalization: TextCapitalization.words,
+                validator: (v) => (v == null || v.trim().isEmpty)
+                    ? 'Informe o ponto de chegada'
+                    : null,
+              ),
+              const SizedBox(height: 16),
+              TextFormField(
+                controller: _durationCtrl,
+                keyboardType: TextInputType.number,
+                decoration: const InputDecoration(
+                  labelText: 'Duração estimada (minutos) *',
+                  prefixIcon: Icon(Icons.schedule),
+                  border: OutlineInputBorder(),
+                ),
+                validator: (value) {
+                  final duration = int.tryParse(value ?? '');
+                  return duration == null || duration <= 0
+                      ? 'Informe uma duração válida'
+                      : null;
+                },
+              ),
+            ],
             const SizedBox(height: 20),
 
             SizedBox(
@@ -261,13 +377,48 @@ class _BoatSelectionDialogState extends ConsumerState<BoatSelectionDialog> {
   void _startTracking() {
     if (!_formKey.currentState!.validate()) return;
     final boat = _selectedBoat!;
+    final route = _useSavedRoute ? _selectedRoute : null;
+    final routeStops = route == null
+        ? List<String>.from(_stops)
+        : route.stops
+            .where((stop) =>
+                stop.id != route.origin.id &&
+                stop.id != route.destination.id)
+            .map((stop) => _stopLabel(stop.name, stop.city))
+            .where((name) => name.isNotEmpty)
+            .toList();
     Navigator.pop(context);
 
     final params = TripStartParams(
       boatId: boat.id,
-      departurePoint: _departureCtrl.text.trim(),
-      arrivalPoint: _arrivalCtrl.text.trim(),
-      stops: List.from(_stops),
+      departurePoint: route == null
+          ? _departureCtrl.text.trim()
+          : _stopLabel(route.origin.name, route.origin.city),
+      arrivalPoint: route == null
+          ? _arrivalCtrl.text.trim()
+          : _stopLabel(route.destination.name, route.destination.city),
+      stops: routeStops,
+      estimatedDurationMinutes: route == null
+          ? int.parse(_durationCtrl.text)
+          : route.estimatedDurationMinutes,
+      originLatitude:
+          route == null || !_hasCoordinates(route.origin.latitude, route.origin.longitude)
+              ? null
+              : route.origin.latitude,
+      originLongitude:
+          route == null || !_hasCoordinates(route.origin.latitude, route.origin.longitude)
+              ? null
+              : route.origin.longitude,
+      destinationLatitude: route == null ||
+              !_hasCoordinates(
+                  route.destination.latitude, route.destination.longitude)
+          ? null
+          : route.destination.latitude,
+      destinationLongitude: route == null ||
+              !_hasCoordinates(
+                  route.destination.latitude, route.destination.longitude)
+          ? null
+          : route.destination.longitude,
     );
 
     ref.invalidate(startTrackingProvider(params));
@@ -288,5 +439,17 @@ class _BoatSelectionDialogState extends ConsumerState<BoatSelectionDialog> {
         context.showErrorSnackBar('Erro ao iniciar rastreamento: $e');
       }
     }
+  }
+
+  String _stopLabel(String name, String city) {
+    return name.trim().isNotEmpty ? name.trim() : city.trim();
+  }
+
+  bool _hasCoordinates(double latitude, double longitude) {
+    return latitude >= -90 &&
+        latitude <= 90 &&
+        longitude >= -180 &&
+        longitude <= 180 &&
+        (latitude != 0 || longitude != 0);
   }
 }

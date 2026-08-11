@@ -4,11 +4,30 @@ import 'package:go_router/go_router.dart';
 import 'package:amazon_track_data/data/models/boat_model.dart';
 import 'package:amazon_track_data/presentation/providers/boat_provider.dart';
 
-class BoatListScreen extends ConsumerWidget {
+class BoatListScreen extends ConsumerStatefulWidget {
   const BoatListScreen({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<BoatListScreen> createState() => _BoatListScreenState();
+}
+
+class _BoatListScreenState extends ConsumerState<BoatListScreen> {
+  bool _showCreateActions = false;
+
+  void _toggleCreateActions() {
+    setState(() => _showCreateActions = !_showCreateActions);
+  }
+
+  Future<void> _openRegistration(String path) async {
+    setState(() => _showCreateActions = false);
+    await context.push(path);
+    if (mounted) {
+      ref.invalidate(userBoatsProvider);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final boats = ref.watch(userBoatsProvider);
 
     return Scaffold(
@@ -31,9 +50,9 @@ class BoatListScreen extends ConsumerWidget {
                   const Text('Nenhuma embarcação cadastrada'),
                   const SizedBox(height: 16),
                   ElevatedButton.icon(
-                    onPressed: () => context.go('/boat-registration'),
+                    onPressed: _toggleCreateActions,
                     icon: const Icon(Icons.add),
-                    label: const Text('Adicionar Embarcação'),
+                    label: const Text('Adicionar'),
                   ),
                 ],
               ),
@@ -137,9 +156,37 @@ class BoatListScreen extends ConsumerWidget {
           ),
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () => context.go('/boat-registration'),
-        child: const Icon(Icons.add),
+      floatingActionButton: Column(
+        mainAxisSize: MainAxisSize.min,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          if (_showCreateActions) ...[
+            FloatingActionButton.extended(
+              heroTag: 'register_route',
+              onPressed: () => _openRegistration('/route-registration'),
+              icon: const Icon(Icons.route),
+              label: const Text('Cadastrar rota'),
+            ),
+            const SizedBox(height: 10),
+            FloatingActionButton.extended(
+              heroTag: 'register_boat',
+              onPressed: () => _openRegistration('/boat-registration'),
+              icon: const Icon(Icons.directions_boat),
+              label: const Text('Cadastrar embarcação'),
+            ),
+            const SizedBox(height: 12),
+          ],
+          FloatingActionButton(
+            heroTag: 'create_menu',
+            onPressed: _toggleCreateActions,
+            tooltip: _showCreateActions ? 'Fechar opções' : 'Cadastrar',
+            child: AnimatedRotation(
+              turns: _showCreateActions ? 0.125 : 0,
+              duration: const Duration(milliseconds: 220),
+              child: Icon(_showCreateActions ? Icons.close : Icons.add),
+            ),
+          ),
+        ],
       ),
     );
   }
