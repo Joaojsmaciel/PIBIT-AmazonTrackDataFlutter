@@ -1,0 +1,109 @@
+name: CI/CD
+
+on:
+  push:
+    branches: [develop, release, main]
+  pull_request:
+    branches: [develop, release, main]
+  workflow_dispatch:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  app:
+    name: App Flutter (analyze, test, build)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          cache: true
+
+      - name: Dependências
+        run: flutter pub get
+
+      - name: Análise estática
+        run: flutter analyze --no-fatal-infos --no-fatal-warnings
+
+      - name: Testes unitários e de widget
+        run: |
+          if [ -d test ]; then
+            flutter test --coverage
+          else
+            echo "Pasta test/ inexistente; etapa ignorada."
+          fi
+
+      - uses: actions/setup-java@v4
+        if: github.event_name == 'push' && (github.ref_name == 'release' || github.ref_name == 'main')
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Build do APK release
+        if: github.event_name == 'push' && (github.ref_name == 'release' || github.ref_name == 'main')
+        run: flutter build apk --release
+
+      - uses: actions/upload-artifact@v4
+        if: github.event_name == 'push' && (github.ref_name == 'release' || github.ref_name == 'main')
+        with:
+          name: amazon-track-apk-${{ github.ref_name }}
+          path: build/app/outputs/flutter-apk/app-release.apk
+          retention-days: 30
+
+  website:
+    name: Site (build Vite)
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: website
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: website/package-lock.json
+
+      - run: npm ci
+      - run: npm run build
+
+  release:
+    name: Tag e GitHub Release
+    needs: [app, website]
+    if: github.event_name == 'push' && github.ref_name == 'main'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Versão do pubspec.yaml
+        id: version
+        run: |
+          v=$(grep -E '^version:' pubspec.yaml | sed -E 's/version:[[:space:]]*([0-9]+\.[0-9]+\.[0-9]+).*/\1/')
+          echo "tag=v$v" >> "$GITHUB_OUTPUT"
+          if git rev-parse "v$v" >/dev/null 2>&1; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+          else
+            echo "exists=false" >> "$GITHUB_OUTPUT"
+          fi
+
+      - uses: actions/download-artifact@v4
+        if: steps.version.outputs.exists == 'false'
+        with:
+          name: amazon-track-apk-main
+
+      - uses: softprops/action-gh-release@v2
+        if: steps.version.outputs.exists == 'false'
+        with:
+          tag_name: ${{ steps.version.outputs.tag }}
+          name: Amazon Track ${{ steps.version.outputs.tag }}
+          generate_release_notes: true
+          files: app-release.apk
