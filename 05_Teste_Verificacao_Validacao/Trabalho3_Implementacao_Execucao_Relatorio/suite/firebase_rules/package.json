@@ -1,0 +1,14 @@
+{
+  "name": "atd-firebase-rules-tests",
+  "private": true,
+  "type": "module",
+  "description": "PROC-02 — regras Firestore/Storage do AmazonTrackData no Firebase Emulator",
+  "scripts": {
+    "test": "firebase emulators:exec --only firestore,storage --project demo-atd \"node --test --test-reporter=spec --test-reporter-destination=stdout --test-reporter=junit --test-reporter-destination=resultado-regras.xml rules.test.mjs\""
+  },
+  "devDependencies": {
+    "@firebase/rules-unit-testing": "^4.0.1",
+    "firebase": "^11.10.0",
+    "firebase-tools": "^14.0.0"
+  }
+}

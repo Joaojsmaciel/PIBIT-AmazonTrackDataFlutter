@@ -1,0 +1,26 @@
+﻿
+Arquivo                         Total Pass Fail Skip
+-------                         ----- ---- ---- ----
+boat_model_test.dart               12   12    0    0
+location_model_test.dart            9    9    0    0
+route_model_test.dart              12   12    0    0
+stop_model_test.dart               11   11    0    0
+trip_summary_test.dart             11   11    0    0
+user_model_test.dart               11   11    0    0
+validators_test.dart               39   39    0    0
+auth_repository_test.dart          11   11    0    0
+geofence_service_test.dart         19   19    0    0
+local_database_test.dart            9    9    0    0
+location_repository_test.dart       8    8    0    0
+modelos_ct_test.dart               22   22    0    0
+validators_ct_test.dart            20   20    0    0
+offline_sync_service_test.dart     16   16    0    0
+inspecao_configuracao_test.dart     8    8    0    0
+telas_test.dart                    16   16    0    0
+
+
+TOTAL: 234  pass=234  fail=0  skip=0
+
+FALHAS:
+
+IGNORADOS:

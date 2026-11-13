@@ -1,0 +1,1122 @@
+﻿Resolving dependencies...
+Downloading packages...
+  _fe_analyzer_shared 85.0.0 (111.0.0 available)
+  _flutterfire_internals 1.3.59 (1.3.79 available)
+  analyzer 7.6.0 (14.7.0 available)
+  analyzer_plugin 0.13.4 (0.14.20 available)
+  async 2.13.0 (2.13.1 available)
+  build 2.5.4 (5.0.0 available)
+  build_config 1.1.2 (1.4.0 available)
+  build_daemon 4.1.1 (4.1.7 available)
+  build_resolvers 2.5.4 (3.0.4 available)
+  build_runner 2.5.4 (2.17.1 available)
+  build_runner_core 9.1.2 (9.3.2 available)
+  built_collection 5.1.1 (6.0.0 available)
+  built_value 8.12.4 (8.13.0 available)
+  cached_network_image 3.4.1 (4.0.6 available)
+  cached_network_image_platform_interface 4.1.1 (5.0.3 available)
+  cached_network_image_web 1.3.1 (2.0.4 available)
+  clock 1.1.2 (1.1.3 available)
+  cloud_firestore 5.6.12 (7.1.0 available)
+  cloud_firestore_platform_interface 6.6.12 (8.1.0 available)
+  cloud_firestore_web 4.4.12 (5.8.0 available)
+  code_assets 1.0.0 (2.1.0 available)
+  code_builder 4.11.1 (4.13.0 available)
+  connectivity_plus 5.0.2 (7.3.2 available)
+  connectivity_plus_platform_interface 1.2.4 (2.1.0 available)
+  cross_file 0.3.5+2 (0.4.0 available)
+  crypto 3.0.7 (3.0.8 available)
+  cupertino_icons 1.0.8 (2.0.0 available)
+  custom_lint_core 0.7.5 (0.8.2 available)
+  custom_lint_visitor 1.0.0+7.7.0 (1.0.0+9.0.0 available)
+  dart_style 3.1.1 (3.1.14 available)
+  dbus 0.7.12 (0.8.0 available)
+  dio 5.9.2 (5.11.1 available)
+  dio_web_adapter 2.1.2 (2.2.2 available)
+  equatable 2.0.8 (3.0.0 available)
+  file_selector_linux 0.9.4 (0.9.4+1 available)
+  file_selector_macos 0.9.5 (0.9.5+2 available)
+  file_selector_windows 0.9.3+5 (0.9.3+6 available)
+  firebase_auth 5.7.0 (7.0.1 available)
+  firebase_auth_platform_interface 7.7.3 (9.1.2 available)
+  firebase_auth_web 5.15.3 (6.3.2 available)
+  firebase_core 3.15.2 (5.1.0 available)
+  firebase_core_platform_interface 6.0.3 (8.1.1 available)
+  firebase_core_web 2.24.1 (4.1.0 available)
+  firebase_storage 12.4.10 (14.0.1 available)
+  firebase_storage_platform_interface 5.2.10 (6.0.9 available)
+  firebase_storage_web 3.10.17 (3.11.15 available)
+  flutter_cache_manager 3.4.1 (3.4.8 available)
+  flutter_lints 2.0.3 (6.0.0 available)
+  flutter_local_notifications 17.2.4 (22.3.3 available)
+  flutter_local_notifications_linux 4.0.1 (8.0.2 available)
+  flutter_local_notifications_platform_interface 7.2.0 (12.2.0 available)
+  flutter_map 7.0.2 (8.3.2 available)
+  flutter_plugin_android_lifecycle 2.0.33 (2.0.35 available)
+  flutter_riverpod 2.6.1 (3.4.3 available)
+  frontend_server_client 4.0.0 (4.2.0 available)
+  geolocator 11.1.0 (14.1.2 available)
+  geolocator_android 4.6.2 (5.2.1 available)
+  geolocator_apple 2.3.13 (2.4.3 available)
+  geolocator_platform_interface 4.2.6 (4.4.1 available)
+  geolocator_web 3.0.0 (4.1.4 available)
+  get_it 7.7.0 (9.3.0 available)
+  glob 2.1.3 (2.2.0 available)
+  go_router 14.8.1 (18.1.2 available)
+  google_sign_in 6.3.0 (7.2.0 available)
+  google_sign_in_android 6.2.1 (7.2.18 available)
+  google_sign_in_ios 5.9.0 (6.3.8 available)
+  google_sign_in_platform_interface 2.5.0 (3.1.0 available)
+  google_sign_in_web 0.12.4+4 (1.1.3 available)
+  hooks 1.0.2 (2.2.0 available)
+  http_multi_server 3.2.2 (3.2.3 available)
+  image_picker 1.2.1 (1.2.4 available)
+  image_picker_android 0.8.13+14 (0.8.13+25 available)
+  image_picker_ios 0.8.13+6 (0.8.13+14 available)
+  image_picker_platform_interface 2.11.1 (2.11.2 available)
+  intl 0.20.2 (0.20.3 available)
+  io 1.0.5 (1.1.0 available)
+  js 0.6.7 (0.7.2 available)
+  json_annotation 4.11.0 (4.12.0 available)
+  latlong2 0.9.1 (0.10.1 available)
+  lints 2.1.1 (6.1.0 available)
+  logger 2.7.0 (2.8.0 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  mgrs_dart 2.0.0 (3.0.0 available)
+  mime 2.0.0 (2.1.0 available)
+  native_toolchain_c 0.17.6 (0.19.5 available)
+  nm 0.5.0 (0.6.0 available)
+  objective_c 9.3.0 (9.6.3 available)
+  octo_image 2.1.0 (2.1.3 available)
+  package_config 2.2.0 (3.0.0 available)
+  path_provider 2.1.5 (2.1.6 available)
+  path_provider_android 2.2.22 (2.3.1 available)
+  path_provider_linux 2.2.1 (2.2.2 available)
+  path_provider_platform_interface 2.1.2 (2.1.3 available)
+  permission_handler 11.4.0 (13.0.2 available)
+  permission_handler_android 12.1.0 (14.1.1 available)
+  permission_handler_apple 9.4.7 (9.6.5 available)
+  permission_handler_html 0.1.3+5 (0.1.4+1 available)
+  permission_handler_platform_interface 4.3.0 (4.4.1 available)
+  permission_handler_windows 0.2.1 (0.2.3 available)
+  petitparser 7.0.2 (7.1.0 available)
+  platform 3.1.6 (3.2.0 available)
+  pool 1.5.2 (1.5.3 available)
+  process 5.0.5 (5.0.6 available)
+  proj4dart 2.1.0 (3.0.0 available)
+  pub_semver 2.2.0 (2.2.1 available)
+  pubspec_parse 1.5.0 (1.7.0 available)
+  riverpod 2.6.1 (3.4.3 available)
+  riverpod_annotation 2.6.1 (4.0.7 available)
+  riverpod_generator 2.6.5 (4.0.9 available)
+  shared_preferences 2.5.4 (2.5.6 available)
+  shared_preferences_android 2.4.21 (2.5.4 available)
+  shared_preferences_foundation 2.5.6 (2.6.1 available)
+  shared_preferences_platform_interface 2.4.1 (2.4.2 available)
+  shelf 1.4.2 (1.4.3 available)
+  source_gen 2.0.0 (4.3.1 available)
+  sqflite 2.4.2 (2.4.5 available)
+  sqflite_android 2.4.2+3 (2.4.5 available)
+  sqflite_common 2.5.13+1 (2.5.14 available)
+  sqflite_common_ffi 2.4.3 (2.4.5 available)
+  sqflite_darwin 2.4.2 (2.4.4+1 available)
+  sqflite_platform_interface 2.4.0 (2.4.3 available)
+  sqlite3 3.5.2 (3.8.0 available)
+  stack_trace 1.12.1 (1.12.2 available)
+  stream_transform 2.1.1 (2.1.2 available)
+  synchronized 3.4.2 (3.5.0 available)
+  test_api 0.7.12 (0.7.15 available)
+  timezone 0.9.4 (0.11.2 available)
+  unicode 0.3.1 (1.1.9 available)
+  uuid 4.5.3 (4.6.0 available)
+  vector_math 2.4.3 (2.4.4 available)
+  vm_service 15.0.2 (15.4.0 available)
+  web 1.1.1 (1.1.2 available)
+  webdriver 3.1.0 (3.2.0 available)
+  xml 6.6.1 (7.1.0 available)
+  yaml 3.1.3 (3.1.4 available)
+Got dependencies!
+135 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+{"protocolVersion":"0.1.1","runnerVersion":null,"pid":21452,"type":"start","time":0}
+{"suite":{"id":0,"platform":"vm","path":"C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/boat_model_test.dart"},"type":"suite","time":0}
+{"test":{"id":1,"name":"loading C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/boat_model_test.dart","suiteID":0,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":0}
+{"suite":{"id":2,"platform":"vm","path":"C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/location_model_test.dart"},"type":"suite","time":2}
+{"test":{"id":3,"name":"loading C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/location_model_test.dart","suiteID":2,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":2}
+{"suite":{"id":4,"platform":"vm","path":"C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/route_model_test.dart"},"type":"suite","time":3}
+{"test":{"id":5,"name":"loading C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/route_model_test.dart","suiteID":4,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":3}
+{"suite":{"id":6,"platform":"vm","path":"C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/stop_model_test.dart"},"type":"suite","time":3}
+{"test":{"id":7,"name":"loading C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/stop_model_test.dart","suiteID":6,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":3}
+{"suite":{"id":8,"platform":"vm","path":"C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/trip_summary_test.dart"},"type":"suite","time":3}
+{"test":{"id":9,"name":"loading C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/trip_summary_test.dart","suiteID":8,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":3}
+{"suite":{"id":10,"platform":"vm","path":"C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/user_model_test.dart"},"type":"suite","time":3}
+{"test":{"id":11,"name":"loading C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/user_model_test.dart","suiteID":10,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":4}
+{"count":16,"time":5,"type":"allSuites"}
+{"testID":1,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":1170}
+{"group":{"id":12,"suiteID":0,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":12,"line":null,"column":null,"url":null},"type":"group","time":1171}
+{"group":{"id":13,"suiteID":0,"parentID":12,"name":"BoatModel.toMap","metadata":{"skip":false,"skipReason":null},"testCount":3,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1172}
+{"test":{"id":14,"name":"BoatModel.toMap Serializa todos os campos corretamente","suiteID":0,"groupIDs":[12,13],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1172}
+{"testID":14,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1189}
+{"test":{"id":15,"name":"BoatModel.toMap photoUrl serializado como null quando não fornecido","suiteID":0,"groupIDs":[12,13],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1194}
+{"testID":15,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1196}
+{"test":{"id":16,"name":"BoatModel.toMap photoUrl serializado quando fornecido","suiteID":0,"groupIDs":[12,13],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1196}
+{"testID":16,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1198}
+{"group":{"id":17,"suiteID":0,"parentID":12,"name":"BoatModel.fromMap","metadata":{"skip":false,"skipReason":null},"testCount":4,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1199}
+{"test":{"id":18,"name":"BoatModel.fromMap Desserializa todos os campos corretamente","suiteID":0,"groupIDs":[12,17],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1199}
+{"testID":18,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1201}
+{"test":{"id":19,"name":"BoatModel.fromMap Listas routes e routeCities vazias quando ausentes no mapa","suiteID":0,"groupIDs":[12,17],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1201}
+{"testID":19,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1202}
+{"test":{"id":20,"name":"BoatModel.fromMap capacity pode ser null","suiteID":0,"groupIDs":[12,17],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1203}
+{"testID":20,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1204}
+{"test":{"id":21,"name":"BoatModel.fromMap isActive padrão true quando ausente","suiteID":0,"groupIDs":[12,17],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1204}
+{"testID":21,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1206}
+{"group":{"id":22,"suiteID":0,"parentID":12,"name":"BoatModel round-trip (toMap → fromMap)","metadata":{"skip":false,"skipReason":null},"testCount":1,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1206}
+{"test":{"id":23,"name":"BoatModel round-trip (toMap → fromMap) Mantém igualdade após serialização e desserialização","suiteID":0,"groupIDs":[12,22],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1206}
+{"testID":23,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1209}
+{"group":{"id":24,"suiteID":0,"parentID":12,"name":"BoatModel.copyWith","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1209}
+{"test":{"id":25,"name":"BoatModel.copyWith Altera apenas o campo indicado","suiteID":0,"groupIDs":[12,24],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1209}
+{"testID":25,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1211}
+{"test":{"id":26,"name":"BoatModel.copyWith isActive pode ser alterado para false","suiteID":0,"groupIDs":[12,24],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1211}
+{"testID":26,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1213}
+{"group":{"id":27,"suiteID":0,"parentID":12,"name":"BoatModel Equatable","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1213}
+{"test":{"id":28,"name":"BoatModel Equatable Dois modelos idênticos são iguais","suiteID":0,"groupIDs":[12,27],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1213}
+{"testID":28,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1215}
+{"test":{"id":29,"name":"BoatModel Equatable Modelos com id diferente não são iguais","suiteID":0,"groupIDs":[12,27],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1215}
+{"testID":29,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1217}
+{"suite":{"id":30,"platform":"vm","path":"C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart"},"type":"suite","time":1235}
+{"test":{"id":31,"name":"loading C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart","suiteID":30,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":1235}
+{"testID":3,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":1263}
+{"group":{"id":32,"suiteID":2,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":9,"line":null,"column":null,"url":null},"type":"group","time":1264}
+{"group":{"id":33,"suiteID":2,"parentID":32,"name":"LocationModel.toMap","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1264}
+{"test":{"id":34,"name":"LocationModel.toMap Serializa todos os campos corretamente","suiteID":2,"groupIDs":[32,33],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1264}
+{"testID":34,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1280}
+{"test":{"id":35,"name":"LocationModel.toMap altitude e bearing serializados como null quando ausentes","suiteID":2,"groupIDs":[32,33],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1280}
+{"testID":35,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1282}
+{"group":{"id":36,"suiteID":2,"parentID":32,"name":"LocationModel.fromMap","metadata":{"skip":false,"skipReason":null},"testCount":4,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1283}
+{"test":{"id":37,"name":"LocationModel.fromMap Desserializa todos os campos corretamente","suiteID":2,"groupIDs":[32,36],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1283}
+{"testID":37,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1285}
+{"test":{"id":38,"name":"LocationModel.fromMap Aceita valores inteiros para campos double (cast automático)","suiteID":2,"groupIDs":[32,36],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1285}
+{"testID":38,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1286}
+{"test":{"id":39,"name":"LocationModel.fromMap altitude e bearing nulos quando ausentes no mapa","suiteID":2,"groupIDs":[32,36],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1286}
+{"testID":39,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1288}
+{"test":{"id":40,"name":"LocationModel.fromMap boatId padrão string vazia quando ausente","suiteID":2,"groupIDs":[32,36],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1288}
+{"testID":40,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1290}
+{"group":{"id":41,"suiteID":2,"parentID":32,"name":"LocationModel round-trip (toMap → fromMap)","metadata":{"skip":false,"skipReason":null},"testCount":1,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1290}
+{"test":{"id":42,"name":"LocationModel round-trip (toMap → fromMap) Mantém igualdade após serialização e desserialização","suiteID":2,"groupIDs":[32,41],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1290}
+{"testID":42,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1293}
+{"group":{"id":43,"suiteID":2,"parentID":32,"name":"LocationModel Equatable","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1293}
+{"test":{"id":44,"name":"LocationModel Equatable Dois modelos idênticos são iguais","suiteID":2,"groupIDs":[32,43],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1293}
+{"testID":44,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1295}
+{"test":{"id":45,"name":"LocationModel Equatable Modelos com userId diferente não são iguais","suiteID":2,"groupIDs":[32,43],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1295}
+{"testID":45,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1297}
+{"suite":{"id":46,"platform":"vm","path":"C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/auth_repository_test.dart"},"type":"suite","time":1312}
+{"test":{"id":47,"name":"loading C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/auth_repository_test.dart","suiteID":46,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":1312}
+{"testID":5,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":1353}
+{"group":{"id":48,"suiteID":4,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":12,"line":null,"column":null,"url":null},"type":"group","time":1353}
+{"group":{"id":49,"suiteID":4,"parentID":48,"name":"RouteModel.toMap","metadata":{"skip":false,"skipReason":null},"testCount":3,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1354}
+{"test":{"id":50,"name":"RouteModel.toMap Serializa campos escalares corretamente","suiteID":4,"groupIDs":[48,49],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1354}
+{"testID":50,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1369}
+{"test":{"id":51,"name":"RouteModel.toMap Serializa origin e destination como mapas aninhados","suiteID":4,"groupIDs":[48,49],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1369}
+{"testID":51,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1371}
+{"test":{"id":52,"name":"RouteModel.toMap Serializa lista de stops corretamente","suiteID":4,"groupIDs":[48,49],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1371}
+{"testID":52,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1373}
+{"group":{"id":53,"suiteID":4,"parentID":48,"name":"RouteModel.fromMap","metadata":{"skip":false,"skipReason":null},"testCount":4,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1373}
+{"test":{"id":54,"name":"RouteModel.fromMap Desserializa todos os campos corretamente","suiteID":4,"groupIDs":[48,53],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1373}
+{"testID":54,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1376}
+{"test":{"id":55,"name":"RouteModel.fromMap Desserializa origin e destination como StopModel","suiteID":4,"groupIDs":[48,53],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1376}
+{"testID":55,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1378}
+{"test":{"id":56,"name":"RouteModel.fromMap Desserializa lista de stops como List<StopModel>","suiteID":4,"groupIDs":[48,53],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1379}
+{"testID":56,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1381}
+{"test":{"id":57,"name":"RouteModel.fromMap Lista de stops vazia quando ausente no mapa","suiteID":4,"groupIDs":[48,53],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1381}
+{"testID":57,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1383}
+{"group":{"id":58,"suiteID":4,"parentID":48,"name":"RouteModel round-trip (toMap → fromMap)","metadata":{"skip":false,"skipReason":null},"testCount":1,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1383}
+{"test":{"id":59,"name":"RouteModel round-trip (toMap → fromMap) Mantém igualdade após serialização e desserialização","suiteID":4,"groupIDs":[48,58],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1383}
+{"testID":59,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1385}
+{"group":{"id":60,"suiteID":4,"parentID":48,"name":"RouteModel.copyWith","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1385}
+{"test":{"id":61,"name":"RouteModel.copyWith Altera apenas o campo indicado","suiteID":4,"groupIDs":[48,60],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1385}
+{"testID":61,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1387}
+{"test":{"id":62,"name":"RouteModel.copyWith isFrequent pode ser alterado para true","suiteID":4,"groupIDs":[48,60],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1387}
+{"testID":62,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1388}
+{"group":{"id":63,"suiteID":4,"parentID":48,"name":"RouteModel Equatable","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1388}
+{"test":{"id":64,"name":"RouteModel Equatable Dois modelos idênticos são iguais","suiteID":4,"groupIDs":[48,63],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1388}
+{"testID":64,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1389}
+{"test":{"id":65,"name":"RouteModel Equatable Modelos com id diferente não são iguais","suiteID":4,"groupIDs":[48,63],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1390}
+{"testID":65,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1391}
+{"suite":{"id":66,"platform":"vm","path":"C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart"},"type":"suite","time":1406}
+{"test":{"id":67,"name":"loading C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart","suiteID":66,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":1406}
+{"testID":7,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":1546}
+{"group":{"id":68,"suiteID":6,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":11,"line":null,"column":null,"url":null},"type":"group","time":1546}
+{"group":{"id":69,"suiteID":6,"parentID":68,"name":"StopModel.toMap","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1546}
+{"test":{"id":70,"name":"StopModel.toMap Serializa todos os campos corretamente","suiteID":6,"groupIDs":[68,69],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1546}
+{"testID":70,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1568}
+{"test":{"id":71,"name":"StopModel.toMap Serializa cada StopType como string do nome do enum","suiteID":6,"groupIDs":[68,69],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1568}
+{"testID":71,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1570}
+{"group":{"id":72,"suiteID":6,"parentID":68,"name":"StopModel.fromMap","metadata":{"skip":false,"skipReason":null},"testCount":5,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1570}
+{"test":{"id":73,"name":"StopModel.fromMap Desserializa todos os campos corretamente","suiteID":6,"groupIDs":[68,72],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1571}
+{"testID":73,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1573}
+{"test":{"id":74,"name":"StopModel.fromMap Usa valor padrão \"AM\" para state quando ausente","suiteID":6,"groupIDs":[68,72],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1573}
+{"testID":74,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1574}
+{"test":{"id":75,"name":"StopModel.fromMap Usa radius 500.0 quando ausente no mapa","suiteID":6,"groupIDs":[68,72],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1575}
+{"testID":75,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1576}
+{"test":{"id":76,"name":"StopModel.fromMap Interpreta type desconhecido como StopType.outro","suiteID":6,"groupIDs":[68,72],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1576}
+{"testID":76,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1578}
+{"test":{"id":77,"name":"StopModel.fromMap latitude e longitude aceitam int no mapa (cast para double)","suiteID":6,"groupIDs":[68,72],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1578}
+{"testID":77,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1580}
+{"group":{"id":78,"suiteID":6,"parentID":68,"name":"StopModel round-trip (toMap → fromMap)","metadata":{"skip":false,"skipReason":null},"testCount":1,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1580}
+{"test":{"id":79,"name":"StopModel round-trip (toMap → fromMap) Mantém igualdade após serialização e desserialização","suiteID":6,"groupIDs":[68,78],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1581}
+{"testID":79,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1583}
+{"group":{"id":80,"suiteID":6,"parentID":68,"name":"StopModel.copyWith","metadata":{"skip":false,"skipReason":null},"testCount":1,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1583}
+{"test":{"id":81,"name":"StopModel.copyWith Altera apenas o campo indicado","suiteID":6,"groupIDs":[68,80],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1583}
+{"testID":81,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1585}
+{"group":{"id":82,"suiteID":6,"parentID":68,"name":"StopModel Equatable","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1585}
+{"test":{"id":83,"name":"StopModel Equatable Dois modelos idênticos são iguais","suiteID":6,"groupIDs":[68,82],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1585}
+{"testID":83,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1586}
+{"test":{"id":84,"name":"StopModel Equatable Modelos com id diferente não são iguais","suiteID":6,"groupIDs":[68,82],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1587}
+{"testID":84,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1588}
+{"suite":{"id":85,"platform":"vm","path":"C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart"},"type":"suite","time":1606}
+{"test":{"id":86,"name":"loading C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart","suiteID":85,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":1607}
+{"testID":9,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":1646}
+{"group":{"id":87,"suiteID":8,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":11,"line":null,"column":null,"url":null},"type":"group","time":1646}
+{"group":{"id":88,"suiteID":8,"parentID":87,"name":"TripSummary.duration","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1647}
+{"test":{"id":89,"name":"TripSummary.duration Calcula duração corretamente como Duration","suiteID":8,"groupIDs":[87,88],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1647}
+{"testID":11,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":1652}
+{"group":{"id":90,"suiteID":10,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":11,"line":null,"column":null,"url":null},"type":"group","time":1652}
+{"group":{"id":91,"suiteID":10,"parentID":90,"name":"UserModel.toMap","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1652}
+{"test":{"id":92,"name":"UserModel.toMap Serializa todos os campos corretamente","suiteID":10,"groupIDs":[90,91],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1652}
+{"testID":89,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1661}
+{"test":{"id":93,"name":"TripSummary.duration Duração zero quando start e end são iguais","suiteID":8,"groupIDs":[87,88],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1662}
+{"testID":93,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1664}
+{"group":{"id":94,"suiteID":8,"parentID":87,"name":"TripSummary.avgSpeedKmh","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1664}
+{"test":{"id":95,"name":"TripSummary.avgSpeedKmh Converte m/s para km/h corretamente (5 m/s = 18 km/h)","suiteID":8,"groupIDs":[87,94],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1664}
+{"testID":95,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1666}
+{"test":{"id":96,"name":"TripSummary.avgSpeedKmh Velocidade zero resulta em 0 km/h","suiteID":8,"groupIDs":[87,94],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1667}
+{"testID":92,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1668}
+{"test":{"id":97,"name":"UserModel.toMap Serializa userType barqueiro como \"barqueiro\"","suiteID":10,"groupIDs":[90,91],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1668}
+{"testID":96,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1668}
+{"group":{"id":98,"suiteID":8,"parentID":87,"name":"TripSummary.totalDistanceKm","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1669}
+{"test":{"id":99,"name":"TripSummary.totalDistanceKm Converte metros para km (36 000 m = 36 km)","suiteID":8,"groupIDs":[87,98],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1669}
+{"testID":97,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1669}
+{"group":{"id":100,"suiteID":10,"parentID":90,"name":"UserModel.fromMap","metadata":{"skip":false,"skipReason":null},"testCount":3,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1670}
+{"test":{"id":101,"name":"UserModel.fromMap Desserializa todos os campos corretamente","suiteID":10,"groupIDs":[90,100],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1670}
+{"testID":99,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1670}
+{"test":{"id":102,"name":"TripSummary.totalDistanceKm 1 000 m = 1 km","suiteID":8,"groupIDs":[87,98],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1670}
+{"testID":101,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1671}
+{"test":{"id":103,"name":"UserModel.fromMap Usa valores padrão quando campos estão ausentes no mapa","suiteID":10,"groupIDs":[90,100],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1672}
+{"testID":102,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1672}
+{"group":{"id":104,"suiteID":8,"parentID":87,"name":"TripSummary.startDate e endDate","metadata":{"skip":false,"skipReason":null},"testCount":3,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1672}
+{"test":{"id":105,"name":"TripSummary.startDate e endDate startDate corresponde ao timestamp de início","suiteID":8,"groupIDs":[87,104],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1672}
+{"testID":103,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1673}
+{"test":{"id":106,"name":"UserModel.fromMap Interpreta userType desconhecido como passageiro","suiteID":10,"groupIDs":[90,100],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1673}
+{"testID":106,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1675}
+{"group":{"id":107,"suiteID":10,"parentID":90,"name":"UserModel round-trip (toMap → fromMap)","metadata":{"skip":false,"skipReason":null},"testCount":1,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1675}
+{"test":{"id":108,"name":"UserModel round-trip (toMap → fromMap) Mantém igualdade após serialização e desserialização","suiteID":10,"groupIDs":[90,107],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1675}
+{"testID":105,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1675}
+{"test":{"id":109,"name":"TripSummary.startDate e endDate endDate corresponde ao timestamp de fim","suiteID":8,"groupIDs":[87,104],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1676}
+{"testID":108,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1677}
+{"testID":109,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1678}
+{"group":{"id":110,"suiteID":10,"parentID":90,"name":"UserModel.copyWith","metadata":{"skip":false,"skipReason":null},"testCount":3,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1678}
+{"test":{"id":111,"name":"UserModel.copyWith Cria nova instância com campo alterado","suiteID":10,"groupIDs":[90,110],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1678}
+{"test":{"id":112,"name":"TripSummary.startDate e endDate endDate é depois de startDate","suiteID":8,"groupIDs":[87,104],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1678}
+{"testID":111,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1680}
+{"test":{"id":113,"name":"UserModel.copyWith Instância original não é modificada","suiteID":10,"groupIDs":[90,110],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1680}
+{"testID":112,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1680}
+{"group":{"id":114,"suiteID":8,"parentID":87,"name":"TripSummary campos opcionais","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1681}
+{"test":{"id":115,"name":"TripSummary campos opcionais departurePoint e arrivalPoint padrão string vazia","suiteID":8,"groupIDs":[87,114],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1681}
+{"testID":113,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1682}
+{"test":{"id":116,"name":"UserModel.copyWith isActive pode ser alterado para false","suiteID":10,"groupIDs":[90,110],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1682}
+{"testID":115,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1682}
+{"test":{"id":117,"name":"TripSummary campos opcionais stops padrão lista vazia","suiteID":8,"groupIDs":[87,114],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1682}
+{"testID":116,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1683}
+{"group":{"id":118,"suiteID":10,"parentID":90,"name":"UserModel Equatable","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1684}
+{"test":{"id":119,"name":"UserModel Equatable Dois modelos com mesmos dados são iguais","suiteID":10,"groupIDs":[90,118],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1684}
+{"testID":117,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1685}
+{"testID":119,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1686}
+{"test":{"id":120,"name":"UserModel Equatable Modelos com uid diferente não são iguais","suiteID":10,"groupIDs":[90,118],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1686}
+{"testID":120,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1688}
+{"testID":31,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":1704}
+{"group":{"id":121,"suiteID":30,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":39,"line":null,"column":null,"url":null},"type":"group","time":1704}
+{"group":{"id":122,"suiteID":30,"parentID":121,"name":"isValidCPF","metadata":{"skip":false,"skipReason":null},"testCount":6,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1704}
+{"test":{"id":123,"name":"isValidCPF CPF válido retorna true","suiteID":30,"groupIDs":[121,122],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1704}
+{"suite":{"id":124,"platform":"vm","path":"C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/location_repository_test.dart"},"type":"suite","time":1710}
+{"test":{"id":125,"name":"loading C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/location_repository_test.dart","suiteID":124,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":1710}
+{"suite":{"id":126,"platform":"vm","path":"C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/modelos_ct_test.dart"},"type":"suite","time":1714}
+{"test":{"id":127,"name":"loading C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/modelos_ct_test.dart","suiteID":126,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":1714}
+{"testID":123,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1726}
+{"test":{"id":128,"name":"isValidCPF CPF com todos os dígitos iguais retorna false","suiteID":30,"groupIDs":[121,122],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1726}
+{"testID":128,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1727}
+{"test":{"id":129,"name":"isValidCPF CPF com comprimento diferente de 11 dígitos retorna false","suiteID":30,"groupIDs":[121,122],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1728}
+{"testID":129,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1729}
+{"test":{"id":130,"name":"isValidCPF CPF vazio retorna false","suiteID":30,"groupIDs":[121,122],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1729}
+{"testID":130,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1731}
+{"test":{"id":131,"name":"isValidCPF CPF com dígito verificador errado retorna false","suiteID":30,"groupIDs":[121,122],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1731}
+{"testID":131,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1732}
+{"test":{"id":132,"name":"isValidCPF CPF com pontuação é aceito (dígitos extraídos)","suiteID":30,"groupIDs":[121,122],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1732}
+{"testID":132,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1733}
+{"group":{"id":133,"suiteID":30,"parentID":121,"name":"validateCPF","metadata":{"skip":false,"skipReason":null},"testCount":5,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1733}
+{"test":{"id":134,"name":"validateCPF CPF nulo retorna mensagem de erro","suiteID":30,"groupIDs":[121,133],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1733}
+{"testID":134,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1735}
+{"test":{"id":135,"name":"validateCPF CPF vazio retorna mensagem de erro","suiteID":30,"groupIDs":[121,133],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1735}
+{"testID":135,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1736}
+{"test":{"id":136,"name":"validateCPF CPF com menos de 11 dígitos retorna mensagem de erro","suiteID":30,"groupIDs":[121,133],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1736}
+{"testID":136,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1737}
+{"test":{"id":137,"name":"validateCPF CPF inválido retorna mensagem de erro","suiteID":30,"groupIDs":[121,133],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1737}
+{"testID":137,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1738}
+{"test":{"id":138,"name":"validateCPF CPF válido retorna null","suiteID":30,"groupIDs":[121,133],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1738}
+{"testID":138,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1739}
+{"group":{"id":139,"suiteID":30,"parentID":121,"name":"formatCPF","metadata":{"skip":false,"skipReason":null},"testCount":3,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1739}
+{"test":{"id":140,"name":"formatCPF Formata CPF sem pontuação corretamente","suiteID":30,"groupIDs":[121,139],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1739}
+{"testID":140,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1742}
+{"test":{"id":141,"name":"formatCPF Formata CPF com pontuação mantendo o mesmo resultado","suiteID":30,"groupIDs":[121,139],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1742}
+{"testID":141,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1743}
+{"test":{"id":142,"name":"formatCPF CPF com menos de 11 dígitos retorna o valor original","suiteID":30,"groupIDs":[121,139],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1743}
+{"testID":142,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1744}
+{"group":{"id":143,"suiteID":30,"parentID":121,"name":"validateEmail","metadata":{"skip":false,"skipReason":null},"testCount":5,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1744}
+{"test":{"id":144,"name":"validateEmail Email válido retorna null","suiteID":30,"groupIDs":[121,143],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1744}
+{"testID":144,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1745}
+{"test":{"id":145,"name":"validateEmail Email sem @ retorna mensagem de erro","suiteID":30,"groupIDs":[121,143],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1746}
+{"testID":145,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1747}
+{"test":{"id":146,"name":"validateEmail Email sem domínio retorna mensagem de erro","suiteID":30,"groupIDs":[121,143],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1747}
+{"testID":146,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1748}
+{"test":{"id":147,"name":"validateEmail Email nulo retorna mensagem de erro","suiteID":30,"groupIDs":[121,143],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1748}
+{"testID":147,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1749}
+{"test":{"id":148,"name":"validateEmail Email vazio retorna mensagem de erro","suiteID":30,"groupIDs":[121,143],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1749}
+{"testID":148,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1750}
+{"group":{"id":149,"suiteID":30,"parentID":121,"name":"validatePassword","metadata":{"skip":false,"skipReason":null},"testCount":4,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1751}
+{"test":{"id":150,"name":"validatePassword Senha com 6 ou mais caracteres retorna null","suiteID":30,"groupIDs":[121,149],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1751}
+{"testID":150,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1752}
+{"test":{"id":151,"name":"validatePassword Senha com menos de 6 caracteres retorna mensagem de erro","suiteID":30,"groupIDs":[121,149],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1752}
+{"testID":151,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1753}
+{"test":{"id":152,"name":"validatePassword Senha nula retorna mensagem de erro","suiteID":30,"groupIDs":[121,149],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1753}
+{"testID":152,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1754}
+{"test":{"id":153,"name":"validatePassword Senha vazia retorna mensagem de erro","suiteID":30,"groupIDs":[121,149],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1754}
+{"testID":153,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1755}
+{"group":{"id":154,"suiteID":30,"parentID":121,"name":"validatePasswordConfirmation","metadata":{"skip":false,"skipReason":null},"testCount":4,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1756}
+{"test":{"id":155,"name":"validatePasswordConfirmation Confirmação igual à senha retorna null","suiteID":30,"groupIDs":[121,154],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1756}
+{"testID":155,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1757}
+{"test":{"id":156,"name":"validatePasswordConfirmation Confirmação diferente da senha retorna mensagem de erro","suiteID":30,"groupIDs":[121,154],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1757}
+{"testID":156,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1758}
+{"test":{"id":157,"name":"validatePasswordConfirmation Confirmação nula retorna mensagem de erro","suiteID":30,"groupIDs":[121,154],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1758}
+{"testID":157,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1759}
+{"test":{"id":158,"name":"validatePasswordConfirmation Confirmação vazia retorna mensagem de erro","suiteID":30,"groupIDs":[121,154],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1759}
+{"testID":158,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1760}
+{"group":{"id":159,"suiteID":30,"parentID":121,"name":"validateName","metadata":{"skip":false,"skipReason":null},"testCount":5,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1760}
+{"test":{"id":160,"name":"validateName Nome com duas palavras retorna null","suiteID":30,"groupIDs":[121,159],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1760}
+{"testID":160,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1762}
+{"test":{"id":161,"name":"validateName Nome com mais de duas palavras retorna null","suiteID":30,"groupIDs":[121,159],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1762}
+{"testID":161,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1763}
+{"test":{"id":162,"name":"validateName Nome com apenas uma palavra retorna mensagem de erro","suiteID":30,"groupIDs":[121,159],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1763}
+{"testID":162,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1764}
+{"test":{"id":163,"name":"validateName Nome nulo retorna mensagem de erro","suiteID":30,"groupIDs":[121,159],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1764}
+{"testID":163,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1765}
+{"test":{"id":164,"name":"validateName Nome vazio retorna mensagem de erro","suiteID":30,"groupIDs":[121,159],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1765}
+{"testID":164,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1766}
+{"group":{"id":165,"suiteID":30,"parentID":121,"name":"validateNotEmpty","metadata":{"skip":false,"skipReason":null},"testCount":3,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1767}
+{"test":{"id":166,"name":"validateNotEmpty Valor preenchido retorna null","suiteID":30,"groupIDs":[121,165],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1767}
+{"testID":166,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1768}
+{"test":{"id":167,"name":"validateNotEmpty Valor vazio retorna mensagem com o nome do campo","suiteID":30,"groupIDs":[121,165],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1768}
+{"testID":167,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1769}
+{"test":{"id":168,"name":"validateNotEmpty Valor nulo retorna mensagem de erro","suiteID":30,"groupIDs":[121,165],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1769}
+{"testID":168,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1771}
+{"group":{"id":169,"suiteID":30,"parentID":121,"name":"validateNumber","metadata":{"skip":false,"skipReason":null},"testCount":4,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1772}
+{"test":{"id":170,"name":"validateNumber String numérica válida retorna null","suiteID":30,"groupIDs":[121,169],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1772}
+{"testID":170,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1773}
+{"test":{"id":171,"name":"validateNumber String não numérica retorna mensagem de erro","suiteID":30,"groupIDs":[121,169],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1773}
+{"testID":171,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1775}
+{"test":{"id":172,"name":"validateNumber String vazia retorna mensagem de erro","suiteID":30,"groupIDs":[121,169],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1775}
+{"testID":172,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1776}
+{"test":{"id":173,"name":"validateNumber Valor nulo retorna mensagem de erro","suiteID":30,"groupIDs":[121,169],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1776}
+{"testID":173,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1777}
+{"suite":{"id":174,"platform":"vm","path":"C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart"},"type":"suite","time":1790}
+{"test":{"id":175,"name":"loading C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart","suiteID":174,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":1790}
+{"testID":47,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":1847}
+{"group":{"id":176,"suiteID":46,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":11,"line":null,"column":null,"url":null},"type":"group","time":1848}
+{"test":{"id":177,"name":"CT-AUT-01 cadastro de passageiro cria credencial e perfil coerentes","suiteID":46,"groupIDs":[176],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":1848}
+{"testID":177,"messageType":"print","message":"[signUp] Credencial criada; gravando perfil.","type":"print","time":1861}
+{"testID":177,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1861}
+{"test":{"id":178,"name":"CT-AUT-02 cadastro de barqueiro e login carregam perfil barqueiro","suiteID":46,"groupIDs":[176],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":1862}
+{"testID":178,"messageType":"print","message":"[signUp] Credencial criada; gravando perfil.","type":"print","time":1864}
+{"testID":178,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1864}
+{"group":{"id":179,"suiteID":46,"parentID":176,"name":"CT-AUT-03 unicidade (UC-01)","metadata":{"skip":false,"skipReason":null},"testCount":3,"line":null,"column":null,"url":"unparsed"},"type":"group","time":1864}
+{"test":{"id":180,"name":"CT-AUT-03 unicidade (UC-01) CT-AUT-03 (b) CPF já cadastrado é recusado","suiteID":46,"groupIDs":[176,179],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1864}
+{"testID":180,"messageType":"print","message":"[signUp] Credencial criada; gravando perfil.","type":"print","time":1868}
+{"testID":180,"messageType":"print","message":"[signUp] Credencial criada; gravando perfil.","type":"print","time":1868}
+{"testID":180,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1868}
+{"test":{"id":181,"name":"CT-AUT-03 unicidade (UC-01) CT-AUT-03 (d) CPF recusado não deixa credencial órfã: o e-mail pode ser reutilizado","suiteID":46,"groupIDs":[176,179],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1868}
+{"testID":181,"messageType":"print","message":"[signUp] Credencial criada; gravando perfil.","type":"print","time":1870}
+{"testID":181,"messageType":"print","message":"[signUp] Credencial criada; gravando perfil.","type":"print","time":1870}
+{"testID":181,"messageType":"print","message":"[signUp] Credencial criada; gravando perfil.","type":"print","time":1871}
+{"testID":181,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1871}
+{"test":{"id":182,"name":"CT-AUT-03 unicidade (UC-01) CT-AUT-03 (c) e-mail repetido é recusado","suiteID":46,"groupIDs":[176,179],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":1871}
+{"testID":182,"messageType":"print","message":"[signUp] Credencial criada; gravando perfil.","type":"print","time":1873}
+{"testID":182,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1873}
+{"test":{"id":183,"name":"CT-AUT-04 login válido carrega o perfil do UID corrente","suiteID":46,"groupIDs":[176],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":1873}
+{"testID":183,"messageType":"print","message":"[signUp] Credencial criada; gravando perfil.","type":"print","time":1874}
+{"testID":183,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1874}
+{"test":{"id":184,"name":"CT-AUT-05 senha errada não concede acesso","suiteID":46,"groupIDs":[176],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":1874}
+{"testID":184,"messageType":"print","message":"[signUp] Credencial criada; gravando perfil.","type":"print","time":1875}
+{"testID":184,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1875}
+{"test":{"id":185,"name":"CT-AUT-06 logout encerra a sessão","suiteID":46,"groupIDs":[176],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":1876}
+{"testID":185,"messageType":"print","message":"[signUp] Credencial criada; gravando perfil.","type":"print","time":1877}
+{"testID":185,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1877}
+{"test":{"id":186,"name":"CT-AUT-07 sessão persistida é recuperada ao reabrir o app","suiteID":46,"groupIDs":[176],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":1877}
+{"testID":186,"messageType":"print","message":"[signUp] Credencial criada; gravando perfil.","type":"print","time":1879}
+{"testID":186,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1879}
+{"test":{"id":187,"name":"CT-SEG-05 conta inativa não inicia sessão","suiteID":46,"groupIDs":[176],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":1879}
+{"testID":187,"messageType":"print","message":"[signUp] Credencial criada; gravando perfil.","type":"print","time":1880}
+{"testID":187,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1880}
+{"test":{"id":188,"name":"CT-SEG-05 (b) sessão restaurada de conta inativa é encerrada","suiteID":46,"groupIDs":[176],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":1881}
+{"testID":188,"messageType":"print","message":"[signUp] Credencial criada; gravando perfil.","type":"print","time":1883}
+{"testID":188,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":1884}
+{"suite":{"id":189,"platform":"vm","path":"C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/validators_ct_test.dart"},"type":"suite","time":1897}
+{"test":{"id":190,"name":"loading C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/validators_ct_test.dart","suiteID":189,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":1898}
+{"testID":67,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":2380}
+{"group":{"id":191,"suiteID":66,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":19,"line":null,"column":null,"url":null},"type":"group","time":2380}
+{"test":{"id":192,"name":"(setUpAll)","suiteID":66,"groupIDs":[191],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":2380}
+{"testID":192,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":2428}
+{"group":{"id":193,"suiteID":66,"parentID":191,"name":"CT-GEO-01 classificação por distância (valor-limite)","metadata":{"skip":false,"skipReason":null},"testCount":7,"line":null,"column":null,"url":"unparsed"},"type":"group","time":2428}
+{"test":{"id":194,"name":"CT-GEO-01 classificação por distância (valor-limite) CT-GEO-01 5000.0 m → Fora da Zona","suiteID":66,"groupIDs":[191,193],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":2428}
+{"testID":194,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":2435}
+{"testID":194,"messageType":"print","message":"[GeofenceService] Notificações desativadas.","type":"print","time":2435}
+{"testID":194,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":2435}
+{"testID":86,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":2460}
+{"group":{"id":195,"suiteID":85,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":9,"line":null,"column":null,"url":null},"type":"group","time":2460}
+{"test":{"id":196,"name":"(setUpAll)","suiteID":85,"groupIDs":[195],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":2460}
+{"testID":194,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2461}
+{"test":{"id":197,"name":"CT-GEO-01 classificação por distância (valor-limite) CT-GEO-01 1201.0 m → Fora da Zona","suiteID":66,"groupIDs":[191,193],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":2461}
+{"testID":197,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":2463}
+{"testID":197,"messageType":"print","message":"[GeofenceService] Notificações desativadas.","type":"print","time":2463}
+{"testID":197,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":2463}
+{"testID":197,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2486}
+{"test":{"id":198,"name":"CT-GEO-01 classificação por distância (valor-limite) CT-GEO-01 1199.0 m → Aproximando","suiteID":66,"groupIDs":[191,193],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":2486}
+{"testID":198,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":2488}
+{"testID":198,"messageType":"print","message":"[GeofenceService] Notificações desativadas.","type":"print","time":2488}
+{"testID":198,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":2488}
+{"testID":198,"messageType":"print","message":"[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Aproximando (dist: 1199m)","type":"print","time":2489}
+{"testID":198,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2510}
+{"test":{"id":199,"name":"CT-GEO-01 classificação por distância (valor-limite) CT-GEO-01 251.0 m → Aproximando","suiteID":66,"groupIDs":[191,193],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":2510}
+{"testID":199,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":2512}
+{"testID":199,"messageType":"print","message":"[GeofenceService] Notificações desativadas.","type":"print","time":2512}
+{"testID":199,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":2513}
+{"testID":199,"messageType":"print","message":"[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Aproximando (dist: 251m)","type":"print","time":2513}
+{"testID":199,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2534}
+{"test":{"id":200,"name":"CT-GEO-01 classificação por distância (valor-limite) CT-GEO-01 249.0 m → Atracado","suiteID":66,"groupIDs":[191,193],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":2534}
+{"testID":200,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":2536}
+{"testID":200,"messageType":"print","message":"[GeofenceService] Notificações desativadas.","type":"print","time":2536}
+{"testID":200,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":2536}
+{"testID":200,"messageType":"print","message":"[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Atracado (dist: 249m)","type":"print","time":2537}
+{"testID":196,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":2538}
+{"test":{"id":201,"name":"CT-RAS-03 ponto válido é persistido completo com ID uid_timestamp","suiteID":85,"groupIDs":[195],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":2538}
+{"testID":201,"messageType":"print","message":"[LocalDB] Abrindo banco em: C:\\Users\\joaog\\AppData\\Local\\Temp\\atd_test_3f3b34c3\\amazon_track.db","type":"print","time":2549}
+{"testID":200,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2558}
+{"test":{"id":202,"name":"CT-GEO-01 classificação por distância (valor-limite) CT-GEO-01 0.0 m → Atracado","suiteID":66,"groupIDs":[191,193],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":2559}
+{"testID":202,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":2560}
+{"testID":202,"messageType":"print","message":"[GeofenceService] Notificações desativadas.","type":"print","time":2560}
+{"testID":202,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":2560}
+{"testID":202,"messageType":"print","message":"[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Atracado (dist: 0m)","type":"print","time":2561}
+{"testID":201,"messageType":"print","message":"[LocalDB] Tabela criada com sucesso.","type":"print","time":2570}
+{"testID":202,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2582}
+{"test":{"id":203,"name":"CT-GEO-01 classificação por distância (valor-limite) CT-GEO-01 a distância gerada corresponde ao valor pedido","suiteID":66,"groupIDs":[191,193],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":2582}
+{"testID":203,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":2584}
+{"testID":203,"messageType":"print","message":"[GeofenceService] Notificações desativadas.","type":"print","time":2584}
+{"testID":203,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2584}
+{"test":{"id":204,"name":"CT-GEO-02 cruzar 1200 m notifica aproximação uma única vez","suiteID":66,"groupIDs":[191],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":2584}
+{"testID":204,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":2586}
+{"testID":204,"messageType":"print","message":"[GeofenceService] Notificações desativadas.","type":"print","time":2586}
+{"testID":204,"messageType":"print","message":"[GeofenceService] Notificações ativadas.","type":"print","time":2586}
+{"testID":201,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2592}
+{"group":{"id":205,"suiteID":85,"parentID":195,"name":"CT-RAS-11 leituras inválidas (RD-02, RD-04)","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":2592}
+{"test":{"id":206,"name":"CT-RAS-11 leituras inválidas (RD-02, RD-04) CT-RAS-11 limites lat ±90 e lon ±180 são aceitos","suiteID":85,"groupIDs":[195,205],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":2592}
+{"testID":206,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2604}
+{"test":{"id":207,"name":"CT-RAS-11 leituras inválidas (RD-02, RD-04) CT-RAS-11 lat 95, lat -90,5, lon 181 e precisão -1 não entram na fila de sincronização","suiteID":85,"groupIDs":[195,205],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":2605}
+{"testID":207,"messageType":"print","message":"[LocalDB] Leitura inválida descartada.","type":"print","time":2609}
+{"testID":207,"messageType":"print","message":"[LocalDB] Leitura inválida descartada.","type":"print","time":2609}
+{"testID":207,"messageType":"print","message":"[LocalDB] Leitura inválida descartada.","type":"print","time":2609}
+{"testID":207,"messageType":"print","message":"[LocalDB] Leitura inválida descartada.","type":"print","time":2609}
+{"testID":207,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2610}
+{"test":{"id":208,"name":"CT-OFF-02 fila sobrevive ao fechamento do banco; limpeza remove só confirmados","suiteID":85,"groupIDs":[195],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":2610}
+{"testID":204,"messageType":"print","message":"[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Aproximando (dist: 800m)","type":"print","time":2630}
+{"testID":204,"messageType":"print","message":"[NotificationService] Inicializado com sucesso.","type":"print","time":2638}
+{"testID":204,"messageType":"print","message":"[NotificationService] Aproximando-se do Porto — Embarcação próxima ao Pier Urbano de Itacoatiara","type":"print","time":2638}
+{"testID":208,"messageType":"print","message":"[LocalDB] Abrindo banco em: C:\\Users\\joaog\\AppData\\Local\\Temp\\atd_test_3f3b34c3\\amazon_track.db","type":"print","time":2652}
+{"testID":208,"messageType":"print","message":"[LocalDB] Removidos 1 pontos antigos.","type":"print","time":2673}
+{"testID":208,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2674}
+{"test":{"id":209,"name":"CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente","suiteID":85,"groupIDs":[195],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":2674}
+{"testID":204,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2679}
+{"test":{"id":210,"name":"CT-GEO-03 cruzar 250 m em seguida notifica atracação","suiteID":66,"groupIDs":[191],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":2679}
+{"testID":210,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":2682}
+{"testID":210,"messageType":"print","message":"[GeofenceService] Notificações desativadas.","type":"print","time":2682}
+{"testID":210,"messageType":"print","message":"[GeofenceService] Notificações ativadas.","type":"print","time":2682}
+{"testID":209,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2687}
+{"test":{"id":211,"name":"CT-OFF-07 pendentes retornam em ordem cronológica (FIFO)","suiteID":85,"groupIDs":[195],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":2687}
+{"testID":210,"messageType":"print","message":"[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Aproximando (dist: 1000m)","type":"print","time":2705}
+{"testID":210,"messageType":"print","message":"[NotificationService] Aproximando-se do Porto — Embarcação próxima ao Pier Urbano de Itacoatiara","type":"print","time":2705}
+{"testID":211,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2712}
+{"test":{"id":212,"name":"CT-OFF-08 consulta de pendentes limita o lote a 50","suiteID":85,"groupIDs":[195],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":2713}
+{"testID":125,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":2742}
+{"group":{"id":213,"suiteID":124,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":8,"line":null,"column":null,"url":null},"type":"group","time":2742}
+{"test":{"id":214,"name":"(setUpAll)","suiteID":124,"groupIDs":[213],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":2742}
+{"testID":210,"messageType":"print","message":"[GeofenceService] Pier Urbano de Itacoatiara: Aproximando → Atracado (dist: 240m)","type":"print","time":2749}
+{"testID":210,"messageType":"print","message":"[NotificationService] Atracado no Porto — Embarcação chegou ao Pier Urbano de Itacoatiara","type":"print","time":2750}
+{"testID":210,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2793}
+{"group":{"id":215,"suiteID":66,"parentID":191,"name":"CT-GEO-04 ruído de ±5 m no limite de 1200 m","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":2793}
+{"test":{"id":216,"name":"CT-GEO-04 ruído de ±5 m no limite de 1200 m CT-GEO-04 no máximo 1 notificação em 10 leituras","suiteID":66,"groupIDs":[191,215],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":2793}
+{"testID":216,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":2795}
+{"testID":216,"messageType":"print","message":"[GeofenceService] Notificações desativadas.","type":"print","time":2795}
+{"testID":216,"messageType":"print","message":"[GeofenceService] Notificações ativadas.","type":"print","time":2795}
+{"testID":214,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":2814}
+{"test":{"id":217,"name":"CT-RAS-08 resumo consistente com pontos entregues fora de ordem","suiteID":124,"groupIDs":[213],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":2814}
+{"testID":216,"messageType":"print","message":"[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Aproximando (dist: 1195m)","type":"print","time":2817}
+{"testID":216,"messageType":"print","message":"[NotificationService] Aproximando-se do Porto — Embarcação próxima ao Pier Urbano de Itacoatiara","type":"print","time":2817}
+{"testID":217,"messageType":"print","message":"[LocalDB] Abrindo banco em: C:\\Users\\joaog\\AppData\\Local\\Temp\\atd_test_a1d3f930\\amazon_track.db","type":"print","time":2832}
+{"testID":217,"messageType":"print","message":"[LocalDB] Tabela criada com sucesso.","type":"print","time":2855}
+{"testID":217,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2891}
+{"test":{"id":218,"name":"CT-HCH-01 histórico só do usuário, mais recente primeiro","suiteID":124,"groupIDs":[213],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":2892}
+{"testID":218,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2899}
+{"test":{"id":219,"name":"CT-HCH-08 pontos sem tripId são ignorados sem erro","suiteID":124,"groupIDs":[213],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":2900}
+{"testID":219,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2905}
+{"group":{"id":220,"suiteID":124,"parentID":213,"name":"CT-HCH-09 metadados da viagem","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":2905}
+{"test":{"id":221,"name":"CT-HCH-09 metadados da viagem CT-HCH-09 falha nos metadados não impede o histórico","suiteID":124,"groupIDs":[213,220],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":2905}
+{"testID":221,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2913}
+{"test":{"id":222,"name":"CT-HCH-09 metadados da viagem CT-HCH-09 metadados presentes são associados","suiteID":124,"groupIDs":[213,220],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":2914}
+{"testID":222,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2920}
+{"test":{"id":223,"name":"CT-OFF-01 sem internet o ponto fica pendente no SQLite","suiteID":124,"groupIDs":[213],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":2920}
+{"testID":223,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2942}
+{"test":{"id":224,"name":"CT-OFF-04 falha parcial: só os confirmados saem da fila","suiteID":124,"groupIDs":[213],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":2943}
+{"testID":212,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2969}
+{"test":{"id":225,"name":"CT-NF-01 processamento local do ponto (Kalman + SQLite) p95 ≤ 2 s","suiteID":85,"groupIDs":[195],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":2969}
+{"testID":224,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":2988}
+{"test":{"id":226,"name":"CT-NF-10 backend indisponível não lança exceção ao usuário","suiteID":124,"groupIDs":[213],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":2988}
+{"testID":226,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3001}
+{"test":{"id":227,"name":"(tearDownAll)","suiteID":124,"groupIDs":[213],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3002}
+{"testID":227,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":3006}
+{"suite":{"id":228,"platform":"vm","path":"C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/widget/telas_test.dart"},"type":"suite","time":3030}
+{"test":{"id":229,"name":"loading C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/widget/telas_test.dart","suiteID":228,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":3030}
+{"testID":216,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3050}
+{"test":{"id":230,"name":"CT-GEO-04 ruído de ±5 m no limite de 1200 m CT-GEO-04 estado não alterna a cada leitura (histerese)","suiteID":66,"groupIDs":[191,215],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3050}
+{"testID":230,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":3054}
+{"testID":230,"messageType":"print","message":"[GeofenceService] Notificações desativadas.","type":"print","time":3054}
+{"testID":230,"messageType":"print","message":"[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Aproximando (dist: 1195m)","type":"print","time":3075}
+{"testID":225,"messageType":"print","message":"CT-NF-01 p95 = 3.77 ms (n=60, host)","type":"print","time":3163}
+{"testID":225,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3163}
+{"test":{"id":231,"name":"CT-NF-06 fila com 5.000 pontos: lote 50 em ordem, consulta < 2 s","suiteID":85,"groupIDs":[195],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3164}
+{"testID":127,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":3198}
+{"group":{"id":232,"suiteID":126,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":22,"line":null,"column":null,"url":null},"type":"group","time":3199}
+{"group":{"id":233,"suiteID":126,"parentID":232,"name":"CT-RAS-10 filtro de Kalman","metadata":{"skip":false,"skipReason":null},"testCount":3,"line":null,"column":null,"url":"unparsed"},"type":"group","time":3199}
+{"test":{"id":234,"name":"CT-RAS-10 filtro de Kalman CT-RAS-10 converge para 5 m/s após 60 leituras constantes","suiteID":126,"groupIDs":[232,233],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3199}
+{"testID":234,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3213}
+{"test":{"id":235,"name":"CT-RAS-10 filtro de Kalman CT-RAS-10 reduz a variância de uma série ruidosa","suiteID":126,"groupIDs":[232,233],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3214}
+{"testID":235,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3217}
+{"test":{"id":236,"name":"CT-RAS-10 filtro de Kalman CT-RAS-10 reset reinicia estimativa e covariância","suiteID":126,"groupIDs":[232,233],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3217}
+{"testID":236,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3219}
+{"group":{"id":237,"suiteID":126,"parentID":232,"name":"CT-RAS-12 vínculo do ponto com a embarcação (RN-06)","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":3220}
+{"test":{"id":238,"name":"CT-RAS-12 vínculo do ponto com a embarcação (RN-06) CT-RAS-12 copyWith preserva boatId","suiteID":126,"groupIDs":[232,237],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3220}
+{"testID":238,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3222}
+{"test":{"id":239,"name":"CT-RAS-12 vínculo do ponto com a embarcação (RN-06) CT-RAS-12 pontos de embarcações diferentes não são iguais","suiteID":126,"groupIDs":[232,237],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3222}
+{"testID":239,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3224}
+{"group":{"id":240,"suiteID":126,"parentID":232,"name":"CT-EMB-01 / CT-EMB-10 embarcação","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":3225}
+{"test":{"id":241,"name":"CT-EMB-01 / CT-EMB-10 embarcação CT-EMB-01 embarcação nova fica vinculada ao dono e ativa","suiteID":126,"groupIDs":[232,240],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3225}
+{"testID":241,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3227}
+{"test":{"id":242,"name":"CT-EMB-01 / CT-EMB-10 embarcação CT-EMB-10 documentos incompletos não geram IDs nulos","suiteID":126,"groupIDs":[232,240],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3227}
+{"testID":242,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3231}
+{"test":{"id":243,"name":"CT-EMB-08 rota expõe origem, destino, paradas e duração","suiteID":126,"groupIDs":[232],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3231}
+{"testID":243,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3233}
+{"test":{"id":244,"name":"CT-HCH-02 dados da viagem: 2 h, 36 km, 18 km/h","suiteID":126,"groupIDs":[232],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3233}
+{"testID":244,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3235}
+{"group":{"id":245,"suiteID":126,"parentID":232,"name":"CT-HCH-05..07 chat","metadata":{"skip":false,"skipReason":null},"testCount":4,"line":null,"column":null,"url":"unparsed"},"type":"group","time":3235}
+{"test":{"id":246,"name":"CT-HCH-05..07 chat CT-HCH-05 ID de conversa é determinístico e ordenado","suiteID":126,"groupIDs":[232,245],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3235}
+{"testID":246,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3237}
+{"test":{"id":247,"name":"CT-HCH-05..07 chat CT-HCH-06 lista de conversas identifica o outro participante","suiteID":126,"groupIDs":[232,245],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3237}
+{"testID":247,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3239}
+{"test":{"id":248,"name":"CT-HCH-05..07 chat CT-HCH-06 nome ausente usa o fallback \"Usuário\"","suiteID":126,"groupIDs":[232,245],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3240}
+{"testID":248,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3241}
+{"test":{"id":249,"name":"CT-HCH-05..07 chat CT-HCH-07 mensagem registra os campos obrigatórios","suiteID":126,"groupIDs":[232,245],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3241}
+{"testID":249,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3243}
+{"group":{"id":250,"suiteID":126,"parentID":232,"name":"CT-AGE agenda","metadata":{"skip":false,"skipReason":null},"testCount":4,"line":null,"column":null,"url":"unparsed"},"type":"group","time":3243}
+{"test":{"id":251,"name":"CT-AGE agenda CT-AGE-01 agenda válida fica vinculada ao dono e à data","suiteID":126,"groupIDs":[232,250],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3243}
+{"testID":251,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3247}
+{"test":{"id":252,"name":"CT-AGE agenda CT-AGE-03 só a agenda futura e não cancelada é \"futura\"","suiteID":126,"groupIDs":[232,250],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3248}
+{"testID":252,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3250}
+{"test":{"id":253,"name":"CT-AGE agenda CT-AGE-05 round-trip preserva campos","suiteID":126,"groupIDs":[232,250],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3250}
+{"testID":253,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3252}
+{"test":{"id":254,"name":"CT-AGE agenda CT-AGE-05 documento só com a data usa padrões seguros","suiteID":126,"groupIDs":[232,250],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3252}
+{"testID":254,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3253}
+{"group":{"id":255,"suiteID":126,"parentID":232,"name":"CT-PAS-04 indicadores da viagem ativa","metadata":{"skip":false,"skipReason":null},"testCount":5,"line":null,"column":null,"url":"unparsed"},"type":"group","time":3253}
+{"test":{"id":256,"name":"CT-PAS-04 indicadores da viagem ativa CT-PAS-04 velocidade em km/h com 1 casa e nunca negativa","suiteID":126,"groupIDs":[232,255],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3253}
+{"testID":256,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3256}
+{"test":{"id":257,"name":"CT-PAS-04 indicadores da viagem ativa CT-PAS-04 progresso ≈ 25 % após 30 de 120 min","suiteID":126,"groupIDs":[232,255],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3256}
+{"testID":257,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3257}
+{"test":{"id":258,"name":"CT-PAS-04 indicadores da viagem ativa CT-PAS-04 distância ≈ 9 km e tempo ≈ 30 min a 5 m/s","suiteID":126,"groupIDs":[232,255],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3258}
+{"testID":258,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3261}
+{"test":{"id":259,"name":"CT-PAS-04 indicadores da viagem ativa CT-PAS-04 abaixo de 0,5 m/s usa o horário planejado","suiteID":126,"groupIDs":[232,255],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3261}
+{"testID":259,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3263}
+{"test":{"id":260,"name":"CT-PAS-04 indicadores da viagem ativa CT-PAS-04 destino inválido é ignorado","suiteID":126,"groupIDs":[232,255],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3263}
+{"testID":260,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3265}
+{"suite":{"id":261,"platform":"vm","path":"C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/static/inspecao_configuracao_test.dart"},"type":"suite","time":3283}
+{"test":{"id":262,"name":"loading C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/static/inspecao_configuracao_test.dart","suiteID":261,"groupIDs":[],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":3283}
+{"testID":230,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3294}
+{"group":{"id":263,"suiteID":66,"parentID":191,"name":"CT-GEO-05 / CT-GEO-06 ETA","metadata":{"skip":false,"skipReason":null},"testCount":3,"line":null,"column":null,"url":"unparsed"},"type":"group","time":3295}
+{"test":{"id":264,"name":"CT-GEO-05 / CT-GEO-06 ETA CT-GEO-05 ETA indisponível a 0 e 0,49 m/s; calculado a 0,50","suiteID":66,"groupIDs":[191,263],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3296}
+{"testID":264,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":3301}
+{"testID":264,"messageType":"print","message":"[GeofenceService] Notificações desativadas.","type":"print","time":3301}
+{"testID":264,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3301}
+{"test":{"id":265,"name":"CT-GEO-05 / CT-GEO-06 ETA CT-GEO-06 900 m a 5 m/s → 180 s ± 1 % e \"3 min\"","suiteID":66,"groupIDs":[191,263],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3301}
+{"testID":265,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":3303}
+{"testID":265,"messageType":"print","message":"[GeofenceService] Notificações desativadas.","type":"print","time":3303}
+{"testID":265,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3303}
+{"test":{"id":266,"name":"CT-GEO-05 / CT-GEO-06 ETA CT-GEO-06 formatação: 20 s → \"< 1 min\"; 3720 s → \"1h 02min\"","suiteID":66,"groupIDs":[191,263],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3303}
+{"testID":266,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":3305}
+{"testID":266,"messageType":"print","message":"[GeofenceService] Notificações desativadas.","type":"print","time":3305}
+{"testID":266,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3306}
+{"test":{"id":267,"name":"CT-GEO-07 catálogo com 13 portos íntegros e sem sobreposição","suiteID":66,"groupIDs":[191],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3306}
+{"testID":267,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":3309}
+{"testID":267,"messageType":"print","message":"[GeofenceService] Notificações desativadas.","type":"print","time":3309}
+{"testID":267,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3310}
+{"test":{"id":268,"name":"CT-GEO-08 sem acompanhamento não há notificação","suiteID":66,"groupIDs":[191],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3310}
+{"testID":268,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":3311}
+{"testID":268,"messageType":"print","message":"[GeofenceService] Notificações desativadas.","type":"print","time":3312}
+{"testID":175,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":3335}
+{"group":{"id":269,"suiteID":174,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":16,"line":null,"column":null,"url":null},"type":"group","time":3336}
+{"test":{"id":270,"name":"(setUpAll)","suiteID":174,"groupIDs":[269],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3336}
+{"testID":268,"messageType":"print","message":"[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Atracado (dist: 100m)","type":"print","time":3336}
+{"testID":268,"messageType":"print","message":"[GeofenceService] Pier Urbano de Itacoatiara: Atracado → Fora da Zona (dist: 2000m)","type":"print","time":3356}
+{"testID":268,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3385}
+{"test":{"id":271,"name":"CT-GEO-09 saída do porto notifica \"Saiu do Porto\" sem anunciar aproximação","suiteID":66,"groupIDs":[191],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3385}
+{"testID":271,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":3388}
+{"testID":271,"messageType":"print","message":"[GeofenceService] Notificações desativadas.","type":"print","time":3388}
+{"testID":271,"messageType":"print","message":"[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Atracado (dist: 100m)","type":"print","time":3388}
+{"testID":271,"messageType":"print","message":"[GeofenceService] Notificações ativadas.","type":"print","time":3409}
+{"testID":271,"messageType":"print","message":"[GeofenceService] Pier Urbano de Itacoatiara: Atracado → Aproximando (dist: 600m)","type":"print","time":3409}
+{"testID":190,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":3419}
+{"group":{"id":272,"suiteID":189,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":20,"line":null,"column":null,"url":null},"type":"group","time":3419}
+{"group":{"id":273,"suiteID":189,"parentID":272,"name":"CT-AUT-03 CPF (RN-02)","metadata":{"skip":false,"skipReason":null},"testCount":8,"line":null,"column":null,"url":"unparsed"},"type":"group","time":3419}
+{"test":{"id":274,"name":"CT-AUT-03 CPF (RN-02) CT-AUT-03 CPFs válidos com e sem máscara são aceitos","suiteID":189,"groupIDs":[272,273],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3419}
+{"testID":271,"messageType":"print","message":"[GeofenceService] Pier Urbano de Itacoatiara: Aproximando → Fora da Zona (dist: 1500m)","type":"print","time":3432}
+{"testID":271,"messageType":"print","message":"[NotificationService] Saiu do Porto — Embarcação saiu do Pier Urbano de Itacoatiara","type":"print","time":3432}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Inicializado. Conectado: false","type":"print","time":3433}
+{"testID":274,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3434}
+{"test":{"id":275,"name":"CT-AUT-03 CPF (RN-02) CT-AUT-03 CPF vazio é recusado com mensagem","suiteID":189,"groupIDs":[272,273],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3434}
+{"testID":270,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":3434}
+{"test":{"id":276,"name":"CT-OFF-01 sem internet os pontos ficam pendentes e nada é enviado","suiteID":174,"groupIDs":[269],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3435}
+{"testID":275,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3436}
+{"test":{"id":277,"name":"CT-AUT-03 CPF (RN-02) CT-AUT-03 CPF com 10 e 12 dígitos é recusado","suiteID":189,"groupIDs":[272,273],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3436}
+{"testID":277,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3437}
+{"test":{"id":278,"name":"CT-AUT-03 CPF (RN-02) CT-AUT-03 CPF com 1º dígito verificador errado é recusado","suiteID":189,"groupIDs":[272,273],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3438}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":3438}
+{"testID":278,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3439}
+{"test":{"id":279,"name":"CT-AUT-03 CPF (RN-02) CT-AUT-03 CPF com 2º dígito verificador errado é recusado","suiteID":189,"groupIDs":[272,273],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3439}
+{"testID":279,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3440}
+{"test":{"id":280,"name":"CT-AUT-03 CPF (RN-02) CT-AUT-03 CPF com todos os dígitos iguais é recusado","suiteID":189,"groupIDs":[272,273],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3440}
+{"testID":280,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3442}
+{"test":{"id":281,"name":"CT-AUT-03 CPF (RN-02) CT-AUT-03 CPF 123.456.789-00 é recusado","suiteID":189,"groupIDs":[272,273],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3442}
+{"testID":281,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3443}
+{"test":{"id":282,"name":"CT-AUT-03 CPF (RN-02) CT-AUT-03 CPF com letras não é aceito","suiteID":189,"groupIDs":[272,273],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3444}
+{"testID":282,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3445}
+{"group":{"id":283,"suiteID":189,"parentID":272,"name":"CT-AUT-08 senha e confirmação (RN-03)","metadata":{"skip":false,"skipReason":null},"testCount":6,"line":null,"column":null,"url":"unparsed"},"type":"group","time":3445}
+{"test":{"id":284,"name":"CT-AUT-08 senha e confirmação (RN-03) CT-AUT-08 senha com 5 caracteres é rejeitada","suiteID":189,"groupIDs":[272,283],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3445}
+{"testID":284,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3447}
+{"test":{"id":285,"name":"CT-AUT-08 senha e confirmação (RN-03) CT-AUT-08 senha com 6 caracteres é aceita (limite)","suiteID":189,"groupIDs":[272,283],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3447}
+{"testID":285,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3448}
+{"test":{"id":286,"name":"CT-AUT-08 senha e confirmação (RN-03) CT-AUT-08 senha com 7 caracteres é aceita","suiteID":189,"groupIDs":[272,283],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3448}
+{"testID":286,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3450}
+{"test":{"id":287,"name":"CT-AUT-08 senha e confirmação (RN-03) CT-AUT-08 senha vazia é rejeitada","suiteID":189,"groupIDs":[272,283],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3450}
+{"testID":287,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3452}
+{"test":{"id":288,"name":"CT-AUT-08 senha e confirmação (RN-03) CT-AUT-08 confirmação divergente é rejeitada","suiteID":189,"groupIDs":[272,283],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3452}
+{"testID":288,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3453}
+{"test":{"id":289,"name":"CT-AUT-08 senha e confirmação (RN-03) CT-AUT-08 confirmação idêntica é aceita","suiteID":189,"groupIDs":[272,283],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3453}
+{"testID":271,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3454}
+{"test":{"id":290,"name":"CT-PAS-05 desativar alertas reinicia o estado e silencia","suiteID":66,"groupIDs":[191],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3454}
+{"testID":289,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3455}
+{"group":{"id":291,"suiteID":189,"parentID":272,"name":"CT-AUT-09 nome com dois termos (RN-04)","metadata":{"skip":false,"skipReason":null},"testCount":4,"line":null,"column":null,"url":"unparsed"},"type":"group","time":3455}
+{"test":{"id":292,"name":"CT-AUT-09 nome com dois termos (RN-04) CT-AUT-09 nome com um termo é rejeitado","suiteID":189,"groupIDs":[272,291],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3455}
+{"testID":290,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":3456}
+{"testID":290,"messageType":"print","message":"[GeofenceService] Notificações desativadas.","type":"print","time":3456}
+{"testID":290,"messageType":"print","message":"[GeofenceService] Notificações ativadas.","type":"print","time":3456}
+{"testID":290,"messageType":"print","message":"[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Aproximando (dist: 800m)","type":"print","time":3456}
+{"testID":290,"messageType":"print","message":"[NotificationService] Aproximando-se do Porto — Embarcação próxima ao Pier Urbano de Itacoatiara","type":"print","time":3456}
+{"testID":292,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3457}
+{"test":{"id":293,"name":"CT-AUT-09 nome com dois termos (RN-04) CT-AUT-09 nome com dois termos é aceito","suiteID":189,"groupIDs":[272,291],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3457}
+{"testID":293,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3458}
+{"test":{"id":294,"name":"CT-AUT-09 nome com dois termos (RN-04) CT-AUT-09 espaços extras entre e ao redor dos termos são aceitos","suiteID":189,"groupIDs":[272,291],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3458}
+{"testID":294,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3460}
+{"test":{"id":295,"name":"CT-AUT-09 nome com dois termos (RN-04) CT-AUT-09 nome só com espaços é rejeitado","suiteID":189,"groupIDs":[272,291],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3460}
+{"testID":295,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3465}
+{"group":{"id":296,"suiteID":189,"parentID":272,"name":"CT-AUT-10 formato de e-mail","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":3465}
+{"test":{"id":297,"name":"CT-AUT-10 formato de e-mail CT-AUT-10 e-mails válidos são aceitos","suiteID":189,"groupIDs":[272,296],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3465}
+{"testID":297,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3468}
+{"test":{"id":298,"name":"CT-AUT-10 formato de e-mail CT-AUT-10 e-mails inválidos são recusados com mensagem","suiteID":189,"groupIDs":[272,296],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":3468}
+{"testID":298,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3469}
+{"testID":290,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":3477}
+{"testID":290,"messageType":"print","message":"[GeofenceService] Notificações desativadas.","type":"print","time":3477}
+{"testID":290,"messageType":"print","message":"[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Aproximando (dist: 800m)","type":"print","time":3500}
+{"testID":276,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 1)","type":"print","time":3508}
+{"testID":276,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 2)","type":"print","time":3512}
+{"testID":276,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 3)","type":"print","time":3513}
+{"testID":276,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3513}
+{"test":{"id":299,"name":"CT-OFF-02 fila persistida é recuperada e registro corrompido é ignorado","suiteID":174,"groupIDs":[269],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3513}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":3515}
+{"testID":290,"messageType":"print","message":"[GeofenceService] Pier Urbano de Itacoatiara: Aproximando → Atracado (dist: 100m)","type":"print","time":3522}
+{"testID":290,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3545}
+{"test":{"id":300,"name":"CT-UI-04 números em pt-BR: \"1,5 km\" e \"12,6 km/h\"","suiteID":66,"groupIDs":[191],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3545}
+{"testID":300,"messageType":"print","message":"[GeofenceService] Estado resetado.","type":"print","time":3547}
+{"testID":300,"messageType":"print","message":"[GeofenceService] Notificações desativadas.","type":"print","time":3547}
+{"testID":300,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3547}
+{"test":{"id":301,"name":"(tearDownAll)","suiteID":66,"groupIDs":[191],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":3548}
+{"testID":301,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":3549}
+{"testID":299,"messageType":"print","message":"[OfflineSyncService] Registro corrompido ignorado: FormatException: Unexpected character (at character 2)\n{corrompido\n ^\n","type":"print","time":3579}
+{"testID":299,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3580}
+{"test":{"id":302,"name":"CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila","suiteID":174,"groupIDs":[269],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3580}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":3581}
+{"testID":302,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 1)","type":"print","time":3646}
+{"testID":302,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 2)","type":"print","time":3646}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":3646}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":3647}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Sincronizando 2 ponto(s)...","type":"print","time":3647}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] 2/2 pontos sincronizados. Restante: 0","type":"print","time":3647}
+{"testID":262,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":3677}
+{"group":{"id":303,"suiteID":261,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":8,"line":null,"column":null,"url":null},"type":"group","time":3677}
+{"test":{"id":304,"name":"CT-SEG-03 nenhum log registra perfil, CPF, senha ou token","suiteID":261,"groupIDs":[303],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3677}
+{"testID":229,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":3685}
+{"group":{"id":305,"suiteID":228,"parentID":null,"name":"","metadata":{"skip":false,"skipReason":null},"testCount":16,"line":null,"column":null,"url":null},"type":"group","time":3685}
+{"test":{"id":306,"name":"CT-UI-01 cadastro vazio mostra mensagem sob cada um dos 6 campos e não envia","suiteID":228,"groupIDs":[305],"metadata":{"skip":false,"skipReason":null},"line":174,"column":5,"url":"package:flutter_test/src/widget_tester.dart"},"type":"testStart","time":3685}
+{"testID":304,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3714}
+{"test":{"id":307,"name":"CT-SEG-04 repositório sem chave privada ou conta de serviço","suiteID":261,"groupIDs":[303],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3715}
+{"testID":307,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3739}
+{"test":{"id":308,"name":"CT-SEG-11 build release não é assinado com a chave de depuração","suiteID":261,"groupIDs":[303],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3739}
+{"testID":308,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3741}
+{"test":{"id":309,"name":"CT-SEG-12 nenhum endpoint http:// sem TLS no código","suiteID":261,"groupIDs":[303],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3741}
+{"testID":309,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3755}
+{"test":{"id":310,"name":"CT-SEG-01 (E) regras Firestore não liberam todo o banco a qualquer autenticado","suiteID":261,"groupIDs":[303],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3755}
+{"testID":310,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3757}
+{"test":{"id":311,"name":"CT-EMB-06 (E) regra de Storage cobre o caminho usado pelo app","suiteID":261,"groupIDs":[303],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3757}
+{"testID":311,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3759}
+{"test":{"id":312,"name":"CT-COM-07 (E) página web declara viewport responsivo","suiteID":261,"groupIDs":[303],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3759}
+{"testID":312,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3760}
+{"test":{"id":313,"name":"CT-COM-08 (E) APK publicado presente e versão igual à do app","suiteID":261,"groupIDs":[303],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3760}
+{"testID":313,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3762}
+{"testID":302,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3908}
+{"test":{"id":314,"name":"CT-OFF-04 falha parcial mantém só os recusados para o próximo ciclo","suiteID":174,"groupIDs":[269],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3908}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":3910}
+{"testID":314,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 1)","type":"print","time":3975}
+{"testID":314,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 2)","type":"print","time":3975}
+{"testID":314,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 3)","type":"print","time":3976}
+{"testID":314,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 4)","type":"print","time":3976}
+{"testID":314,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 5)","type":"print","time":3977}
+{"testID":314,"messageType":"print","message":"[OfflineSyncService] Sincronizando 5 ponto(s)...","type":"print","time":3977}
+{"testID":314,"messageType":"print","message":"[OfflineSyncService] 3/5 pontos sincronizados. Restante: 2","type":"print","time":3977}
+{"testID":314,"messageType":"print","message":"[OfflineSyncService] Sincronizando 2 ponto(s)...","type":"print","time":3978}
+{"testID":314,"messageType":"print","message":"[OfflineSyncService] 2/2 pontos sincronizados. Restante: 0","type":"print","time":3978}
+{"testID":314,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":3979}
+{"test":{"id":315,"name":"CT-OFF-05 o mesmo ponto salvo 3 vezes é enviado uma vez","suiteID":174,"groupIDs":[269],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":3979}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":3980}
+{"testID":315,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 1)","type":"print","time":4044}
+{"testID":315,"messageType":"print","message":"[OfflineSyncService] Sincronizando 1 ponto(s)...","type":"print","time":4045}
+{"testID":315,"messageType":"print","message":"[OfflineSyncService] 1/1 pontos sincronizados. Restante: 0","type":"print","time":4045}
+{"testID":315,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":4046}
+{"test":{"id":316,"name":"CT-OFF-06 Wi-Fi → móvel não reenvia; offline → Wi-Fi esvazia a fila","suiteID":174,"groupIDs":[269],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":4046}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":4048}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":4110}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":4111}
+{"testID":316,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 1)","type":"print","time":4173}
+{"testID":316,"messageType":"print","message":"[OfflineSyncService] Sincronizando 1 ponto(s)...","type":"print","time":4173}
+{"testID":316,"messageType":"print","message":"[OfflineSyncService] 0/1 pontos sincronizados. Restante: 1","type":"print","time":4173}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":4275}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":4438}
+{"testID":316,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 2)","type":"print","time":4499}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":4500}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":4500}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Sincronizando 2 ponto(s)...","type":"print","time":4500}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] 2/2 pontos sincronizados. Restante: 0","type":"print","time":4501}
+{"testID":306,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":4513}
+{"test":{"id":317,"name":"CT-AUT-03 (a) CPF 123.456.789-00 → \"CPF inválido\" sem envio","suiteID":228,"groupIDs":[305],"metadata":{"skip":false,"skipReason":null},"line":174,"column":5,"url":"package:flutter_test/src/widget_tester.dart"},"type":"testStart","time":4514}
+{"testID":316,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":4763}
+{"test":{"id":318,"name":"CT-OFF-07 envio na ordem de captura (FIFO)","suiteID":174,"groupIDs":[269],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":4763}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":4765}
+{"testID":318,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 1)","type":"print","time":4828}
+{"testID":318,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 2)","type":"print","time":4829}
+{"testID":318,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 3)","type":"print","time":4830}
+{"testID":318,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 4)","type":"print","time":4830}
+{"testID":318,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 5)","type":"print","time":4830}
+{"testID":318,"messageType":"print","message":"[OfflineSyncService] Sincronizando 5 ponto(s)...","type":"print","time":4830}
+{"testID":318,"messageType":"print","message":"[OfflineSyncService] 5/5 pontos sincronizados. Restante: 0","type":"print","time":4830}
+{"testID":318,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":4831}
+{"group":{"id":319,"suiteID":174,"parentID":269,"name":"CT-OFF-08 lote máximo de 50 por ciclo","metadata":{"skip":false,"skipReason":null},"testCount":3,"line":null,"column":null,"url":"unparsed"},"type":"group","time":4831}
+{"test":{"id":320,"name":"CT-OFF-08 lote máximo de 50 por ciclo CT-OFF-08 fila de 49 pontos","suiteID":174,"groupIDs":[269,319],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":4831}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":4832}
+{"testID":320,"messageType":"print","message":"[OfflineSyncService] Sincronizando 49 ponto(s)...","type":"print","time":4898}
+{"testID":320,"messageType":"print","message":"[OfflineSyncService] 49/49 pontos sincronizados. Restante: 0","type":"print","time":4899}
+{"testID":320,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":4899}
+{"test":{"id":321,"name":"CT-OFF-08 lote máximo de 50 por ciclo CT-OFF-08 fila de 50 pontos","suiteID":174,"groupIDs":[269,319],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":4899}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":4901}
+{"testID":317,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":4918}
+{"test":{"id":322,"name":"CT-AUT-08 senha de 5 caracteres e confirmação divergente","suiteID":228,"groupIDs":[305],"metadata":{"skip":false,"skipReason":null},"line":174,"column":5,"url":"package:flutter_test/src/widget_tester.dart"},"type":"testStart","time":4918}
+{"testID":321,"messageType":"print","message":"[OfflineSyncService] Sincronizando 50 ponto(s)...","type":"print","time":4965}
+{"testID":321,"messageType":"print","message":"[OfflineSyncService] 50/50 pontos sincronizados. Restante: 0","type":"print","time":4966}
+{"testID":321,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":4966}
+{"test":{"id":323,"name":"CT-OFF-08 lote máximo de 50 por ciclo CT-OFF-08 fila de 51 pontos","suiteID":174,"groupIDs":[269,319],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":4966}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":4968}
+{"testID":323,"messageType":"print","message":"[OfflineSyncService] Sincronizando 51 ponto(s)...","type":"print","time":5030}
+{"testID":323,"messageType":"print","message":"[OfflineSyncService] 50/50 pontos sincronizados. Restante: 1","type":"print","time":5031}
+{"testID":323,"messageType":"print","message":"[OfflineSyncService] Sincronizando 1 ponto(s)...","type":"print","time":5032}
+{"testID":323,"messageType":"print","message":"[OfflineSyncService] 1/1 pontos sincronizados. Restante: 0","type":"print","time":5032}
+{"testID":323,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":5032}
+{"group":{"id":324,"suiteID":174,"parentID":269,"name":"CT-OFF-09 indicador de pendentes","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":5033}
+{"test":{"id":325,"name":"CT-OFF-09 indicador de pendentes CT-OFF-09 (a) contador acompanha inclusões e envio","suiteID":174,"groupIDs":[269,324],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":5033}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":5034}
+{"testID":325,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 1)","type":"print","time":5097}
+{"testID":325,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 2)","type":"print","time":5098}
+{"testID":325,"messageType":"print","message":"[OfflineSyncService] Sincronizando 2 ponto(s)...","type":"print","time":5098}
+{"testID":325,"messageType":"print","message":"[OfflineSyncService] 2/2 pontos sincronizados. Restante: 0","type":"print","time":5098}
+{"testID":322,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":5158}
+{"test":{"id":326,"name":"CT-AUT-01 cadastro válido grava perfil passageiro e volta ao login","suiteID":228,"groupIDs":[305],"metadata":{"skip":false,"skipReason":null},"line":174,"column":5,"url":"package:flutter_test/src/widget_tester.dart"},"type":"testStart","time":5158}
+{"testID":325,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":5161}
+{"test":{"id":327,"name":"CT-OFF-09 indicador de pendentes CT-OFF-09 (b) indicador do mapa reflete pontos pendentes do rastreamento (SQLite)","suiteID":174,"groupIDs":[269,324],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste"},"type":"testStart","time":5161}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":5163}
+{"testID":327,"messageType":"print","message":"[LocalDB] Abrindo banco em: C:\\Users\\joaog\\AppData\\Local\\Temp\\atd_test_6fbfddaf\\amazon_track.db","type":"print","time":5246}
+{"testID":327,"messageType":"print","message":"[LocalDB] Tabela criada com sucesso.","type":"print","time":5270}
+{"testID":327,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":5296}
+{"test":{"id":328,"name":"CT-OFF-10 exceção em um ponto não bloqueia os demais","suiteID":174,"groupIDs":[269],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":5297}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":5298}
+{"testID":328,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 1)","type":"print","time":5363}
+{"testID":328,"messageType":"print","message":"[LocalDB] Abrindo banco em: C:\\Users\\joaog\\AppData\\Local\\Temp\\atd_test_6fbfddaf\\amazon_track.db","type":"print","time":5364}
+{"testID":328,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 2)","type":"print","time":5364}
+{"testID":328,"messageType":"print","message":"[LocalDB] Abrindo banco em: C:\\Users\\joaog\\AppData\\Local\\Temp\\atd_test_6fbfddaf\\amazon_track.db","type":"print","time":5364}
+{"testID":328,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 3)","type":"print","time":5365}
+{"testID":328,"messageType":"print","message":"[OfflineSyncService] Sincronizando 3 ponto(s)...","type":"print","time":5365}
+{"testID":328,"messageType":"print","message":"[LocalDB] Abrindo banco em: C:\\Users\\joaog\\AppData\\Local\\Temp\\atd_test_6fbfddaf\\amazon_track.db","type":"print","time":5365}
+{"testID":328,"messageType":"print","message":"[OfflineSyncService] Falha ao sincronizar ponto p2: Exception: falha de rede em p2","type":"print","time":5365}
+{"testID":328,"messageType":"print","message":"[LocalDB] Abrindo banco em: C:\\Users\\joaog\\AppData\\Local\\Temp\\atd_test_6fbfddaf\\amazon_track.db","type":"print","time":5365}
+{"testID":328,"messageType":"print","message":"[OfflineSyncService] 2/3 pontos sincronizados. Restante: 1","type":"print","time":5366}
+{"testID":328,"messageType":"print","message":"[OfflineSyncService] Sincronizando 1 ponto(s)...","type":"print","time":5366}
+{"testID":328,"messageType":"print","message":"[OfflineSyncService] 1/1 pontos sincronizados. Restante: 0","type":"print","time":5367}
+{"testID":328,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":5367}
+{"test":{"id":329,"name":"CT-OFF-11 ponto salvo durante uma sincronização não é perdido","suiteID":174,"groupIDs":[269],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":5367}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":5369}
+{"testID":329,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 1)","type":"print","time":5431}
+{"testID":329,"messageType":"print","message":"[OfflineSyncService] Sincronizando 1 ponto(s)...","type":"print","time":5431}
+{"testID":329,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 2)","type":"print","time":5483}
+{"testID":326,"messageType":"print","message":"[signUp] Credencial criada; gravando perfil.","type":"print","time":5525}
+{"testID":326,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":5525}
+{"test":{"id":330,"name":"CT-AUT-05 login inválido: mensagem em português sem estrutura interna","suiteID":228,"groupIDs":[305],"metadata":{"skip":false,"skipReason":null},"line":174,"column":5,"url":"package:flutter_test/src/widget_tester.dart"},"type":"testStart","time":5526}
+{"testID":330,"messageType":"print","message":"CT-AUT-05 mensagem exibida: \"E-mail ou senha incorretos.\"","type":"print","time":5612}
+{"testID":330,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":5612}
+{"group":{"id":331,"suiteID":228,"parentID":305,"name":"CT-EMB-07 formulário de embarcação","metadata":{"skip":false,"skipReason":null},"testCount":3,"line":null,"column":null,"url":"unparsed"},"type":"group","time":5612}
+{"test":{"id":332,"name":"CT-EMB-07 formulário de embarcação CT-EMB-07 (a) campos vazios são bloqueados","suiteID":228,"groupIDs":[305,331],"metadata":{"skip":false,"skipReason":null},"line":174,"column":5,"url":"package:flutter_test/src/widget_tester.dart"},"type":"testStart","time":5612}
+{"testID":332,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":5729}
+{"test":{"id":333,"name":"CT-EMB-07 formulário de embarcação CT-EMB-07 (b) capacidade \"abc\" é rejeitada","suiteID":228,"groupIDs":[305,331],"metadata":{"skip":false,"skipReason":null},"line":174,"column":5,"url":"package:flutter_test/src/widget_tester.dart"},"type":"testStart","time":5730}
+{"testID":329,"messageType":"print","message":"[OfflineSyncService] 1/1 pontos sincronizados. Restante: 1","type":"print","time":5732}
+{"testID":329,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":5733}
+{"test":{"id":334,"name":"CT-NF-05 sincronização começa em até 30 s após reconectar","suiteID":174,"groupIDs":[269],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":5733}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":5734}
+{"testID":334,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 1)","type":"print","time":5798}
+{"testID":334,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 2)","type":"print","time":5798}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":5799}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":5799}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Sincronizando 2 ponto(s)...","type":"print","time":5799}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] 2/2 pontos sincronizados. Restante: 0","type":"print","time":5799}
+{"testID":333,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":5842}
+{"test":{"id":335,"name":"CT-EMB-07 formulário de embarcação CT-EMB-07 (c) capacidade \"-5\" é rejeitada","suiteID":228,"groupIDs":[305,331],"metadata":{"skip":false,"skipReason":null},"line":174,"column":5,"url":"package:flutter_test/src/widget_tester.dart"},"type":"testStart","time":5843}
+{"testID":335,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":5945}
+{"group":{"id":336,"suiteID":228,"parentID":305,"name":"CT-UI-03 diretrizes de acessibilidade (WCAG 2.1 AA)","metadata":{"skip":false,"skipReason":null},"testCount":6,"line":null,"column":null,"url":"unparsed"},"type":"group","time":5945}
+{"test":{"id":337,"name":"CT-UI-03 diretrizes de acessibilidade (WCAG 2.1 AA) CT-UI-03 /login: alvo de toque ≥ 48 dp","suiteID":228,"groupIDs":[305,336],"metadata":{"skip":false,"skipReason":null},"line":174,"column":5,"url":"package:flutter_test/src/widget_tester.dart"},"type":"testStart","time":5945}
+{"testID":337,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":5980}
+{"test":{"id":338,"name":"CT-UI-03 diretrizes de acessibilidade (WCAG 2.1 AA) CT-UI-03 /login: tocáveis com rótulo semântico","suiteID":228,"groupIDs":[305,336],"metadata":{"skip":false,"skipReason":null},"line":174,"column":5,"url":"package:flutter_test/src/widget_tester.dart"},"type":"testStart","time":5980}
+{"testID":338,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":6018}
+{"test":{"id":339,"name":"CT-UI-03 diretrizes de acessibilidade (WCAG 2.1 AA) CT-UI-03 /login: contraste de texto ≥ 4,5:1","suiteID":228,"groupIDs":[305,336],"metadata":{"skip":false,"skipReason":null},"line":174,"column":5,"url":"package:flutter_test/src/widget_tester.dart"},"type":"testStart","time":6018}
+{"testID":334,"messageType":"print","message":"CT-NF-05 início do sync após reconexão = 0 ms (host)","type":"print","time":6061}
+{"testID":334,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":6061}
+{"test":{"id":340,"name":"CT-NF-08 100 alternâncias de rede: cada ponto enviado uma vez","suiteID":174,"groupIDs":[269],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":6061}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":6063}
+{"testID":339,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":6068}
+{"test":{"id":341,"name":"CT-UI-03 diretrizes de acessibilidade (WCAG 2.1 AA) CT-UI-03 /signup: alvo de toque ≥ 48 dp","suiteID":228,"groupIDs":[305,336],"metadata":{"skip":false,"skipReason":null},"line":174,"column":5,"url":"package:flutter_test/src/widget_tester.dart"},"type":"testStart","time":6068}
+{"testID":341,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":6120}
+{"test":{"id":342,"name":"CT-UI-03 diretrizes de acessibilidade (WCAG 2.1 AA) CT-UI-03 /signup: tocáveis com rótulo semântico","suiteID":228,"groupIDs":[305,336],"metadata":{"skip":false,"skipReason":null},"line":174,"column":5,"url":"package:flutter_test/src/widget_tester.dart"},"type":"testStart","time":6121}
+{"testID":340,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 1)","type":"print","time":6132}
+{"testID":340,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 2)","type":"print","time":6132}
+{"testID":340,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 3)","type":"print","time":6132}
+{"testID":340,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 4)","type":"print","time":6132}
+{"testID":340,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 5)","type":"print","time":6133}
+{"testID":340,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 6)","type":"print","time":6133}
+{"testID":340,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 7)","type":"print","time":6133}
+{"testID":340,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 8)","type":"print","time":6133}
+{"testID":340,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 9)","type":"print","time":6133}
+{"testID":340,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 10)","type":"print","time":6134}
+{"testID":340,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 11)","type":"print","time":6134}
+{"testID":340,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 12)","type":"print","time":6134}
+{"testID":340,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 13)","type":"print","time":6135}
+{"testID":340,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 14)","type":"print","time":6135}
+{"testID":340,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 15)","type":"print","time":6135}
+{"testID":340,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 16)","type":"print","time":6135}
+{"testID":340,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 17)","type":"print","time":6136}
+{"testID":340,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 18)","type":"print","time":6136}
+{"testID":340,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 19)","type":"print","time":6136}
+{"testID":340,"messageType":"print","message":"[OfflineSyncService] Ponto salvo (total pendente: 20)","type":"print","time":6136}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":6137}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":6137}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Sincronizando 20 ponto(s)...","type":"print","time":6137}
+{"testID":342,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":6184}
+{"test":{"id":343,"name":"CT-UI-03 diretrizes de acessibilidade (WCAG 2.1 AA) CT-UI-03 /signup: contraste de texto ≥ 4,5:1","suiteID":228,"groupIDs":[305,336],"metadata":{"skip":false,"skipReason":null},"line":174,"column":5,"url":"package:flutter_test/src/widget_tester.dart"},"type":"testStart","time":6184}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":6193}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] 20/20 pontos sincronizados. Restante: 0","type":"print","time":6200}
+{"testID":343,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":6246}
+{"group":{"id":344,"suiteID":228,"parentID":305,"name":"CT-UI-05 tela 320 × 568 dp com fonte 1,5×","metadata":{"skip":false,"skipReason":null},"testCount":2,"line":null,"column":null,"url":"unparsed"},"type":"group","time":6246}
+{"test":{"id":345,"name":"CT-UI-05 tela 320 × 568 dp com fonte 1,5× CT-UI-05 /login sem overflow","suiteID":228,"groupIDs":[305,344],"metadata":{"skip":false,"skipReason":null},"line":174,"column":5,"url":"package:flutter_test/src/widget_tester.dart"},"type":"testStart","time":6246}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":6254}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":6254}
+{"testID":345,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":6284}
+{"test":{"id":346,"name":"CT-UI-05 tela 320 × 568 dp com fonte 1,5× CT-UI-05 /signup sem overflow","suiteID":228,"groupIDs":[305,344],"metadata":{"skip":false,"skipReason":null},"line":174,"column":5,"url":"package:flutter_test/src/widget_tester.dart"},"type":"testStart","time":6284}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":6316}
+{"testID":346,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":6335}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":6377}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":6377}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":6439}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":6500}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":6500}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":6562}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":6623}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":6623}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":6684}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":6747}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":6747}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":6806}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":6867}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":6868}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":6930}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":6991}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":6991}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":7051}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":7112}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":7113}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":7173}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":7235}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":7235}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":7297}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":7358}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":7358}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":7419}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":7481}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":7481}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":7543}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":7604}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":7604}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":7666}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":7726}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":7726}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":7787}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":7849}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":7849}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":7911}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":7973}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":7973}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":8034}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":8094}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":8094}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":8156}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":8216}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":8216}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":8278}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":8340}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":8340}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":8400}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":8462}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":8462}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":8522}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":8583}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":8584}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":8645}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":8707}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":8707}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":8769}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":8831}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":8831}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":8893}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":8955}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":8955}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":9015}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":9077}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":9077}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":9138}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":9199}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":9199}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":9261}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":9325}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":9329}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":9386}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":9447}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":9448}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":9508}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":9570}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":9570}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":9631}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":9692}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":9692}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":9752}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":9814}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":9814}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":9876}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":9936}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":9936}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":9998}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":10059}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":10059}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":10119}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":10180}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":10181}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":10241}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":10303}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":10303}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":10365}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":10426}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":10426}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":10488}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":10550}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":10550}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":10610}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":10672}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":10672}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":10733}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":10795}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":10795}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":10855}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":10917}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":10917}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":10977}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":11038}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":11038}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":11099}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":11161}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":11161}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":11223}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":11283}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":11284}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":11346}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":11406}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":11406}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":11468}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":11528}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":11528}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":11590}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":11652}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":11652}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":11714}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":11776}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":11776}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":11838}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":11899}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":11899}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":11960}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":12022}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":12022}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":12084}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":12146}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":12146}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: false","type":"print","time":12208}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Conectividade: true","type":"print","time":12268}
+{"testID":270,"messageType":"print","message":"[OfflineSyncService] Internet restaurada — iniciando sync...","type":"print","time":12268}
+{"testID":340,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":12833}
+{"test":{"id":347,"name":"(tearDownAll)","suiteID":174,"groupIDs":[269],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":null},"type":"testStart","time":12833}
+{"testID":347,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":12836}
+{"testID":231,"messageType":"print","message":"CT-NF-06 inserção 5000 = 10891 ms; consulta lote = 0 ms","type":"print","time":14062}
+{"testID":231,"result":"success","skipped":false,"hidden":false,"type":"testDone","time":14062}
+{"test":{"id":348,"name":"(tearDownAll)","suiteID":85,"groupIDs":[195],"metadata":{"skip":false,"skipReason":null},"line":null,"column":null,"url":"unparsed"},"type":"testStart","time":14062}
+{"testID":348,"result":"success","skipped":false,"hidden":true,"type":"testDone","time":14064}
+{"success":true,"type":"done","time":14080}

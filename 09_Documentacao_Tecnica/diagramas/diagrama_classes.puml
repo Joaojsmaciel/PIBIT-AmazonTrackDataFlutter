@@ -1,0 +1,214 @@
+@startuml diagrama_classes
+skinparam classAttributeIconSize 0
+skinparam classFontSize 12
+skinparam classBackgroundColor #EAF4FF
+skinparam classBorderColor #2D6DB4
+skinparam arrowColor #2D6DB4
+skinparam packageBackgroundColor #F5FBFF
+skinparam packageBorderColor #A0C4E8
+hide empty methods
+
+' ─────────────────────────────────────────
+'  ENUMERAÇÕES
+' ─────────────────────────────────────────
+enum UserType {
+  passageiro
+  barqueiro
+}
+
+enum StopType {
+  porto
+  terminal
+  comunidade
+  cidade
+  outro
+}
+
+' ─────────────────────────────────────────
+'  MODELOS PRINCIPAIS
+' ─────────────────────────────────────────
+package "Autenticação" {
+  class UserModel {
+    + uid : String
+    + email : String
+    + fullName : String
+    + cpf : String
+    + userType : UserType
+    + createdAt : int
+    + isActive : bool
+    --
+    + toMap() : Map
+    + fromMap(map) : UserModel
+    + copyWith(...) : UserModel
+  }
+}
+
+package "Embarcação" {
+  class BoatModel {
+    + id : String
+    + ownerId : String
+    + ownerName : String
+    + name : String
+    + photoUrl : String?
+    + routes : List<String>
+    + routeCities : List<String>
+    + capacity : int?
+    + type : String
+    + createdAt : int
+    + isActive : bool
+    --
+    + toMap() : Map
+    + fromMap(map) : BoatModel
+    + copyWith(...) : BoatModel
+  }
+}
+
+package "Rota / Parada" {
+  class RouteModel {
+    + id : String
+    + name : String
+    + origin : StopModel
+    + destination : StopModel
+    + stops : List<StopModel>
+    + estimatedDurationMinutes : int
+    + isFrequent : bool
+    + createdAt : int
+    + isActive : bool
+    --
+    + toMap() : Map
+    + fromMap(map) : RouteModel
+    + copyWith(...) : RouteModel
+  }
+
+  class StopModel {
+    + id : String
+    + name : String
+    + city : String
+    + state : String
+    + latitude : double
+    + longitude : double
+    + radius : double
+    + type : StopType
+    + createdAt : int?
+    --
+    + toMap() : Map
+    + fromMap(map) : StopModel
+    + copyWith(...) : StopModel
+  }
+}
+
+package "Rastreamento / DTN" {
+  class LocationModel {
+    + userId : String
+    + tripId : String
+    + boatId : String
+    + latitude : double
+    + longitude : double
+    + speed : double
+    + altitude : double?
+    + accuracy : double
+    + bearing : double?
+    + timestamp : int
+    + userType : String
+    + userName : String
+    --
+    + toMap() : Map
+    + fromMap(map) : LocationModel
+  }
+
+  class LocalLocationPoint {
+    + id : String
+    + latitude : double
+    + longitude : double
+    + velocidade : double
+    + timestamp : DateTime
+    + sincronizado : bool
+    + userId : String
+    + tripId : String
+    + boatId : String
+    --
+    + toJson() : Map
+    + fromJson(json) : LocalLocationPoint
+    + toJsonString() : String
+  }
+
+  class TripSummary {
+    + tripId : String
+    + userId : String
+    + userName : String
+    + boatId : String
+    + startTimestamp : int
+    + endTimestamp : int
+    + startLat : double
+    + startLng : double
+    + endLat : double
+    + endLng : double
+    + pointCount : int
+    + avgSpeedMs : double
+    + totalDistanceMeters : double
+    + departurePoint : String
+    + arrivalPoint : String
+    + stops : List<String>
+    --
+    + duration : Duration
+    + avgSpeedKmh : double
+    + totalDistanceKm : double
+    + startDate : DateTime
+    + endDate : DateTime
+  }
+}
+
+package "Comunicação" {
+  class ChatMessage {
+    + id : String
+    + chatId : String
+    + senderId : String
+    + senderName : String
+    + text : String
+    + timestamp : int
+    + isRead : bool
+    --
+    + toMap() : Map
+    + fromMap(map) : ChatMessage
+    + buildChatId(uid1, uid2) : String
+  }
+
+  class ChatConversation {
+    + chatId : String
+    + participants : List<String>
+    + participantNames : Map<String,String>
+    + lastMessage : String
+    + lastSenderId : String
+    + lastSenderName : String
+    + lastTimestamp : int
+    --
+    + otherName(myId) : String
+    + otherId(myId) : String
+    + fromMap(chatId, map) : ChatConversation
+  }
+}
+
+' ─────────────────────────────────────────
+'  RELACIONAMENTOS
+' ─────────────────────────────────────────
+UserModel  "1" --> "0..*" BoatModel        : possui\n(ownerId)
+UserModel  "1" --> "0..*" TripSummary      : realiza\n(userId)
+UserModel  "1" --> "0..*" LocationModel    : gera\n(userId)
+
+BoatModel  "1" --> "0..*" TripSummary      : associada\n(boatId)
+BoatModel  "1" --> "0..*" LocationModel    : rastreada\n(boatId)
+BoatModel  "1" --> "0..*" LocalLocationPoint : armazena\nlocalmente
+
+RouteModel "1" *-- "1"    StopModel        : origin
+RouteModel "1" *-- "1"    StopModel        : destination
+RouteModel "1" *-- "0..*" StopModel        : stops
+
+TripSummary "1" --> "0..*" LocalLocationPoint : sincroniza\n(tripId)
+
+ChatConversation "1" *-- "0..*" ChatMessage : contém
+ChatMessage --> UserModel                   : enviada por\n(senderId)
+
+UserModel  ..>  UserType  : usa
+StopModel  ..>  StopType  : usa
+
+@enduml

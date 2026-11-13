@@ -1,0 +1,23 @@
+// Firebase Storage Security Rules para Amazon Track Data — menor privilégio.
+//
+// Corrige DEF-02: cobre o caminho usado pelo app (boat_images/{boatId}.jpg,
+// firebase_storage_datasource.dart) e restringe a escrita ao dono da
+// embarcação. A consulta ao Firestore (firestore.get) exige que a integração
+// Storage → Firestore seja autorizada na primeira publicação.
+
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /boat_images/{fileName} {
+      function boatOwner() {
+        return firestore.get(/databases/(default)/documents/_root/amazontrackdata/boats/$(fileName.split('[.]')[0])).data.ownerId;
+      }
+      allow read: if request.auth != null;
+      allow delete: if request.auth != null && boatOwner() == request.auth.uid;
+      allow create, update: if request.auth != null
+        && boatOwner() == request.auth.uid
+        && request.resource.size < 5 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+    }
+  }
+}

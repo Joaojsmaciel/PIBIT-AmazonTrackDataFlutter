@@ -1,0 +1,81 @@
+// Proposta de regras Firestore de menor privilégio para o AmazonTrackData
+// (correção sugerida para DEF-01). Verificada por rules.test.mjs com RULES=proposta.
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function isUser(uid) { return signedIn() && request.auth.uid == uid; }
+    function ownsExisting() { return signedIn() && resource.data.ownerId == request.auth.uid; }
+    function createsAsOwner() { return signedIn() && request.resource.data.ownerId == request.auth.uid; }
+    function keepsOwner() { return request.resource.data.ownerId == resource.data.ownerId; }
+
+    match /_root/amazontrackdata {
+      // Perfil contém CPF: somente o próprio usuário.
+      match /users/{uid} {
+        allow read, write: if isUser(uid);
+      }
+
+      match /boats/{boatId} {
+        allow read: if signedIn();
+        allow create: if createsAsOwner();
+        allow update: if ownsExisting() && keepsOwner();
+        allow delete: if ownsExisting();
+      }
+
+      match /routes/{routeId} {
+        allow read: if signedIn();
+        allow create: if createsAsOwner();
+        allow update, delete: if ownsExisting();
+      }
+
+      match /stops/{stopId} {
+        allow read: if signedIn();
+      }
+
+      // Pontos, metadados e posição ao vivo: leitura para acompanhamento,
+      // escrita apenas pelo próprio barqueiro.
+      match /locations/{uid}/tracks/{trackId} {
+        allow read: if signedIn();
+        allow write: if isUser(uid);
+      }
+      match /tripMeta/{uid}/trips/{tripId} {
+        allow read: if signedIn();
+        allow write: if isUser(uid);
+      }
+      match /livePositions/{uid} {
+        allow read: if signedIn();
+        allow write: if isUser(uid);
+      }
+
+      // Agendas não são apagadas: cancelamento por isCancelled.
+      match /scheduledTrips/{tripId} {
+        allow read: if signedIn();
+        allow create: if createsAsOwner();
+        allow update: if ownsExisting() && keepsOwner();
+        allow delete: if false;
+      }
+
+      // chatId = uidMenor_uidMaior: somente os dois participantes.
+      match /chats/{chatId} {
+        function participant() {
+          return signedIn() && request.auth.uid in chatId.split('_');
+        }
+        allow read, write: if participant();
+
+        match /messages/{messageId} {
+          allow read: if participant();
+          allow create: if participant()
+            && request.resource.data.senderId == request.auth.uid;
+          allow update: if participant();
+        }
+      }
+
+      match /tripSummaries/{summaryId} {
+        allow read: if signedIn();
+        allow write: if signedIn()
+          && request.resource.data.userId == request.auth.uid;
+      }
+    }
+  }
+}

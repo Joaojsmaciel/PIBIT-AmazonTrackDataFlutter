@@ -1,0 +1,821 @@
+﻿Resolving dependencies...
+Downloading packages...
+  _fe_analyzer_shared 85.0.0 (111.0.0 available)
+  _flutterfire_internals 1.3.59 (1.3.79 available)
+  analyzer 7.6.0 (14.7.0 available)
+  analyzer_plugin 0.13.4 (0.14.20 available)
+  async 2.13.0 (2.13.1 available)
+  build 2.5.4 (5.0.0 available)
+  build_config 1.1.2 (1.4.0 available)
+  build_daemon 4.1.1 (4.1.7 available)
+  build_resolvers 2.5.4 (3.0.4 available)
+  build_runner 2.5.4 (2.17.1 available)
+  build_runner_core 9.1.2 (9.3.2 available)
+  built_collection 5.1.1 (6.0.0 available)
+  built_value 8.12.4 (8.13.0 available)
+  cached_network_image 3.4.1 (4.0.6 available)
+  cached_network_image_platform_interface 4.1.1 (5.0.3 available)
+  cached_network_image_web 1.3.1 (2.0.4 available)
+  clock 1.1.2 (1.1.3 available)
+  cloud_firestore 5.6.12 (7.1.0 available)
+  cloud_firestore_platform_interface 6.6.12 (8.1.0 available)
+  cloud_firestore_web 4.4.12 (5.8.0 available)
+  code_assets 1.0.0 (2.1.0 available)
+  code_builder 4.11.1 (4.13.0 available)
+  connectivity_plus 5.0.2 (7.3.2 available)
+  connectivity_plus_platform_interface 1.2.4 (2.1.0 available)
+  cross_file 0.3.5+2 (0.4.0 available)
+  crypto 3.0.7 (3.0.8 available)
+  cupertino_icons 1.0.8 (2.0.0 available)
+  custom_lint_core 0.7.5 (0.8.2 available)
+  custom_lint_visitor 1.0.0+7.7.0 (1.0.0+9.0.0 available)
+  dart_style 3.1.1 (3.1.14 available)
+  dbus 0.7.12 (0.8.0 available)
+  dio 5.9.2 (5.11.1 available)
+  dio_web_adapter 2.1.2 (2.2.2 available)
+  equatable 2.0.8 (3.0.0 available)
+  file_selector_linux 0.9.4 (0.9.4+1 available)
+  file_selector_macos 0.9.5 (0.9.5+2 available)
+  file_selector_windows 0.9.3+5 (0.9.3+6 available)
+  firebase_auth 5.7.0 (7.0.1 available)
+  firebase_auth_platform_interface 7.7.3 (9.1.2 available)
+  firebase_auth_web 5.15.3 (6.3.2 available)
+  firebase_core 3.15.2 (5.1.0 available)
+  firebase_core_platform_interface 6.0.3 (8.1.1 available)
+  firebase_core_web 2.24.1 (4.1.0 available)
+  firebase_storage 12.4.10 (14.0.1 available)
+  firebase_storage_platform_interface 5.2.10 (6.0.9 available)
+  firebase_storage_web 3.10.17 (3.11.15 available)
+  flutter_cache_manager 3.4.1 (3.4.8 available)
+  flutter_lints 2.0.3 (6.0.0 available)
+  flutter_local_notifications 17.2.4 (22.3.3 available)
+  flutter_local_notifications_linux 4.0.1 (8.0.2 available)
+  flutter_local_notifications_platform_interface 7.2.0 (12.2.0 available)
+  flutter_map 7.0.2 (8.3.2 available)
+  flutter_plugin_android_lifecycle 2.0.33 (2.0.35 available)
+  flutter_riverpod 2.6.1 (3.4.3 available)
+  frontend_server_client 4.0.0 (4.2.0 available)
+  geolocator 11.1.0 (14.1.2 available)
+  geolocator_android 4.6.2 (5.2.1 available)
+  geolocator_apple 2.3.13 (2.4.3 available)
+  geolocator_platform_interface 4.2.6 (4.4.1 available)
+  geolocator_web 3.0.0 (4.1.4 available)
+  get_it 7.7.0 (9.3.0 available)
+  glob 2.1.3 (2.2.0 available)
+  go_router 14.8.1 (18.1.2 available)
+  google_sign_in 6.3.0 (7.2.0 available)
+  google_sign_in_android 6.2.1 (7.2.18 available)
+  google_sign_in_ios 5.9.0 (6.3.8 available)
+  google_sign_in_platform_interface 2.5.0 (3.1.0 available)
+  google_sign_in_web 0.12.4+4 (1.1.3 available)
+  hooks 1.0.2 (2.2.0 available)
+  http_multi_server 3.2.2 (3.2.3 available)
+  image_picker 1.2.1 (1.2.4 available)
+  image_picker_android 0.8.13+14 (0.8.13+25 available)
+  image_picker_ios 0.8.13+6 (0.8.13+14 available)
+  image_picker_platform_interface 2.11.1 (2.11.2 available)
+  intl 0.20.2 (0.20.3 available)
+  io 1.0.5 (1.1.0 available)
+  js 0.6.7 (0.7.2 available)
+  json_annotation 4.11.0 (4.12.0 available)
+  latlong2 0.9.1 (0.10.1 available)
+  lints 2.1.1 (6.1.0 available)
+  logger 2.7.0 (2.8.0 available)
+  material_color_utilities 0.13.0 (0.13.1 available)
+  mgrs_dart 2.0.0 (3.0.0 available)
+  mime 2.0.0 (2.1.0 available)
+  native_toolchain_c 0.17.6 (0.19.5 available)
+  nm 0.5.0 (0.6.0 available)
+  objective_c 9.3.0 (9.6.3 available)
+  octo_image 2.1.0 (2.1.3 available)
+  package_config 2.2.0 (3.0.0 available)
+  path_provider 2.1.5 (2.1.6 available)
+  path_provider_android 2.2.22 (2.3.1 available)
+  path_provider_linux 2.2.1 (2.2.2 available)
+  path_provider_platform_interface 2.1.2 (2.1.3 available)
+  permission_handler 11.4.0 (13.0.2 available)
+  permission_handler_android 12.1.0 (14.1.1 available)
+  permission_handler_apple 9.4.7 (9.6.5 available)
+  permission_handler_html 0.1.3+5 (0.1.4+1 available)
+  permission_handler_platform_interface 4.3.0 (4.4.1 available)
+  permission_handler_windows 0.2.1 (0.2.3 available)
+  petitparser 7.0.2 (7.1.0 available)
+  platform 3.1.6 (3.2.0 available)
+  pool 1.5.2 (1.5.3 available)
+  process 5.0.5 (5.0.6 available)
+  proj4dart 2.1.0 (3.0.0 available)
+  pub_semver 2.2.0 (2.2.1 available)
+  pubspec_parse 1.5.0 (1.7.0 available)
+  riverpod 2.6.1 (3.4.3 available)
+  riverpod_annotation 2.6.1 (4.0.7 available)
+  riverpod_generator 2.6.5 (4.0.9 available)
+  shared_preferences 2.5.4 (2.5.6 available)
+  shared_preferences_android 2.4.21 (2.5.4 available)
+  shared_preferences_foundation 2.5.6 (2.6.1 available)
+  shared_preferences_platform_interface 2.4.1 (2.4.2 available)
+  shelf 1.4.2 (1.4.3 available)
+  source_gen 2.0.0 (4.3.1 available)
+  sqflite 2.4.2 (2.4.5 available)
+  sqflite_android 2.4.2+3 (2.4.5 available)
+  sqflite_common 2.5.13+1 (2.5.14 available)
+  sqflite_common_ffi 2.4.3 (2.4.5 available)
+  sqflite_darwin 2.4.2 (2.4.4+1 available)
+  sqflite_platform_interface 2.4.0 (2.4.3 available)
+  sqlite3 3.5.2 (3.8.0 available)
+  stack_trace 1.12.1 (1.12.2 available)
+  stream_transform 2.1.1 (2.1.2 available)
+  synchronized 3.4.2 (3.5.0 available)
+  test_api 0.7.12 (0.7.15 available)
+  timezone 0.9.4 (0.11.2 available)
+  unicode 0.3.1 (1.1.9 available)
+  uuid 4.5.3 (4.6.0 available)
+  vector_math 2.4.3 (2.4.4 available)
+  vm_service 15.0.2 (15.4.0 available)
+  web 1.1.1 (1.1.2 available)
+  webdriver 3.1.0 (3.2.0 available)
+  xml 6.6.1 (7.1.0 available)
+  yaml 3.1.3 (3.1.4 available)
+Got dependencies!
+135 packages have newer versions incompatible with dependency constraints.
+Try `flutter pub outdated` for more information.
+00:00 +0: loading C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/boat_model_test.dart
+00:00 +0: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/boat_model_test.dart: BoatModel.toMap Serializa todos os campos corretamente
+00:00 +1: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/boat_model_test.dart: BoatModel.toMap photoUrl serializado como null quando não fornecido
+00:00 +2: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/boat_model_test.dart: BoatModel.toMap photoUrl serializado quando fornecido
+00:00 +3: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/boat_model_test.dart: BoatModel.fromMap Desserializa todos os campos corretamente
+00:00 +4: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/boat_model_test.dart: BoatModel.fromMap Listas routes e routeCities vazias quando ausentes no mapa
+00:00 +5: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/boat_model_test.dart: BoatModel.fromMap capacity pode ser null
+00:00 +6: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/boat_model_test.dart: BoatModel.fromMap isActive padrão true quando ausente
+00:00 +7: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/boat_model_test.dart: BoatModel round-trip (toMap → fromMap) Mantém igualdade após serialização e desserialização
+00:00 +8: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/boat_model_test.dart: BoatModel.copyWith Altera apenas o campo indicado
+00:00 +9: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/boat_model_test.dart: BoatModel.copyWith isActive pode ser alterado para false
+00:00 +10: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/boat_model_test.dart: BoatModel Equatable Dois modelos idênticos são iguais
+00:00 +11: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/boat_model_test.dart: BoatModel Equatable Modelos com id diferente não são iguais
+00:00 +12: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/location_model_test.dart: LocationModel.toMap Serializa todos os campos corretamente
+00:00 +13: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/location_model_test.dart: LocationModel.toMap altitude e bearing serializados como null quando ausentes
+00:00 +14: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/location_model_test.dart: LocationModel.fromMap Desserializa todos os campos corretamente
+00:00 +15: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/location_model_test.dart: LocationModel.fromMap Aceita valores inteiros para campos double (cast automático)
+00:00 +16: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/location_model_test.dart: LocationModel.fromMap altitude e bearing nulos quando ausentes no mapa
+00:00 +17: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/location_model_test.dart: LocationModel.fromMap boatId padrão string vazia quando ausente
+00:00 +18: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/location_model_test.dart: LocationModel round-trip (toMap → fromMap) Mantém igualdade após serialização e desserialização
+00:00 +19: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/location_model_test.dart: LocationModel Equatable Dois modelos idênticos são iguais
+00:00 +20: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/location_model_test.dart: LocationModel Equatable Modelos com userId diferente não são iguais
+00:00 +21: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/route_model_test.dart: RouteModel.toMap Serializa campos escalares corretamente
+00:00 +22: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/stop_model_test.dart: StopModel.toMap Serializa todos os campos corretamente
+00:00 +23: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/stop_model_test.dart: StopModel.toMap Serializa todos os campos corretamente
+00:00 +24: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/stop_model_test.dart: StopModel.toMap Serializa todos os campos corretamente
+00:00 +25: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/trip_summary_test.dart: TripSummary.duration Duração zero quando start e end são iguais
+00:00 +26: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/route_model_test.dart: RouteModel.toMap Serializa lista de stops corretamente
+00:00 +27: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/stop_model_test.dart: StopModel.toMap Serializa cada StopType como string do nome do enum
+00:00 +28: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/trip_summary_test.dart: TripSummary.avgSpeedKmh Converte m/s para km/h corretamente (5 m/s = 18 km/h)
+00:00 +29: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/route_model_test.dart: RouteModel.fromMap Desserializa todos os campos corretamente
+00:00 +30: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/stop_model_test.dart: StopModel.fromMap Desserializa todos os campos corretamente
+00:00 +31: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/stop_model_test.dart: StopModel.fromMap Desserializa todos os campos corretamente
+00:00 +32: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/route_model_test.dart: RouteModel.fromMap Desserializa origin e destination como StopModel
+00:00 +33: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/trip_summary_test.dart: TripSummary.totalDistanceKm Converte metros para km (36 000 m = 36 km)
+00:00 +34: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/stop_model_test.dart: StopModel.fromMap Usa valor padrão "AM" para state quando ausente
+00:00 +35: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/route_model_test.dart: RouteModel.fromMap Desserializa lista de stops como List<StopModel>
+00:00 +36: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/trip_summary_test.dart: TripSummary.totalDistanceKm 1 000 m = 1 km
+00:00 +37: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/stop_model_test.dart: StopModel.fromMap Usa radius 500.0 quando ausente no mapa
+00:00 +38: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/route_model_test.dart: RouteModel.fromMap Lista de stops vazia quando ausente no mapa
+00:00 +39: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/trip_summary_test.dart: TripSummary.startDate e endDate startDate corresponde ao timestamp de início
+00:00 +40: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/trip_summary_test.dart: TripSummary.startDate e endDate startDate corresponde ao timestamp de início
+00:00 +41: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/trip_summary_test.dart: TripSummary.startDate e endDate startDate corresponde ao timestamp de início
+00:00 +42: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/trip_summary_test.dart: TripSummary.startDate e endDate startDate corresponde ao timestamp de início
+00:00 +43: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/route_model_test.dart: RouteModel.copyWith Altera apenas o campo indicado
+00:00 +44: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/stop_model_test.dart: StopModel round-trip (toMap → fromMap) Mantém igualdade após serialização e desserialização
+00:00 +45: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/stop_model_test.dart: StopModel round-trip (toMap → fromMap) Mantém igualdade após serialização e desserialização
+00:00 +46: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/route_model_test.dart: RouteModel.copyWith isFrequent pode ser alterado para true
+00:00 +47: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/stop_model_test.dart: StopModel.copyWith Altera apenas o campo indicado
+00:00 +48: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/trip_summary_test.dart: TripSummary.startDate e endDate endDate é depois de startDate
+00:00 +49: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/route_model_test.dart: RouteModel Equatable Dois modelos idênticos são iguais
+00:00 +50: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/stop_model_test.dart: StopModel Equatable Dois modelos idênticos são iguais
+00:00 +51: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/trip_summary_test.dart: TripSummary campos opcionais departurePoint e arrivalPoint padrão string vazia
+00:00 +52: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/route_model_test.dart: RouteModel Equatable Modelos com id diferente não são iguais
+00:00 +53: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/stop_model_test.dart: StopModel Equatable Modelos com id diferente não são iguais
+00:00 +54: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/trip_summary_test.dart: TripSummary campos opcionais stops padrão lista vazia
+00:00 +55: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/user_model_test.dart: UserModel.toMap Serializa todos os campos corretamente
+00:00 +56: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/user_model_test.dart: UserModel.toMap Serializa userType barqueiro como "barqueiro"
+00:00 +57: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/user_model_test.dart: UserModel.fromMap Desserializa todos os campos corretamente
+00:00 +58: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/user_model_test.dart: UserModel.fromMap Usa valores padrão quando campos estão ausentes no mapa
+00:00 +59: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/user_model_test.dart: UserModel.fromMap Interpreta userType desconhecido como passageiro
+00:00 +60: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/user_model_test.dart: UserModel round-trip (toMap → fromMap) Mantém igualdade após serialização e desserialização
+00:00 +61: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/user_model_test.dart: UserModel.copyWith Cria nova instância com campo alterado
+00:00 +62: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/user_model_test.dart: UserModel.copyWith Instância original não é modificada
+00:00 +63: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/user_model_test.dart: UserModel.copyWith isActive pode ser alterado para false
+00:00 +64: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/user_model_test.dart: UserModel Equatable Dois modelos com mesmos dados são iguais
+00:00 +65: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/models/user_model_test.dart: UserModel Equatable Modelos com uid diferente não são iguais
+00:01 +66: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: isValidCPF CPF válido retorna true
+00:01 +67: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: isValidCPF CPF com todos os dígitos iguais retorna false
+00:01 +68: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: isValidCPF CPF com comprimento diferente de 11 dígitos retorna false
+00:01 +69: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: isValidCPF CPF vazio retorna false
+00:01 +70: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: isValidCPF CPF com dígito verificador errado retorna false
+00:01 +71: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: isValidCPF CPF com pontuação é aceito (dígitos extraídos)
+00:01 +72: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateCPF CPF nulo retorna mensagem de erro
+00:01 +73: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateCPF CPF vazio retorna mensagem de erro
+00:01 +74: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateCPF CPF com menos de 11 dígitos retorna mensagem de erro
+00:01 +75: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateCPF CPF inválido retorna mensagem de erro
+00:01 +76: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateCPF CPF válido retorna null
+00:01 +77: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: formatCPF Formata CPF sem pontuação corretamente
+00:01 +78: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: formatCPF Formata CPF com pontuação mantendo o mesmo resultado
+00:01 +79: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: formatCPF CPF com menos de 11 dígitos retorna o valor original
+00:01 +80: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateEmail Email válido retorna null
+00:01 +81: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateEmail Email sem @ retorna mensagem de erro
+00:01 +82: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateEmail Email sem domínio retorna mensagem de erro
+00:01 +83: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateEmail Email nulo retorna mensagem de erro
+00:01 +84: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateEmail Email vazio retorna mensagem de erro
+00:01 +85: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validatePassword Senha com 6 ou mais caracteres retorna null
+00:01 +86: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validatePassword Senha com menos de 6 caracteres retorna mensagem de erro
+00:01 +87: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validatePassword Senha nula retorna mensagem de erro
+00:01 +88: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validatePassword Senha vazia retorna mensagem de erro
+00:01 +89: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validatePasswordConfirmation Confirmação igual à senha retorna null
+00:01 +90: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validatePasswordConfirmation Confirmação diferente da senha retorna mensagem de erro
+00:01 +91: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validatePasswordConfirmation Confirmação nula retorna mensagem de erro
+00:01 +92: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validatePasswordConfirmation Confirmação vazia retorna mensagem de erro
+00:01 +93: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateName Nome com duas palavras retorna null
+00:01 +94: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateName Nome com mais de duas palavras retorna null
+00:01 +95: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateName Nome com apenas uma palavra retorna mensagem de erro
+00:01 +96: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateName Nome nulo retorna mensagem de erro
+00:01 +97: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateName Nome vazio retorna mensagem de erro
+00:01 +98: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateNotEmpty Valor preenchido retorna null
+00:01 +99: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateNotEmpty Valor vazio retorna mensagem com o nome do campo
+00:01 +100: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateNotEmpty Valor nulo retorna mensagem de erro
+00:01 +101: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateNumber String numérica válida retorna null
+00:01 +102: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateNumber String não numérica retorna mensagem de erro
+00:01 +103: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateNumber String vazia retorna mensagem de erro
+00:01 +104: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/gqs/validators/validators_test.dart: validateNumber Valor nulo retorna mensagem de erro
+00:01 +105: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/auth_repository_test.dart: CT-AUT-01 cadastro de passageiro cria credencial e perfil coerentes
+[signUp] Credencial criada; gravando perfil.
+00:01 +106: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/auth_repository_test.dart: CT-AUT-02 cadastro de barqueiro e login carregam perfil barqueiro
+[signUp] Credencial criada; gravando perfil.
+00:01 +107: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/auth_repository_test.dart: CT-AUT-03 unicidade (UC-01) CT-AUT-03 (b) CPF já cadastrado é recusado
+[signUp] Credencial criada; gravando perfil.
+[signUp] Credencial criada; gravando perfil.
+00:01 +108: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/auth_repository_test.dart: CT-AUT-03 unicidade (UC-01) CT-AUT-03 (d) CPF recusado não deixa credencial órfã: o e-mail pode ser reutilizado
+[signUp] Credencial criada; gravando perfil.
+[signUp] Credencial criada; gravando perfil.
+[signUp] Credencial criada; gravando perfil.
+00:01 +109: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/auth_repository_test.dart: CT-AUT-03 unicidade (UC-01) CT-AUT-03 (c) e-mail repetido é recusado
+[signUp] Credencial criada; gravando perfil.
+00:01 +110: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/auth_repository_test.dart: CT-AUT-04 login válido carrega o perfil do UID corrente
+[signUp] Credencial criada; gravando perfil.
+00:01 +111: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/auth_repository_test.dart: CT-AUT-05 senha errada não concede acesso
+[signUp] Credencial criada; gravando perfil.
+00:01 +112: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/auth_repository_test.dart: CT-AUT-06 logout encerra a sessão
+[signUp] Credencial criada; gravando perfil.
+00:01 +113: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/auth_repository_test.dart: CT-AUT-07 sessão persistida é recuperada ao reabrir o app
+[signUp] Credencial criada; gravando perfil.
+00:01 +114: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/auth_repository_test.dart: CT-SEG-05 conta inativa não inicia sessão
+[signUp] Credencial criada; gravando perfil.
+00:01 +115: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/auth_repository_test.dart: CT-SEG-05 (b) sessão restaurada de conta inativa é encerrada
+[signUp] Credencial criada; gravando perfil.
+00:02 +116: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: (setUpAll)
+00:02 +116: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-GEO-01 classificação por distância (valor-limite) CT-GEO-01 5000.0 m → Fora da Zona
+[GeofenceService] Estado resetado.
+[GeofenceService] Notificações desativadas.
+[GeofenceService] Estado resetado.
+00:02 +117: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-GEO-01 classificação por distância (valor-limite) CT-GEO-01 1201.0 m → Fora da Zona
+[GeofenceService] Estado resetado.
+[GeofenceService] Notificações desativadas.
+[GeofenceService] Estado resetado.
+00:02 +118: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-GEO-01 classificação por distância (valor-limite) CT-GEO-01 1199.0 m → Aproximando
+[GeofenceService] Estado resetado.
+[GeofenceService] Notificações desativadas.
+[GeofenceService] Estado resetado.
+[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Aproximando (dist: 1199m)
+00:02 +119: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-GEO-01 classificação por distância (valor-limite) CT-GEO-01 251.0 m → Aproximando
+[GeofenceService] Estado resetado.
+[GeofenceService] Notificações desativadas.
+[GeofenceService] Estado resetado.
+[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Aproximando (dist: 251m)
+00:02 +120: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-GEO-01 classificação por distância (valor-limite) CT-GEO-01 249.0 m → Atracado
+[GeofenceService] Estado resetado.
+[GeofenceService] Notificações desativadas.
+[GeofenceService] Estado resetado.
+[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Atracado (dist: 249m)
+00:02 +121: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-GEO-01 classificação por distância (valor-limite) CT-GEO-01 0.0 m → Atracado
+[GeofenceService] Estado resetado.
+[GeofenceService] Notificações desativadas.
+[GeofenceService] Estado resetado.
+[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Atracado (dist: 0m)
+00:02 +122: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-GEO-01 classificação por distância (valor-limite) CT-GEO-01 a distância gerada corresponde ao valor pedido
+[GeofenceService] Estado resetado.
+[GeofenceService] Notificações desativadas.
+00:02 +123: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-GEO-02 cruzar 1200 m notifica aproximação uma única vez
+[GeofenceService] Estado resetado.
+[GeofenceService] Notificações desativadas.
+[GeofenceService] Notificações ativadas.
+[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Aproximando (dist: 800m)
+[NotificationService] Inicializado com sucesso.
+[NotificationService] Aproximando-se do Porto — Embarcação próxima ao Pier Urbano de Itacoatiara
+00:02 +124: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-GEO-03 cruzar 250 m em seguida notifica atracação
+[GeofenceService] Estado resetado.
+[GeofenceService] Notificações desativadas.
+[GeofenceService] Notificações ativadas.
+[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Aproximando (dist: 1000m)
+[NotificationService] Aproximando-se do Porto — Embarcação próxima ao Pier Urbano de Itacoatiara
+[GeofenceService] Pier Urbano de Itacoatiara: Aproximando → Atracado (dist: 240m)
+[NotificationService] Atracado no Porto — Embarcação chegou ao Pier Urbano de Itacoatiara
+00:02 +125: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: (setUpAll)
+00:02 +125: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-GEO-04 ruído de ±5 m no limite de 1200 m CT-GEO-04 no máximo 1 notificação em 10 leituras
+[GeofenceService] Estado resetado.
+[GeofenceService] Notificações desativadas.
+[GeofenceService] Notificações ativadas.
+[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Aproximando (dist: 1195m)
+[NotificationService] Aproximando-se do Porto — Embarcação próxima ao Pier Urbano de Itacoatiara
+00:02 +125: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-RAS-03 ponto válido é persistido completo com ID uid_timestamp
+[LocalDB] Abrindo banco em: C:\Users\joaog\AppData\Local\Temp\atd_test_b0eaddc5\amazon_track.db
+[LocalDB] Tabela criada com sucesso.
+00:02 +126: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-GEO-04 ruído de ±5 m no limite de 1200 m CT-GEO-04 no máximo 1 notificação em 10 leituras
+00:02 +127: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-GEO-04 ruído de ±5 m no limite de 1200 m CT-GEO-04 no máximo 1 notificação em 10 leituras
+00:02 +127: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-RAS-11 leituras inválidas (RD-02, RD-04) CT-RAS-11 lat 95, lat -90,5, lon 181 e precisão -1 não entram na fila de sincronização
+[LocalDB] Leitura inválida descartada.
+[LocalDB] Leitura inválida descartada.
+[LocalDB] Leitura inválida descartada.
+[LocalDB] Leitura inválida descartada.
+00:02 +128: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-GEO-04 ruído de ±5 m no limite de 1200 m CT-GEO-04 no máximo 1 notificação em 10 leituras
+00:02 +129: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-02 fila sobrevive ao fechamento do banco; limpeza remove só confirmados
+00:02 +129: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-GEO-04 ruído de ±5 m no limite de 1200 m CT-GEO-04 estado não alterna a cada leitura (histerese)
+[GeofenceService] Estado resetado.
+[GeofenceService] Notificações desativadas.
+[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Aproximando (dist: 1195m)
+00:02 +129: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-02 fila sobrevive ao fechamento do banco; limpeza remove só confirmados
+00:02 +129: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/location_repository_test.dart: CT-RAS-08 resumo consistente com pontos entregues fora de ordem
+[LocalDB] Abrindo banco em: C:\Users\joaog\AppData\Local\Temp\atd_test_4044f880\amazon_track.db
+[LocalDB] Tabela criada com sucesso.
+00:03 +130: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-02 fila sobrevive ao fechamento do banco; limpeza remove só confirmados
+00:03 +131: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-02 fila sobrevive ao fechamento do banco; limpeza remove só confirmados
+00:03 +132: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-02 fila sobrevive ao fechamento do banco; limpeza remove só confirmados
+00:03 +132: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-GEO-05 / CT-GEO-06 ETA CT-GEO-05 ETA indisponível a 0 e 0,49 m/s; calculado a 0,50
+[GeofenceService] Estado resetado.
+[GeofenceService] Notificações desativadas.
+00:03 +133: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-02 fila sobrevive ao fechamento do banco; limpeza remove só confirmados
+00:03 +133: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-GEO-05 / CT-GEO-06 ETA CT-GEO-06 900 m a 5 m/s → 180 s ± 1 % e "3 min"
+[GeofenceService] Estado resetado.
+[GeofenceService] Notificações desativadas.
+00:03 +134: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-02 fila sobrevive ao fechamento do banco; limpeza remove só confirmados
+00:03 +134: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-GEO-05 / CT-GEO-06 ETA CT-GEO-06 formatação: 20 s → "< 1 min"; 3720 s → "1h 02min"
+[GeofenceService] Estado resetado.
+[GeofenceService] Notificações desativadas.
+00:03 +135: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-02 fila sobrevive ao fechamento do banco; limpeza remove só confirmados
+00:03 +135: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-GEO-07 catálogo com 13 portos íntegros e sem sobreposição
+[GeofenceService] Estado resetado.
+[GeofenceService] Notificações desativadas.
+00:03 +136: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-02 fila sobrevive ao fechamento do banco; limpeza remove só confirmados
+00:03 +136: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-GEO-08 sem acompanhamento não há notificação
+[GeofenceService] Estado resetado.
+[GeofenceService] Notificações desativadas.
+[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Atracado (dist: 100m)
+[GeofenceService] Pier Urbano de Itacoatiara: Atracado → Fora da Zona (dist: 2000m)
+00:03 +137: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-02 fila sobrevive ao fechamento do banco; limpeza remove só confirmados
+00:03 +137: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-GEO-09 saída do porto notifica "Saiu do Porto" sem anunciar aproximação
+[GeofenceService] Estado resetado.
+[GeofenceService] Notificações desativadas.
+[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Atracado (dist: 100m)
+[GeofenceService] Notificações ativadas.
+[GeofenceService] Pier Urbano de Itacoatiara: Atracado → Aproximando (dist: 600m)
+[GeofenceService] Pier Urbano de Itacoatiara: Aproximando → Fora da Zona (dist: 1500m)
+[NotificationService] Saiu do Porto — Embarcação saiu do Pier Urbano de Itacoatiara
+00:03 +138: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-02 fila sobrevive ao fechamento do banco; limpeza remove só confirmados
+00:03 +138: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-PAS-05 desativar alertas reinicia o estado e silencia
+[GeofenceService] Estado resetado.
+[GeofenceService] Notificações desativadas.
+[GeofenceService] Notificações ativadas.
+[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Aproximando (dist: 800m)
+[NotificationService] Aproximando-se do Porto — Embarcação próxima ao Pier Urbano de Itacoatiara
+[GeofenceService] Estado resetado.
+[GeofenceService] Notificações desativadas.
+[GeofenceService] Pier Urbano de Itacoatiara: Fora da Zona → Aproximando (dist: 800m)
+[GeofenceService] Pier Urbano de Itacoatiara: Aproximando → Atracado (dist: 100m)
+00:03 +139: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-02 fila sobrevive ao fechamento do banco; limpeza remove só confirmados
+00:03 +139: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/geofence_service_test.dart: CT-UI-04 números em pt-BR: "1,5 km" e "12,6 km/h"
+[GeofenceService] Estado resetado.
+[GeofenceService] Notificações desativadas.
+00:03 +140: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-02 fila sobrevive ao fechamento do banco; limpeza remove só confirmados
+00:03 +141: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-02 fila sobrevive ao fechamento do banco; limpeza remove só confirmados
+[LocalDB] Abrindo banco em: C:\Users\joaog\AppData\Local\Temp\atd_test_b0eaddc5\amazon_track.db
+[LocalDB] Removidos 1 pontos antigos.
+00:04 +142: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/location_repository_test.dart: CT-HCH-09 metadados da viagem CT-HCH-09 falha nos metadados não impede o histórico
+00:04 +143: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +144: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +145: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +146: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +147: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +148: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +149: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +150: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +151: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +152: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +153: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +154: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +155: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +156: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +157: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +158: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +159: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +160: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +161: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +162: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +163: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +164: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:04 +165: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:05 +166: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-05 o mesmo ponto inserido 3 vezes gera 1 pendente
+00:05 +167: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/location_repository_test.dart: CT-OFF-01 sem internet o ponto fica pendente no SQLite
+00:05 +168: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-07 pendentes retornam em ordem cronológica (FIFO)
+00:05 +169: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/location_repository_test.dart: CT-OFF-04 falha parcial: só os confirmados saem da fila
+00:05 +170: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-08 consulta de pendentes limita o lote a 50
+00:05 +171: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-08 consulta de pendentes limita o lote a 50
+00:05 +171: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Inicializado. Conectado: false
+00:05 +171: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-08 consulta de pendentes limita o lote a 50
+00:05 +171: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+00:06 +171: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-01 sem internet os pontos ficam pendentes e nada é enviado
+[OfflineSyncService] Ponto salvo (total pendente: 1)
+[OfflineSyncService] Ponto salvo (total pendente: 2)
+[OfflineSyncService] Ponto salvo (total pendente: 3)
+00:06 +172: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-08 consulta de pendentes limita o lote a 50
+00:06 +172: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+00:06 +172: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-02 fila persistida é recuperada e registro corrompido é ignorado
+[OfflineSyncService] Registro corrompido ignorado: FormatException: Unexpected character (at character 2)
+{corrompido
+ ^
+
+00:06 +173: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-OFF-08 consulta de pendentes limita o lote a 50
+00:06 +173: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+00:06 +173: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+[OfflineSyncService] Ponto salvo (total pendente: 1)
+[OfflineSyncService] Ponto salvo (total pendente: 2)
+00:06 +173: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Sincronizando 2 ponto(s)...
+[OfflineSyncService] 2/2 pontos sincronizados. Restante: 0
+00:06 +174: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +175: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +176: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +177: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +178: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +179: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +180: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +181: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +182: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +183: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +184: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +185: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +186: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +187: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +188: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +189: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +190: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +191: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +192: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +193: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +194: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-03 ao reconectar a sincronização é iniciada e esvazia a fila
+00:06 +195: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-01 processamento local do ponto (Kalman + SQLite) p95 ≤ 2 s
+00:06 +195: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+00:06 +195: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-04 falha parcial mantém só os recusados para o próximo ciclo
+[OfflineSyncService] Ponto salvo (total pendente: 1)
+[OfflineSyncService] Ponto salvo (total pendente: 2)
+[OfflineSyncService] Ponto salvo (total pendente: 3)
+[OfflineSyncService] Ponto salvo (total pendente: 4)
+[OfflineSyncService] Ponto salvo (total pendente: 5)
+[OfflineSyncService] Sincronizando 5 ponto(s)...
+[OfflineSyncService] 3/5 pontos sincronizados. Restante: 2
+[OfflineSyncService] Sincronizando 2 ponto(s)...
+[OfflineSyncService] 2/2 pontos sincronizados. Restante: 0
+00:06 +196: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-01 processamento local do ponto (Kalman + SQLite) p95 ≤ 2 s
+00:06 +196: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+00:06 +196: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-05 o mesmo ponto salvo 3 vezes é enviado uma vez
+[OfflineSyncService] Ponto salvo (total pendente: 1)
+[OfflineSyncService] Sincronizando 1 ponto(s)...
+[OfflineSyncService] 1/1 pontos sincronizados. Restante: 0
+00:06 +197: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-01 processamento local do ponto (Kalman + SQLite) p95 ≤ 2 s
+00:06 +197: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+00:06 +197: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-06 Wi-Fi → móvel não reenvia; offline → Wi-Fi esvazia a fila
+[OfflineSyncService] Ponto salvo (total pendente: 1)
+[OfflineSyncService] Sincronizando 1 ponto(s)...
+[OfflineSyncService] 0/1 pontos sincronizados. Restante: 1
+00:06 +197: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Conectividade: false
+00:06 +197: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-06 Wi-Fi → móvel não reenvia; offline → Wi-Fi esvazia a fila
+[OfflineSyncService] Ponto salvo (total pendente: 2)
+00:06 +197: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Sincronizando 2 ponto(s)...
+[OfflineSyncService] 2/2 pontos sincronizados. Restante: 0
+00:07 +198: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-01 processamento local do ponto (Kalman + SQLite) p95 ≤ 2 s
+00:07 +198: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+00:07 +198: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-01 processamento local do ponto (Kalman + SQLite) p95 ≤ 2 s
+CT-NF-01 p95 = 119.88 ms (n=60, host)
+00:07 +199: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-07 envio na ordem de captura (FIFO)
+[OfflineSyncService] Ponto salvo (total pendente: 1)
+[OfflineSyncService] Ponto salvo (total pendente: 2)
+[OfflineSyncService] Ponto salvo (total pendente: 3)
+[OfflineSyncService] Ponto salvo (total pendente: 4)
+[OfflineSyncService] Ponto salvo (total pendente: 5)
+[OfflineSyncService] Sincronizando 5 ponto(s)...
+[OfflineSyncService] 5/5 pontos sincronizados. Restante: 0
+00:07 +200: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/widget/telas_test.dart: CT-UI-01 cadastro vazio mostra mensagem sob cada um dos 6 campos e não envia
+00:07 +200: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+00:07 +200: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-08 lote máximo de 50 por ciclo CT-OFF-08 fila de 49 pontos
+[OfflineSyncService] Sincronizando 49 ponto(s)...
+[OfflineSyncService] 49/49 pontos sincronizados. Restante: 0
+00:07 +201: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/widget/telas_test.dart: CT-UI-01 cadastro vazio mostra mensagem sob cada um dos 6 campos e não envia
+00:07 +201: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+00:07 +201: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-08 lote máximo de 50 por ciclo CT-OFF-08 fila de 50 pontos
+[OfflineSyncService] Sincronizando 50 ponto(s)...
+[OfflineSyncService] 50/50 pontos sincronizados. Restante: 0
+00:07 +202: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/widget/telas_test.dart: CT-UI-01 cadastro vazio mostra mensagem sob cada um dos 6 campos e não envia
+00:07 +202: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+00:07 +203: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/widget/telas_test.dart: CT-UI-01 cadastro vazio mostra mensagem sob cada um dos 6 campos e não envia
+00:07 +204: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/widget/telas_test.dart: CT-UI-01 cadastro vazio mostra mensagem sob cada um dos 6 campos e não envia
+00:07 +205: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/widget/telas_test.dart: CT-UI-01 cadastro vazio mostra mensagem sob cada um dos 6 campos e não envia
+00:07 +206: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/widget/telas_test.dart: CT-UI-01 cadastro vazio mostra mensagem sob cada um dos 6 campos e não envia
+00:07 +207: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/widget/telas_test.dart: CT-UI-01 cadastro vazio mostra mensagem sob cada um dos 6 campos e não envia
+00:07 +208: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/widget/telas_test.dart: CT-UI-01 cadastro vazio mostra mensagem sob cada um dos 6 campos e não envia
+00:07 +209: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/widget/telas_test.dart: CT-UI-01 cadastro vazio mostra mensagem sob cada um dos 6 campos e não envia
+00:07 +210: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/widget/telas_test.dart: CT-UI-01 cadastro vazio mostra mensagem sob cada um dos 6 campos e não envia
+00:07 +210: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-08 lote máximo de 50 por ciclo CT-OFF-08 fila de 51 pontos
+[OfflineSyncService] Sincronizando 51 ponto(s)...
+[OfflineSyncService] 50/50 pontos sincronizados. Restante: 1
+[OfflineSyncService] Sincronizando 1 ponto(s)...
+[OfflineSyncService] 1/1 pontos sincronizados. Restante: 0
+00:07 +211: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/widget/telas_test.dart: CT-UI-01 cadastro vazio mostra mensagem sob cada um dos 6 campos e não envia
+00:07 +211: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+00:07 +211: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-09 indicador de pendentes CT-OFF-09 (a) contador acompanha inclusões e envio
+[OfflineSyncService] Ponto salvo (total pendente: 1)
+[OfflineSyncService] Ponto salvo (total pendente: 2)
+[OfflineSyncService] Sincronizando 2 ponto(s)...
+[OfflineSyncService] 2/2 pontos sincronizados. Restante: 0
+00:07 +212: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/widget/telas_test.dart: CT-UI-01 cadastro vazio mostra mensagem sob cada um dos 6 campos e não envia
+00:07 +212: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+00:07 +212: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-09 indicador de pendentes CT-OFF-09 (b) indicador do mapa reflete pontos pendentes do rastreamento (SQLite)
+[LocalDB] Abrindo banco em: C:\Users\joaog\AppData\Local\Temp\atd_test_f7335645\amazon_track.db
+[LocalDB] Tabela criada com sucesso.
+00:07 +213: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/widget/telas_test.dart: CT-UI-01 cadastro vazio mostra mensagem sob cada um dos 6 campos e não envia
+00:07 +213: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+00:07 +213: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-10 exceção em um ponto não bloqueia os demais
+[OfflineSyncService] Ponto salvo (total pendente: 1)
+[LocalDB] Abrindo banco em: C:\Users\joaog\AppData\Local\Temp\atd_test_f7335645\amazon_track.db
+[OfflineSyncService] Ponto salvo (total pendente: 2)
+[LocalDB] Abrindo banco em: C:\Users\joaog\AppData\Local\Temp\atd_test_f7335645\amazon_track.db
+[OfflineSyncService] Ponto salvo (total pendente: 3)
+[OfflineSyncService] Sincronizando 3 ponto(s)...
+[LocalDB] Abrindo banco em: C:\Users\joaog\AppData\Local\Temp\atd_test_f7335645\amazon_track.db
+[OfflineSyncService] Falha ao sincronizar ponto p2: Exception: falha de rede em p2
+[LocalDB] Abrindo banco em: C:\Users\joaog\AppData\Local\Temp\atd_test_f7335645\amazon_track.db
+[OfflineSyncService] 2/3 pontos sincronizados. Restante: 1
+[OfflineSyncService] Sincronizando 1 ponto(s)...
+[OfflineSyncService] 1/1 pontos sincronizados. Restante: 0
+00:07 +214: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/widget/telas_test.dart: CT-UI-01 cadastro vazio mostra mensagem sob cada um dos 6 campos e não envia
+00:07 +214: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+00:07 +214: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-11 ponto salvo durante uma sincronização não é perdido
+[OfflineSyncService] Ponto salvo (total pendente: 1)
+[OfflineSyncService] Sincronizando 1 ponto(s)...
+00:07 +215: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-06 fila com 5.000 pontos: lote 50 em ordem, consulta < 2 s
+00:07 +215: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-OFF-11 ponto salvo durante uma sincronização não é perdido
+[OfflineSyncService] Ponto salvo (total pendente: 2)
+[OfflineSyncService] 1/1 pontos sincronizados. Restante: 1
+00:08 +216: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-06 fila com 5.000 pontos: lote 50 em ordem, consulta < 2 s
+00:08 +216: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+00:08 +216: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-NF-05 sincronização começa em até 30 s após reconectar
+[OfflineSyncService] Ponto salvo (total pendente: 1)
+[OfflineSyncService] Ponto salvo (total pendente: 2)
+00:08 +216: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Sincronizando 2 ponto(s)...
+[OfflineSyncService] 2/2 pontos sincronizados. Restante: 0
+00:08 +217: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-06 fila com 5.000 pontos: lote 50 em ordem, consulta < 2 s
+00:08 +218: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-06 fila com 5.000 pontos: lote 50 em ordem, consulta < 2 s
+00:08 +218: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-NF-05 sincronização começa em até 30 s após reconectar
+CT-NF-05 início do sync após reconexão = 0 ms (host)
+00:08 +219: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-06 fila com 5.000 pontos: lote 50 em ordem, consulta < 2 s
+00:08 +219: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+00:08 +219: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: CT-NF-08 100 alternâncias de rede: cada ponto enviado uma vez
+[OfflineSyncService] Ponto salvo (total pendente: 1)
+[OfflineSyncService] Ponto salvo (total pendente: 2)
+[OfflineSyncService] Ponto salvo (total pendente: 3)
+[OfflineSyncService] Ponto salvo (total pendente: 4)
+[OfflineSyncService] Ponto salvo (total pendente: 5)
+[OfflineSyncService] Ponto salvo (total pendente: 6)
+[OfflineSyncService] Ponto salvo (total pendente: 7)
+[OfflineSyncService] Ponto salvo (total pendente: 8)
+[OfflineSyncService] Ponto salvo (total pendente: 9)
+[OfflineSyncService] Ponto salvo (total pendente: 10)
+[OfflineSyncService] Ponto salvo (total pendente: 11)
+[OfflineSyncService] Ponto salvo (total pendente: 12)
+[OfflineSyncService] Ponto salvo (total pendente: 13)
+[OfflineSyncService] Ponto salvo (total pendente: 14)
+[OfflineSyncService] Ponto salvo (total pendente: 15)
+[OfflineSyncService] Ponto salvo (total pendente: 16)
+[OfflineSyncService] Ponto salvo (total pendente: 17)
+[OfflineSyncService] Ponto salvo (total pendente: 18)
+[OfflineSyncService] Ponto salvo (total pendente: 19)
+[OfflineSyncService] Ponto salvo (total pendente: 20)
+00:08 +219: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Sincronizando 20 ponto(s)...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] 20/20 pontos sincronizados. Restante: 0
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+00:08 +219: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/widget/telas_test.dart: CT-AUT-01 cadastro válido grava perfil passageiro e volta ao login
+[signUp] Credencial criada; gravando perfil.
+00:08 +220: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-06 fila com 5.000 pontos: lote 50 em ordem, consulta < 2 s
+00:08 +220: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+00:08 +220: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/widget/telas_test.dart: CT-AUT-05 login inválido: mensagem em português sem estrutura interna
+CT-AUT-05 mensagem exibida: "E-mail ou senha incorretos."
+00:08 +221: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-06 fila com 5.000 pontos: lote 50 em ordem, consulta < 2 s
+00:08 +221: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+00:08 +222: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-06 fila com 5.000 pontos: lote 50 em ordem, consulta < 2 s
+00:09 +222: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+00:09 +223: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-06 fila com 5.000 pontos: lote 50 em ordem, consulta < 2 s
+00:09 +223: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+00:09 +224: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-06 fila com 5.000 pontos: lote 50 em ordem, consulta < 2 s
+00:09 +225: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-06 fila com 5.000 pontos: lote 50 em ordem, consulta < 2 s
+00:09 +225: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+00:09 +226: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-06 fila com 5.000 pontos: lote 50 em ordem, consulta < 2 s
+00:09 +227: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-06 fila com 5.000 pontos: lote 50 em ordem, consulta < 2 s
+00:09 +227: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+00:09 +228: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-06 fila com 5.000 pontos: lote 50 em ordem, consulta < 2 s
+00:09 +228: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+00:09 +229: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-06 fila com 5.000 pontos: lote 50 em ordem, consulta < 2 s
+00:09 +229: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+00:09 +230: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-06 fila com 5.000 pontos: lote 50 em ordem, consulta < 2 s
+00:09 +231: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-06 fila com 5.000 pontos: lote 50 em ordem, consulta < 2 s
+00:09 +231: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+00:09 +232: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-06 fila com 5.000 pontos: lote 50 em ordem, consulta < 2 s
+00:09 +232: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/offline_sync_service_test.dart: (setUpAll)
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+[OfflineSyncService] Conectividade: false
+[OfflineSyncService] Conectividade: true
+[OfflineSyncService] Internet restaurada — iniciando sync...
+00:15 +233: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: CT-NF-06 fila com 5.000 pontos: lote 50 em ordem, consulta < 2 s
+CT-NF-06 inserção 5000 = 10064 ms; consulta lote = 0 ms
+00:17 +234: C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/unit/local_database_test.dart: (tearDownAll)
+00:17 +234: All tests passed!

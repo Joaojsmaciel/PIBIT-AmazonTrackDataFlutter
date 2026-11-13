@@ -1,0 +1,101 @@
+﻿
+> test
+> firebase emulators:exec --only firestore,storage --project demo-atd "node --test --test-reporter=spec --test-reporter-destination=stdout --test-reporter=junit --test-reporter-destination=resultado-regras.xml rules.test.mjs"
+
+i  emulators: Starting emulators: firestore, storage
+i  emulators: Detected demo project ID "demo-atd", emulated services will use a demo configuration and attempts to access non-emulated services for this project will fail.
+i  firestore: Firestore Emulator logging to firestore-debug.log
++  firestore: Firestore Emulator UI websocket is running on 9150.
+i  Running script: node --test --test-reporter=spec --test-reporter-destination=stdout --test-reporter=junit --test-reporter-destination=resultado-regras.xml rules.test.mjs
+Regras avaliadas: vigente
+✔ CT-SEG-01 terceiro C não lê o perfil (com CPF) de A (806.4044ms)
+✔ CT-SEG-01 A lê o próprio perfil (93.3707ms)
+✔ CT-SEG-02 anônimo não lê perfil (77.1501ms)
+[2026-11-04T03:48:19.214Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x4f18f1bd error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L81, false for 'update' @ L81
+✔ CT-SEG-02 anônimo não grava localização (86.7482ms)
+[2026-11-04T03:48:19.275Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x4f18f1bf error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'update' @ L40
+✔ CT-SEG-08 C não altera userType/isActive de A (59.5156ms)
+[2026-11-04T03:48:19.359Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x4f18f1c1 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+evaluation error at L62:26 for 'update' @ L62, false for 'update' @ L62
+✔ CT-EMB-02 C não edita a embarcação de A (84.4982ms)
+✔ CT-EMB-04 A edita a própria embarcação (54.9165ms)
+✔ CT-HCH-04 C não lê a conversa A–B (62.4747ms)
+[2026-11-04T03:48:19.543Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x4f18f1c7 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L112, false for 'update' @ L114
+✔ CT-HCH-04 C não grava na conversa A–B (66.4416ms)
+✔ CT-HCH-04 participante B lê a conversa (75.7532ms)
+[2026-11-04T03:48:19.682Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x4f18f1cb error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L81, false for 'update' @ L81
+✔ CT-HCH-10 C não grava no histórico de A (62.8656ms)
+✔ CT-HCH-10 A grava no próprio histórico (62.4794ms)
+[2026-11-04T03:48:19.808Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x4f18f1cf error. Code: 7 Message: 7 PERMISSION_DENIED: 
+evaluation error at L96:26 for 'update' @ L96, false for 'update' @ L96
+✔ CT-AGE-02 C não cancela a agenda de A (63.4112ms)
+✔ CT-AGE-04 A cancela a própria agenda (68.663ms)
+[2026-11-04T03:48:19.935Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x4f18f1d3 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+evaluation error at L40:26 for 'update' @ L40, false for 'update' @ L40
+[2026-11-04T03:48:19.947Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x4f18f1d4 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+evaluation error at L40:26 for 'update' @ L40, false for 'update' @ L40
+✔ CT-SEG-08 A não altera o próprio userType nem isActive (70.1529ms)
+✔ CT-SEG-08 A atualiza o próprio nome mantendo os campos de controle (66.8457ms)
+[2026-11-04T03:48:20.075Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x4f18f1d8 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+evaluation error at L40:26 for 'update' @ L40, false for 'update' @ L40
+✔ CT-SEG-05 conta inativa D não se reativa (61.6988ms)
+✔ CT-AUT-03 novo usuário N cria perfil e reserva o CPF na mesma operação (68.8957ms)
+[2026-11-04T03:48:20.203Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x4f18f1dc error. Code: 7 Message: 7 PERMISSION_DENIED: 
+evaluation error at L35:26 for 'create' @ L35, evaluation error at L40:26 for 'update' @ L40, false for 'create' @ L52, false for 'update' @ L56, false for 'update' @ L56
+✔ CT-AUT-03 CPF já reservado por A não é reutilizado por N (58.7044ms)
+[2026-11-04T03:48:20.269Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x4f18f1de error. Code: 7 Message: 7 PERMISSION_DENIED: 
+evaluation error at L35:26 for 'create' @ L35, evaluation error at L40:26 for 'update' @ L40, Service call error. Function: [getAfter], Argument: [path_value {
+  segments {
+    simple: "databases"
+  }
+  segments {
+    simple: "(default)"
+  }
+  segments {
+    simple: "documents"
+  }
+  segments {
+    simple: "_root"
+  }
+  segments {
+    simple: "amazontrackdata"
+  }
+  segments {
+    simple: "cpfs"
+  }
+  segments {
+    simple: "39053344705"
+  }
+}
+]. for 'create' @ L35
+✔ CT-AUT-03 perfil com CPF sem reserva no índice é negado (65.978ms)
+[2026-11-04T03:48:20.328Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x4f18f1e0 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L35, evaluation error at L40:26 for 'update' @ L40, false for 'create' @ L35
+[2026-11-04T03:48:20.343Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x4f18f1e1 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L35, evaluation error at L40:26 for 'update' @ L40, false for 'create' @ L35
+✔ CT-SEG-08 N não cria perfil já inativo nem com outro uid (73.5252ms)
+✔ CT-HCH-01 participante lista as próprias conversas (76.1121ms)
+✔ CT-HCH-04 C não lista conversas de A (64.1392ms)
+✔ CT-EMB-06 dono A envia foto no caminho usado pelo app (160.884ms)
+✔ CT-SEG-06 C não substitui a foto da embarcação de A (75.8494ms)
+✔ CT-SEG-07 gravação fora dos caminhos permitidos é negada (52.0364ms)
+✔ CT-SEG-02 anônimo não lê foto (47.6396ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2913.5671
++  Script exited successfully (code 0)
+i  emulators: Shutting down emulators.
+i  firestore: Stopping Firestore Emulator
+!  Firestore Emulator has exited upon receiving signal: SIGINT
+i  storage: Stopping Storage Emulator
+i  hub: Stopping emulator hub
+i  logging: Stopping Logging Emulator

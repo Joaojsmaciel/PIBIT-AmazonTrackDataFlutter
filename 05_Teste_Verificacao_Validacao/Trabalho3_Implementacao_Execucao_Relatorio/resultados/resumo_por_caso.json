@@ -1,0 +1,900 @@
+{
+  "regras": {
+    "vigente": {
+      "pass": 27,
+      "fail": 0
+    },
+    "proposta": {
+      "pass": 21,
+      "fail": 6
+    }
+  },
+  "testesSemCaso": 105,
+  "casos": [
+    {
+      "caso": "CT-AUT-01",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "auth_repository_test.dart",
+        "telas_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-AUT-02",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "auth_repository_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-AUT-03",
+      "estado": "Aprovado",
+      "testes": 15,
+      "pass": 15,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "auth_repository_test.dart",
+        "rules.test.mjs",
+        "telas_test.dart",
+        "validators_ct_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-AUT-04",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "auth_repository_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-AUT-05",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "auth_repository_test.dart",
+        "telas_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-AUT-06",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "auth_repository_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-AUT-07",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "auth_repository_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-AUT-08",
+      "estado": "Aprovado",
+      "testes": 7,
+      "pass": 7,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "telas_test.dart",
+        "validators_ct_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-AUT-09",
+      "estado": "Aprovado",
+      "testes": 4,
+      "pass": 4,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "validators_ct_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-AUT-10",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "validators_ct_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-EMB-01",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "modelos_ct_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-EMB-02",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "rules.test.mjs"
+      ]
+    },
+    {
+      "caso": "CT-EMB-04",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "rules.test.mjs"
+      ]
+    },
+    {
+      "caso": "CT-EMB-06",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "inspecao_configuracao_test.dart",
+        "rules.test.mjs"
+      ]
+    },
+    {
+      "caso": "CT-EMB-07",
+      "estado": "Aprovado",
+      "testes": 3,
+      "pass": 3,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "telas_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-EMB-08",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "modelos_ct_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-EMB-10",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "modelos_ct_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-RAS-03",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "local_database_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-RAS-08",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "location_repository_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-RAS-10",
+      "estado": "Aprovado",
+      "testes": 3,
+      "pass": 3,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "modelos_ct_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-RAS-11",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "local_database_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-RAS-12",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "modelos_ct_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-OFF-01",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "location_repository_test.dart",
+        "offline_sync_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-OFF-02",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "local_database_test.dart",
+        "offline_sync_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-OFF-03",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "offline_sync_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-OFF-04",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "location_repository_test.dart",
+        "offline_sync_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-OFF-05",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "local_database_test.dart",
+        "offline_sync_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-OFF-06",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "offline_sync_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-OFF-07",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "local_database_test.dart",
+        "offline_sync_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-OFF-08",
+      "estado": "Aprovado",
+      "testes": 4,
+      "pass": 4,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "local_database_test.dart",
+        "offline_sync_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-OFF-09",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "offline_sync_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-OFF-10",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "offline_sync_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-OFF-11",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "offline_sync_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-GEO-01",
+      "estado": "Aprovado",
+      "testes": 7,
+      "pass": 7,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "geofence_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-GEO-02",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "geofence_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-GEO-03",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "geofence_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-GEO-04",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "geofence_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-GEO-05",
+      "estado": "Aprovado",
+      "testes": 3,
+      "pass": 3,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "geofence_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-GEO-06",
+      "estado": "Aprovado",
+      "testes": 3,
+      "pass": 3,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "geofence_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-GEO-07",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "geofence_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-GEO-08",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "geofence_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-GEO-09",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "geofence_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-PAS-04",
+      "estado": "Aprovado",
+      "testes": 5,
+      "pass": 5,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "modelos_ct_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-PAS-05",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "geofence_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-HCH-01",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "location_repository_test.dart",
+        "rules.test.mjs"
+      ]
+    },
+    {
+      "caso": "CT-HCH-02",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "modelos_ct_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-HCH-04",
+      "estado": "Aprovado",
+      "testes": 4,
+      "pass": 4,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "rules.test.mjs"
+      ]
+    },
+    {
+      "caso": "CT-HCH-05",
+      "estado": "Aprovado",
+      "testes": 4,
+      "pass": 4,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "modelos_ct_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-HCH-06",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "modelos_ct_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-HCH-07",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "modelos_ct_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-HCH-08",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "location_repository_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-HCH-09",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "location_repository_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-HCH-10",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "rules.test.mjs"
+      ]
+    },
+    {
+      "caso": "CT-AGE-01",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "modelos_ct_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-AGE-02",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "rules.test.mjs"
+      ]
+    },
+    {
+      "caso": "CT-AGE-03",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "modelos_ct_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-AGE-04",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "rules.test.mjs"
+      ]
+    },
+    {
+      "caso": "CT-AGE-05",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "modelos_ct_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-SEG-01",
+      "estado": "Aprovado",
+      "testes": 3,
+      "pass": 3,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "inspecao_configuracao_test.dart",
+        "rules.test.mjs"
+      ]
+    },
+    {
+      "caso": "CT-SEG-02",
+      "estado": "Aprovado",
+      "testes": 3,
+      "pass": 3,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "rules.test.mjs"
+      ]
+    },
+    {
+      "caso": "CT-SEG-03",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "inspecao_configuracao_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-SEG-04",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "inspecao_configuracao_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-SEG-05",
+      "estado": "Aprovado",
+      "testes": 3,
+      "pass": 3,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "auth_repository_test.dart",
+        "rules.test.mjs"
+      ]
+    },
+    {
+      "caso": "CT-SEG-06",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "rules.test.mjs"
+      ]
+    },
+    {
+      "caso": "CT-SEG-07",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "rules.test.mjs"
+      ]
+    },
+    {
+      "caso": "CT-SEG-08",
+      "estado": "Aprovado",
+      "testes": 4,
+      "pass": 4,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "rules.test.mjs"
+      ]
+    },
+    {
+      "caso": "CT-SEG-11",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "inspecao_configuracao_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-SEG-12",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "inspecao_configuracao_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-UI-01",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "telas_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-UI-03",
+      "estado": "Aprovado",
+      "testes": 6,
+      "pass": 6,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "telas_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-UI-04",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "geofence_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-UI-05",
+      "estado": "Aprovado",
+      "testes": 2,
+      "pass": 2,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "telas_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-NF-01",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "local_database_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-NF-05",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "offline_sync_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-NF-06",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "local_database_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-NF-08",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "offline_sync_service_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-NF-10",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "location_repository_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-COM-07",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "inspecao_configuracao_test.dart"
+      ]
+    },
+    {
+      "caso": "CT-COM-08",
+      "estado": "Aprovado",
+      "testes": 1,
+      "pass": 1,
+      "fail": 0,
+      "skip": 0,
+      "arquivos": [
+        "inspecao_configuracao_test.dart"
+      ]
+    }
+  ]
+}

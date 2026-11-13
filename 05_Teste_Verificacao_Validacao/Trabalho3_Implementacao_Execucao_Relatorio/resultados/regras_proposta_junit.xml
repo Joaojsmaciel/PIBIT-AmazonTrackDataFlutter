@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+	<testcase name="CT-SEG-01 terceiro C não lê o perfil (com CPF) de A" time="0.742554" classname="test"/>
+	<testcase name="CT-SEG-01 A lê o próprio perfil" time="0.108721" classname="test"/>
+	<testcase name="CT-SEG-02 anônimo não lê perfil" time="0.078500" classname="test"/>
+	<testcase name="CT-SEG-02 anônimo não grava localização" time="0.072927" classname="test"/>
+	<testcase name="CT-SEG-08 C não altera userType/isActive de A" time="0.090438" classname="test"/>
+	<testcase name="CT-EMB-02 C não edita a embarcação de A" time="0.082616" classname="test"/>
+	<testcase name="CT-EMB-04 A edita a própria embarcação" time="0.053802" classname="test"/>
+	<testcase name="CT-HCH-04 C não lê a conversa A–B" time="0.061335" classname="test"/>
+	<testcase name="CT-HCH-04 C não grava na conversa A–B" time="0.062749" classname="test"/>
+	<testcase name="CT-HCH-04 participante B lê a conversa" time="0.062540" classname="test"/>
+	<testcase name="CT-HCH-10 C não grava no histórico de A" time="0.062767" classname="test"/>
+	<testcase name="CT-HCH-10 A grava no próprio histórico" time="0.057367" classname="test"/>
+	<testcase name="CT-AGE-02 C não cancela a agenda de A" time="0.052554" classname="test"/>
+	<testcase name="CT-AGE-04 A cancela a própria agenda" time="0.061928" classname="test"/>
+	<testcase name="CT-SEG-08 A não altera o próprio userType nem isActive" time="0.063592" classname="test" failure="Expected request to fail, but it succeeded.">
+		<failure type="testCodeFailure" message="Expected request to fail, but it succeeded.">
+[Error [ERR_TEST_FAILURE]: Expected request to fail, but it succeeded.] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: Error: Expected request to fail, but it succeeded.
+      at pr.then._a (file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste%20Verifica%C3%A7%C3%A3o%20e%20valida%C3%A7%C3%A3o/Trabalho3_Implementacao_Execucao_Relatorio/suite/firebase_rules/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:571:31)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.&lt;anonymous> (file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste%20Verifica%C3%A7%C3%A3o%20e%20valida%C3%A7%C3%A3o/Trabalho3_Implementacao_Execucao_Relatorio/suite/firebase_rules/rules.test.mjs:132:3)
+      at async Test.run (node:internal/test_runner/test:1054:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+}
+		</failure>
+	</testcase>
+	<testcase name="CT-SEG-08 A atualiza o próprio nome mantendo os campos de controle" time="0.062338" classname="test"/>
+	<testcase name="CT-SEG-05 conta inativa D não se reativa" time="0.060616" classname="test" failure="Expected request to fail, but it succeeded.">
+		<failure type="testCodeFailure" message="Expected request to fail, but it succeeded.">
+[Error [ERR_TEST_FAILURE]: Expected request to fail, but it succeeded.] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: Error: Expected request to fail, but it succeeded.
+      at pr.then._a (file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste%20Verifica%C3%A7%C3%A3o%20e%20valida%C3%A7%C3%A3o/Trabalho3_Implementacao_Execucao_Relatorio/suite/firebase_rules/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:571:31)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1054:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+}
+		</failure>
+	</testcase>
+	<testcase name="CT-AUT-03 novo usuário N cria perfil e reserva o CPF na mesma operação" time="0.066674" classname="test" failure="7 PERMISSION_DENIED: false for 'create' @ L16, false for 'update' @ L16">
+		<failure type="testCodeFailure" message="7 PERMISSION_DENIED: false for 'create' @ L16, false for 'update' @ L16">
+[Error [ERR_TEST_FAILURE]: 7 PERMISSION_DENIED: 
+false for 'create' @ L16, false for 'update' @ L16] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: [Error [FirebaseError]: 7 PERMISSION_DENIED: 
+  false for 'create' @ L16, false for 'update' @ L16] {
+    code: 'permission-denied',
+    customData: undefined
+  }
+}
+		</failure>
+	</testcase>
+	<testcase name="CT-AUT-03 CPF já reservado por A não é reutilizado por N" time="0.061935" classname="test"/>
+	<testcase name="CT-AUT-03 perfil com CPF sem reserva no índice é negado" time="0.061568" classname="test" failure="Expected request to fail, but it succeeded.">
+		<failure type="testCodeFailure" message="Expected request to fail, but it succeeded.">
+[Error [ERR_TEST_FAILURE]: Expected request to fail, but it succeeded.] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: Error: Expected request to fail, but it succeeded.
+      at pr.then._a (file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste%20Verifica%C3%A7%C3%A3o%20e%20valida%C3%A7%C3%A3o/Trabalho3_Implementacao_Execucao_Relatorio/suite/firebase_rules/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:571:31)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1054:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+}
+		</failure>
+	</testcase>
+	<testcase name="CT-SEG-08 N não cria perfil já inativo nem com outro uid" time="0.061013" classname="test" failure="Expected request to fail, but it succeeded.">
+		<failure type="testCodeFailure" message="Expected request to fail, but it succeeded.">
+[Error [ERR_TEST_FAILURE]: Expected request to fail, but it succeeded.] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: Error: Expected request to fail, but it succeeded.
+      at pr.then._a (file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste%20Verifica%C3%A7%C3%A3o%20e%20valida%C3%A7%C3%A3o/Trabalho3_Implementacao_Execucao_Relatorio/suite/firebase_rules/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:571:31)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.&lt;anonymous> (file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste%20Verifica%C3%A7%C3%A3o%20e%20valida%C3%A7%C3%A3o/Trabalho3_Implementacao_Execucao_Relatorio/suite/firebase_rules/rules.test.mjs:164:3)
+      at async Test.run (node:internal/test_runner/test:1054:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+}
+		</failure>
+	</testcase>
+	<testcase name="CT-HCH-01 participante lista as próprias conversas" time="0.097694" classname="test" failure="Null value error. for 'list' @ L64">
+		<failure type="testCodeFailure" message="Null value error. for 'list' @ L64">
+[Error [ERR_TEST_FAILURE]: 
+Null value error. for 'list' @ L64] {
+  code: 'ERR_TEST_FAILURE',
+  failureType: 'testCodeFailure',
+  cause: [Error [FirebaseError]: 
+  Null value error. for 'list' @ L64] {
+    code: 'permission-denied',
+    customData: undefined
+  }
+}
+		</failure>
+	</testcase>
+	<testcase name="CT-HCH-04 C não lista conversas de A" time="0.063915" classname="test"/>
+	<testcase name="CT-EMB-06 dono A envia foto no caminho usado pelo app" time="0.154594" classname="test"/>
+	<testcase name="CT-SEG-06 C não substitui a foto da embarcação de A" time="0.066920" classname="test"/>
+	<testcase name="CT-SEG-07 gravação fora dos caminhos permitidos é negada" time="0.052852" classname="test"/>
+	<testcase name="CT-SEG-02 anônimo não lê foto" time="0.057412" classname="test"/>
+	<!-- tests 27 -->
+	<!-- suites 0 -->
+	<!-- pass 21 -->
+	<!-- fail 6 -->
+	<!-- cancelled 0 -->
+	<!-- skipped 0 -->
+	<!-- todo 0 -->
+	<!-- duration_ms 2808.6357 -->
+</testsuites>

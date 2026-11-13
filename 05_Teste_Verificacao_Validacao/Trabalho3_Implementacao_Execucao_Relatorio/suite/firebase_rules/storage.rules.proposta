@@ -1,0 +1,19 @@
+// Proposta de regras Storage (correção sugerida para DEF-02): cobre o caminho
+// usado pelo app (boat_images/{boatId}.jpg) e restringe a escrita ao dono.
+
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    match /boat_images/{fileName} {
+      function boatOwner() {
+        return firestore.get(/databases/(default)/documents/_root/amazontrackdata/boats/$(fileName.split('[.]')[0])).data.ownerId;
+      }
+      allow read: if request.auth != null;
+      allow delete: if request.auth != null && boatOwner() == request.auth.uid;
+      allow create, update: if request.auth != null
+        && boatOwner() == request.auth.uid
+        && request.resource.size < 5 * 1024 * 1024
+        && request.resource.contentType.matches('image/.*');
+    }
+  }
+}

@@ -1,0 +1,12 @@
+﻿== APK novo (build/app/outputs/flutter-apk/app-release.apk, branch fix/aceite-v1.1)
+Signer #1 certificate DN: CN=AmazonTrackData, OU=PIBITI, O=UFAM, L=Manaus, ST=AM, C=BR
+Signer #1 certificate SHA-256 digest: d8b5a8f3c99cfe77759bbd7ea6e893ab20d7184e3071fed8c5e39971500d3360
+Signer #1 certificate SHA-1 digest: 03b4489e1922a5d98dc58ef0ceb6a9335cabfd7f
+Signer #1 certificate MD5 digest: beb7da67f540bcb2b754ea1762476948
+SHA-256 do arquivo: F6AF7E2F263C8DB27252712542C9599F9C12946BBC56A746055A774796D2C663
+
+== APK publicado no site (website/public/downloads/amazon-track.apk, versão 1.0.0)
+Signer #1 certificate DN: C=US, O=Android, CN=Android Debug
+Signer #1 certificate SHA-256 digest: 02f3bed841479e1306abe2d39f126c2ded113311942c2f6436476c6f59b855a0
+Signer #1 certificate SHA-1 digest: 763b2a35bd957cb609e2a3fdc86400e9777e2fb2
+Signer #1 certificate MD5 digest: 2e0103c2ff3d1666498bbb74cae90d46

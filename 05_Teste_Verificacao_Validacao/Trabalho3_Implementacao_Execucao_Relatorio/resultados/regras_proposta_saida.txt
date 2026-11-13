@@ -1,0 +1,122 @@
+﻿
+> test
+> firebase emulators:exec --only firestore,storage --project demo-atd "node --test --test-reporter=spec --test-reporter-destination=stdout --test-reporter=junit --test-reporter-destination=resultado-regras.xml rules.test.mjs"
+
+i  emulators: Starting emulators: firestore, storage
+i  emulators: Detected demo project ID "demo-atd", emulated services will use a demo configuration and attempts to access non-emulated services for this project will fail.
+i  firestore: Firestore Emulator logging to firestore-debug.log
++  firestore: Firestore Emulator UI websocket is running on 9150.
+i  Running script: node --test --test-reporter=spec --test-reporter-destination=stdout --test-reporter=junit --test-reporter-destination=resultado-regras.xml rules.test.mjs
+Regras avaliadas: proposta
+✔ CT-SEG-01 terceiro C não lê o perfil (com CPF) de A (742.5542ms)
+✔ CT-SEG-01 A lê o próprio perfil (108.721ms)
+✔ CT-SEG-02 anônimo não lê perfil (78.4997ms)
+[2026-11-04T03:51:03.999Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x61bff93c error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L40, false for 'update' @ L40
+✔ CT-SEG-02 anônimo não grava localização (72.9274ms)
+[2026-11-04T03:51:04.090Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x61bff93e error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'update' @ L16
+✔ CT-SEG-08 C não altera userType/isActive de A (90.4384ms)
+[2026-11-04T03:51:04.173Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x61bff940 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+evaluation error at L22:26 for 'update' @ L22, false for 'update' @ L22
+✔ CT-EMB-02 C não edita a embarcação de A (82.6156ms)
+✔ CT-EMB-04 A edita a própria embarcação (53.8023ms)
+✔ CT-HCH-04 C não lê a conversa A–B (61.3346ms)
+[2026-11-04T03:51:04.351Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x61bff946 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L68, false for 'update' @ L70
+✔ CT-HCH-04 C não grava na conversa A–B (62.7486ms)
+✔ CT-HCH-04 participante B lê a conversa (62.5405ms)
+[2026-11-04T03:51:04.476Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x61bff94a error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L40, false for 'update' @ L40
+✔ CT-HCH-10 C não grava no histórico de A (62.7669ms)
+✔ CT-HCH-10 A grava no próprio histórico (57.3667ms)
+[2026-11-04T03:51:04.586Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x61bff94e error. Code: 7 Message: 7 PERMISSION_DENIED: 
+evaluation error at L55:26 for 'update' @ L55, false for 'update' @ L55
+✔ CT-AGE-02 C não cancela a agenda de A (52.5535ms)
+✔ CT-AGE-04 A cancela a própria agenda (61.9285ms)
+✖ CT-SEG-08 A não altera o próprio userType nem isActive (63.5923ms)
+✔ CT-SEG-08 A atualiza o próprio nome mantendo os campos de controle (62.3383ms)
+✖ CT-SEG-05 conta inativa D não se reativa (60.6156ms)
+[2026-11-04T03:51:04.901Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x61bff958 error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L16, false for 'update' @ L16
+✖ CT-AUT-03 novo usuário N cria perfil e reserva o CPF na mesma operação (66.6743ms)
+[2026-11-04T03:51:04.964Z]  @firebase/firestore: Firestore (11.10.0): GrpcConnection RPC 'Write' stream 0x61bff95a error. Code: 7 Message: 7 PERMISSION_DENIED: 
+false for 'create' @ L16, false for 'update' @ L16
+✔ CT-AUT-03 CPF já reservado por A não é reutilizado por N (61.9347ms)
+✖ CT-AUT-03 perfil com CPF sem reserva no índice é negado (61.5684ms)
+✖ CT-SEG-08 N não cria perfil já inativo nem com outro uid (61.0131ms)
+✖ CT-HCH-01 participante lista as próprias conversas (97.6942ms)
+✔ CT-HCH-04 C não lista conversas de A (63.9152ms)
+✔ CT-EMB-06 dono A envia foto no caminho usado pelo app (154.5936ms)
+✔ CT-SEG-06 C não substitui a foto da embarcação de A (66.9201ms)
+✔ CT-SEG-07 gravação fora dos caminhos permitidos é negada (52.8519ms)
+✔ CT-SEG-02 anônimo não lê foto (57.4125ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 21
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2808.6357
+
+✖ failing tests:
+
+test at rules.test.mjs:131:1
+✖ CT-SEG-08 A não altera o próprio userType nem isActive (63.5923ms)
+  Error: Expected request to fail, but it succeeded.
+      at pr.then._a (file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste%20Verifica%C3%A7%C3%A3o%20e%20valida%C3%A7%C3%A3o/Trabalho3_Implementacao_Execucao_Relatorio/suite/firebase_rules/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:571:31)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste%20Verifica%C3%A7%C3%A3o%20e%20valida%C3%A7%C3%A3o/Trabalho3_Implementacao_Execucao_Relatorio/suite/firebase_rules/rules.test.mjs:132:3)
+      at async Test.run (node:internal/test_runner/test:1054:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+
+test at rules.test.mjs:141:1
+✖ CT-SEG-05 conta inativa D não se reativa (60.6156ms)
+  Error: Expected request to fail, but it succeeded.
+      at pr.then._a (file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste%20Verifica%C3%A7%C3%A3o%20e%20valida%C3%A7%C3%A3o/Trabalho3_Implementacao_Execucao_Relatorio/suite/firebase_rules/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:571:31)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1054:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+
+test at rules.test.mjs:144:1
+✖ CT-AUT-03 novo usuário N cria perfil e reserva o CPF na mesma operação (66.6743ms)
+  [Error [FirebaseError]: 7 PERMISSION_DENIED: 
+  false for 'create' @ L16, false for 'update' @ L16] {
+    code: 'permission-denied',
+    customData: undefined
+  }
+
+test at rules.test.mjs:160:1
+✖ CT-AUT-03 perfil com CPF sem reserva no índice é negado (61.5684ms)
+  Error: Expected request to fail, but it succeeded.
+      at pr.then._a (file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste%20Verifica%C3%A7%C3%A3o%20e%20valida%C3%A7%C3%A3o/Trabalho3_Implementacao_Execucao_Relatorio/suite/firebase_rules/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:571:31)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async Test.run (node:internal/test_runner/test:1054:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+
+test at rules.test.mjs:163:1
+✖ CT-SEG-08 N não cria perfil já inativo nem com outro uid (61.0131ms)
+  Error: Expected request to fail, but it succeeded.
+      at pr.then._a (file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste%20Verifica%C3%A7%C3%A3o%20e%20valida%C3%A7%C3%A3o/Trabalho3_Implementacao_Execucao_Relatorio/suite/firebase_rules/node_modules/@firebase/rules-unit-testing/dist/esm/index.esm.js:571:31)
+      at process.processTicksAndRejections (node:internal/process/task_queues:103:5)
+      at async TestContext.<anonymous> (file:///C:/Users/joaog/OneDrive/Documents/amazontrackdata/Teste%20Verifica%C3%A7%C3%A3o%20e%20valida%C3%A7%C3%A3o/Trabalho3_Implementacao_Execucao_Relatorio/suite/firebase_rules/rules.test.mjs:164:3)
+      at async Test.run (node:internal/test_runner/test:1054:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+
+test at rules.test.mjs:169:1
+✖ CT-HCH-01 participante lista as próprias conversas (97.6942ms)
+  [Error [FirebaseError]: 
+  Null value error. for 'list' @ L64] {
+    code: 'permission-denied',
+    customData: undefined
+  }
+!  Script exited unsuccessfully (code 1)
+i  emulators: Shutting down emulators.
+i  firestore: Stopping Firestore Emulator
+!  Firestore Emulator has exited upon receiving signal: SIGINT
+i  storage: Stopping Storage Emulator
+i  hub: Stopping emulator hub
+i  logging: Stopping Logging Emulator
+
+Error: Script "node --test --test-reporter=spec --test-reporter-destination=stdout --test-reporter=junit --test-reporter-destination=resultado-regras.xml rules.test.mjs" exited with code 1

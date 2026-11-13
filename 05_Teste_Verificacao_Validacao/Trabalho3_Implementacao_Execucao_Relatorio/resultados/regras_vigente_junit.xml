@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+	<testcase name="CT-SEG-01 terceiro C não lê o perfil (com CPF) de A" time="0.806404" classname="test"/>
+	<testcase name="CT-SEG-01 A lê o próprio perfil" time="0.093371" classname="test"/>
+	<testcase name="CT-SEG-02 anônimo não lê perfil" time="0.077150" classname="test"/>
+	<testcase name="CT-SEG-02 anônimo não grava localização" time="0.086748" classname="test"/>
+	<testcase name="CT-SEG-08 C não altera userType/isActive de A" time="0.059516" classname="test"/>
+	<testcase name="CT-EMB-02 C não edita a embarcação de A" time="0.084498" classname="test"/>
+	<testcase name="CT-EMB-04 A edita a própria embarcação" time="0.054917" classname="test"/>
+	<testcase name="CT-HCH-04 C não lê a conversa A–B" time="0.062475" classname="test"/>
+	<testcase name="CT-HCH-04 C não grava na conversa A–B" time="0.066442" classname="test"/>
+	<testcase name="CT-HCH-04 participante B lê a conversa" time="0.075753" classname="test"/>
+	<testcase name="CT-HCH-10 C não grava no histórico de A" time="0.062866" classname="test"/>
+	<testcase name="CT-HCH-10 A grava no próprio histórico" time="0.062479" classname="test"/>
+	<testcase name="CT-AGE-02 C não cancela a agenda de A" time="0.063411" classname="test"/>
+	<testcase name="CT-AGE-04 A cancela a própria agenda" time="0.068663" classname="test"/>
+	<testcase name="CT-SEG-08 A não altera o próprio userType nem isActive" time="0.070153" classname="test"/>
+	<testcase name="CT-SEG-08 A atualiza o próprio nome mantendo os campos de controle" time="0.066846" classname="test"/>
+	<testcase name="CT-SEG-05 conta inativa D não se reativa" time="0.061699" classname="test"/>
+	<testcase name="CT-AUT-03 novo usuário N cria perfil e reserva o CPF na mesma operação" time="0.068896" classname="test"/>
+	<testcase name="CT-AUT-03 CPF já reservado por A não é reutilizado por N" time="0.058704" classname="test"/>
+	<testcase name="CT-AUT-03 perfil com CPF sem reserva no índice é negado" time="0.065978" classname="test"/>
+	<testcase name="CT-SEG-08 N não cria perfil já inativo nem com outro uid" time="0.073525" classname="test"/>
+	<testcase name="CT-HCH-01 participante lista as próprias conversas" time="0.076112" classname="test"/>
+	<testcase name="CT-HCH-04 C não lista conversas de A" time="0.064139" classname="test"/>
+	<testcase name="CT-EMB-06 dono A envia foto no caminho usado pelo app" time="0.160884" classname="test"/>
+	<testcase name="CT-SEG-06 C não substitui a foto da embarcação de A" time="0.075849" classname="test"/>
+	<testcase name="CT-SEG-07 gravação fora dos caminhos permitidos é negada" time="0.052036" classname="test"/>
+	<testcase name="CT-SEG-02 anônimo não lê foto" time="0.047640" classname="test"/>
+	<!-- tests 27 -->
+	<!-- suites 0 -->
+	<!-- pass 27 -->
+	<!-- fail 0 -->
+	<!-- cancelled 0 -->
+	<!-- skipped 0 -->
+	<!-- todo 0 -->
+	<!-- duration_ms 2913.5671 -->
+</testsuites>

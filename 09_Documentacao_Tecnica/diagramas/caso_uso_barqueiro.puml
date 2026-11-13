@@ -1,0 +1,84 @@
+@startuml caso_uso_barqueiro
+skinparam actorStyle awesome
+skinparam usecaseBackgroundColor #EAF4FF
+skinparam usecaseBorderColor #2D6DB4
+skinparam arrowColor #2D6DB4
+skinparam packageBackgroundColor #F5FBFF
+skinparam packageBorderColor #A0C4E8
+skinparam actorBackgroundColor #FFF8DC
+skinparam actorBorderColor #B8860B
+left to right direction
+
+actor "Barqueiro" as B
+
+rectangle "Sistema AmazonTrack" {
+
+  package "Autenticação" {
+    usecase "Criar conta" as UC1
+    usecase "Fazer login" as UC2
+    usecase "Fazer logout" as UC3
+  }
+
+  package "Gestão de Embarcação" {
+    usecase "Registrar embarcação" as UC4
+    usecase "Editar embarcação" as UC5
+    usecase "Visualizar embarcações\nregistradas" as UC6
+  }
+
+  package "Gestão de Rotas" {
+    usecase "Cadastrar rota" as UC7
+    usecase "Visualizar rotas\ndisponíveis" as UC8
+    usecase "Selecionar rota\npara viagem" as UC9
+  }
+
+  package "Rastreamento / Viagem" {
+    usecase "Iniciar rastreamento\nGPS" as UC10
+    usecase "Visualizar posição\nno mapa" as UC11
+    usecase "Monitorar progresso\nda rota" as UC12
+    usecase "Visualizar ETA\n(tempo de chegada)" as UC13
+    usecase "Parar rastreamento" as UC14
+    usecase "Visualizar histórico\nde viagens" as UC15
+  }
+
+  package "Sincronização DTN" {
+    usecase "Armazenar pontos GPS\nlocalmente (offline)" as UC16
+    usecase "Sincronizar dados\nao reconectar" as UC17
+    usecase "Monitorar fila\nde sincronização" as UC18
+  }
+
+  package "Comunicação" {
+    usecase "Visualizar inbox\nde mensagens" as UC19
+    usecase "Responder mensagem\nde passageiro" as UC20
+  }
+
+}
+
+' ── Relacionamentos principais ──────────
+B --> UC1
+B --> UC2
+B --> UC3
+B --> UC4
+B --> UC5
+B --> UC6
+B --> UC7
+B --> UC8
+B --> UC9
+B --> UC10
+B --> UC11
+B --> UC14
+B --> UC15
+B --> UC18
+B --> UC19
+B --> UC20
+
+' ── Includes / Extends ──────────────────
+UC10 ..> UC11 : <<include>>
+UC10 ..> UC16 : <<include>>
+UC10 ..> UC12 : <<include>>
+UC10 ..> UC13 : <<include>>
+UC14 ..> UC17 : <<include>>
+UC9  ..> UC10 : <<extend>>
+UC16 ..> UC17 : <<extend>>\n[ao detectar\nconectividade]
+UC2  ..> UC1  : <<extend>>\n[novo usuário]
+
+@enduml

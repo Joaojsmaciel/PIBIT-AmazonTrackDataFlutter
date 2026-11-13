@@ -1,0 +1,126 @@
+// Firestore Security Rules para Amazon Track Data — menor privilégio.
+//
+// Corrige DEF-01 (acesso horizontal), DEF-09 (CPF duplicado) e reforça
+// DEF-10 (conta inativa). Verificadas por
+// "Teste Verificação e validação/Trabalho3_Implementacao_Execucao_Relatorio/suite/firebase_rules".
+// Publicação: firebase deploy --only firestore:rules,storage (ver firebase.json na raiz).
+
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() { return request.auth != null; }
+    function isUser(uid) { return signedIn() && request.auth.uid == uid; }
+    function ownsExisting() { return signedIn() && resource.data.ownerId == request.auth.uid; }
+    function createsAsOwner() { return signedIn() && request.resource.data.ownerId == request.auth.uid; }
+    function keepsOwner() { return request.resource.data.ownerId == resource.data.ownerId; }
+    function unchanged(field) {
+      return request.resource.data.get(field, null) == resource.data.get(field, null);
+    }
+    function cpfIndex(cpf) {
+      return /databases/$(database)/documents/_root/amazontrackdata/cpfs/$(cpf);
+    }
+    // Perfil sem CPF (login com Google) ou CPF reservado para o próprio usuário
+    // no índice cpfs/ na mesma operação (transação do cadastro).
+    function cpfReservedFor(uid) {
+      let cpf = request.resource.data.get('cpf', '');
+      return cpf == '' || getAfter(cpfIndex(cpf)).data.uid == uid;
+    }
+
+    match /_root/amazontrackdata {
+      // Perfil contém CPF: somente o próprio usuário lê e grava.
+      // Campos de controle (isActive, userType, uid, createdAt) não podem ser
+      // alterados pelo usuário; CPF só pode ser definido enquanto estiver vazio.
+      match /users/{uid} {
+        allow get: if isUser(uid);
+        allow create: if isUser(uid)
+          && request.resource.data.uid == uid
+          && request.resource.data.get('isActive', true) == true
+          && request.resource.data.userType in ['passageiro', 'barqueiro']
+          && cpfReservedFor(uid);
+        allow update: if isUser(uid)
+          && resource.data.get('isActive', true) == true
+          && unchanged('uid') && unchanged('isActive')
+          && unchanged('userType') && unchanged('createdAt')
+          && (unchanged('cpf')
+              || (resource.data.get('cpf', '') == '' && cpfReservedFor(uid)));
+        allow list, delete: if false;
+      }
+
+      // Índice de unicidade de CPF (id = 11 dígitos). Nunca sobrescrito.
+      match /cpfs/{cpf} {
+        allow get: if signedIn();
+        allow create: if signedIn()
+          && cpf.matches('^[0-9]{11}$')
+          && request.resource.data.keys().hasOnly(['uid'])
+          && request.resource.data.uid == request.auth.uid;
+        allow list, update, delete: if false;
+      }
+
+      match /boats/{boatId} {
+        allow read: if signedIn();
+        allow create: if createsAsOwner();
+        allow update: if ownsExisting() && keepsOwner();
+        allow delete: if ownsExisting();
+      }
+
+      match /routes/{routeId} {
+        allow read: if signedIn();
+        allow create: if createsAsOwner();
+        allow update: if ownsExisting() && keepsOwner();
+        allow delete: if ownsExisting();
+      }
+
+      match /stops/{stopId} {
+        allow read: if signedIn();
+      }
+
+      // Pontos, metadados e posição ao vivo: leitura para acompanhamento,
+      // escrita apenas pelo próprio barqueiro.
+      match /locations/{uid}/tracks/{trackId} {
+        allow read: if signedIn();
+        allow write: if isUser(uid);
+      }
+      match /tripMeta/{uid}/trips/{tripId} {
+        allow read: if signedIn();
+        allow write: if isUser(uid);
+      }
+      match /livePositions/{uid} {
+        allow read: if signedIn();
+        allow write: if isUser(uid);
+      }
+
+      // Agendas não são apagadas: cancelamento por isCancelled.
+      match /scheduledTrips/{tripId} {
+        allow read: if signedIn();
+        allow create: if createsAsOwner();
+        allow update: if ownsExisting() && keepsOwner();
+        allow delete: if false;
+      }
+
+      // chatId = uidMenor_uidMaior: somente os dois participantes.
+      match /chats/{chatId} {
+        function participant() {
+          return signedIn() && request.auth.uid in chatId.split('_');
+        }
+        allow get, create, update: if participant();
+        // Caixa de entrada: where('participants', arrayContains: uid).
+        allow list: if signedIn() && request.auth.uid in resource.data.participants;
+        allow delete: if false;
+
+        match /messages/{messageId} {
+          allow read: if participant();
+          allow create: if participant()
+            && request.resource.data.senderId == request.auth.uid;
+          allow update: if participant();
+          allow delete: if false;
+        }
+      }
+
+      match /tripSummaries/{summaryId} {
+        allow read: if signedIn();
+        allow write: if signedIn()
+          && request.resource.data.userId == request.auth.uid;
+      }
+    }
+  }
+}
